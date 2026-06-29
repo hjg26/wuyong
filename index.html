@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌍环游世界 · 线上数字展馆合集</title>
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
+        /* 原有样式完全保留，省略重复CSS，和之前一致 */
         * {
             margin: 0;
             padding: 0;
@@ -20,7 +23,6 @@
             padding-left: 260px;
         }
 
-        /* 侧边悬浮导航目录 */
         .sidebar-nav {
             position: fixed;
             top: 0;
@@ -67,7 +69,6 @@
             color: #fff;
         }
 
-        /* 搜索区域 */
         .search-wrap {
             max-width: 700px;
             margin: 0 auto 30px;
@@ -83,10 +84,6 @@
             font-size: 16px;
             outline: none;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        #search-input::placeholder {
-            color: #999;
         }
 
         .btn-base {
@@ -107,7 +104,6 @@
             background: #073258;
         }
 
-        /* 悬浮「想要什么」按钮 */
         .float-wish-btn {
             position: fixed;
             right: 24px;
@@ -129,7 +125,6 @@
             transform: translateY(-4px);
         }
 
-        /* 弹窗遮罩层 */
         .modal-mask {
             position: fixed;
             inset: 0;
@@ -148,7 +143,6 @@
             visibility: visible;
         }
 
-        /* 弹窗主体 */
         .modal-box {
             background: white;
             width: min(90vw, 520px);
@@ -213,7 +207,6 @@
             background: #777;
         }
 
-        /* 头部标题 */
         .page-header {
             text-align: center;
             color: #fff;
@@ -235,7 +228,6 @@
             line-height: 1.6;
         }
 
-        /* 卡片网格容器 */
         .gallery-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -244,7 +236,6 @@
             gap: 24px;
         }
 
-        /* 统一卡片基础样式 */
         .world-card {
             background: #fff;
             border-radius: 16px;
@@ -254,12 +245,7 @@
             border: 3px solid transparent;
         }
 
-        .world-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 32px rgba(0, 30, 70, 0.25);
-        }
 
-        /* 跳转后高亮放大样式 */
         .world-card.active-card {
             transform: scale(1.04);
             border-color: #ffc107;
@@ -267,7 +253,6 @@
             box-shadow: 0 0 30px rgba(255, 193, 7, 0.4);
         }
 
-        /* 卡片顶部横幅 */
         .card-banner {
             height: 140px;
             display: flex;
@@ -283,7 +268,6 @@
             background: linear-gradient(45deg, #219653, #6fcf97);
         }
 
-        /* 卡片内容区域 */
         .card-body {
             padding: 20px;
         }
@@ -301,7 +285,6 @@
             margin-bottom: 24px;
         }
 
-        /* 愿望记录列表样式 */
         .wish-list {
             max-height: 360px;
             overflow-y: auto;
@@ -376,7 +359,6 @@
             background: #555;
         }
 
-        /* 跳转按钮 */
         .visit-btn {
             display: block;
             width: 100%;
@@ -401,7 +383,26 @@
             font-size: 13px;
         }
 
-        /* 移动端适配：992px以下侧边栏隐藏 */
+        .sync-status {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            margin: 8px 0;
+        }
+
+        .sync-status.success {
+            color: #219653;
+        }
+
+        .sync-status.error {
+            color: #e53935;
+        }
+        .world-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0, 30, 70, 0.25);
+            border-color: rgba(15, 76, 129, 0.1); 
+        }
+
         @media screen and (max-width: 992px) {
             body {
                 padding-left: 16px;
@@ -416,7 +417,6 @@
                 transform: translateX(0);
             }
 
-            /* 侧边栏开关按钮 */
             .toggle-sidebar {
                 position: fixed;
                 top: 16px;
@@ -453,7 +453,6 @@
             }
         }
 
-        /* 手机布局：768px以下双列，480px单列 */
         @media screen and (max-width: 768px) {
             .page-header h1 {
                 font-size: 28px;
@@ -495,18 +494,12 @@
 </head>
 
 <body>
-    <!-- 侧边导航目录 -->
     <aside class="sidebar-nav">
         <h2>📖 站点目录</h2>
         <ul class="nav-list" id="navList"></ul>
     </aside>
-    <!-- 移动端侧边栏开关 -->
     <button class="toggle-sidebar" id="toggleBtn" style="display: none;">☰</button>
-
-    <!-- 悬浮弹窗触发按钮 -->
     <button class="float-wish-btn" id="openModalBtn">想要什么请点我</button>
-
-    <!-- 弹窗遮罩与内容 -->
     <div class="modal-mask" id="modalMask">
         <div class="modal-box">
             <h3>记录你想要的网址/工具</h3>
@@ -517,32 +510,16 @@
             </div>
         </div>
     </div>
-
     <main>
-        <!-- 搜索区域 -->
         <div class="search-wrap">
             <input type="text" id="search-input" placeholder="🔍 输入名称模糊搜索站点...">
             <button id="search-btn" class="btn-base">搜索</button>
         </div>
-
         <header class="page-header">
             <h1>🌍 环游世界 · 线上数字展馆合集</h1>
             <p>免费线上全景、博物馆、趣味工具、天文地理古籍资源，手机双列流畅浏览，一键新窗口打开</p>
         </header>
-
         <section class="gallery-container" id="galleryWrap">
-            <!-- 通用新增模板（复制这段即可添加新站点，无需改CSS）
-            <div class="world-card" data-name="站点全称">
-                <div class="card-banner">顶部标题</div>
-                <div class="card-body">
-                    <h3>站点名称</h3>
-                    <p class="desc">简短功能介绍</p>
-                    <a href="粘贴网址" target="_blank" class="visit-btn">立即前往游览</a>
-                </div>
-            </div>
-            -->
-
-            <!-- 原有站点1 -->
             <div class="world-card" data-name="中国国家博物馆数字展厅">
                 <div class="card-banner">国博VR展厅</div>
                 <div class="card-body">
@@ -551,8 +528,6 @@
                     <a href="https://www.chnmuseum.cn/Portals/0/web/vr" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-
-            <!-- 原有站点2 -->
             <div class="world-card" data-name="Vid2X 本地视频处理工具">
                 <div class="card-banner">音视频工具</div>
                 <div class="card-body">
@@ -561,8 +536,6 @@
                     <a href="https://vid2x.cn/" target="_blank" class="visit-btn">打开工具页面</a>
                 </div>
             </div>
-
-            <!-- 原有站点3 -->
             <div class="world-card" data-name="AirPano 全球360°全景">
                 <div class="card-banner">全景VR</div>
                 <div class="card-body">
@@ -571,8 +544,6 @@
                     <a href="https://www.airpano.org.cn/" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-
-            <!-- 原有站点4 -->
             <div class="world-card" data-name="数字敦煌">
                 <div class="card-banner">敦煌壁画</div>
                 <div class="card-body">
@@ -581,18 +552,14 @@
                     <a href="https://ip.e-dunhuang.com/" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-
-            <!-- 原有站点5 -->
             <div class="world-card" data-name="荷兰国家博物馆">
                 <div class="card-banner">伦勃朗名画</div>
                 <div class="card-body">
                     <h3>荷兰国家博物馆</h3>
                     <p class="desc">荷兰国宝美术馆，收藏伦勃朗、维米尔名画，全部馆藏高清免费查阅</p>
-                    <a href="https://www.rijksmuseum.nl/nl" target="_blank" class="visit-btn">立即前往游览</a>
+                    <a href="https://rijksmuseum.nl/nl" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-
-            <!-- 原有站点6 -->
             <div class="world-card" data-name="卢浮宫藏品检索网站">
                 <div class="card-banner">卢浮宫</div>
                 <div class="card-body">
@@ -601,8 +568,6 @@
                     <a href="https://collections.louvre.fr/en/" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-
-            <!-- 原有站点7 -->
             <div class="world-card" data-name="Neal.fun 深海海底可视化">
                 <div class="card-banner">深海探秘</div>
                 <div class="card-body">
@@ -611,8 +576,6 @@
                     <a href="https://neal.fun/deep-sea/" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-
-            <!-- 原有站点8 -->
             <div class="world-card" data-name="The Treeographer 树志档案">
                 <div class="card-banner">古树档案</div>
                 <div class="card-body">
@@ -621,8 +584,6 @@
                     <a href="https://thetreeographer.com/archive/" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-
-            <!-- 原有站点9 -->
             <div class="world-card" data-name="DFJ101 俄文电子书库">
                 <div class="card-banner">俄文藏书</div>
                 <div class="card-body">
@@ -631,8 +592,6 @@
                     <a href="https://zh.dfj101.ru/" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-
-            <!-- 原有站点10 -->
             <div class="world-card" data-name="全球电子书综合阅览区">
                 <div class="card-banner">综合电子书</div>
                 <div class="card-body">
@@ -641,8 +600,6 @@
                     <a href="#" class="visit-btn">更多电子书站点（可自行补充链接）</a>
                 </div>
             </div>
-
-            <!-- 新增1：Stellarium 在线天文星图 -->
             <div class="world-card" data-name="Stellarium 在线天文星图">
                 <div class="card-banner">虚拟星图</div>
                 <div class="card-body">
@@ -651,8 +608,6 @@
                     <a href="https://stellarium-web.org/" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-
-            <!-- 新增2：Magma 免费在线数字画板 -->
             <div class="world-card" data-name="Magma 免费在线数字画板">
                 <div class="card-banner">在线绘画</div>
                 <div class="card-body">
@@ -661,8 +616,6 @@
                     <a href="https://magma.com/" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-
-            <!-- 新增3：中华经典古籍库 -->
             <div class="world-card" data-name="中华经典古籍库">
                 <div class="card-banner">古籍善本</div>
                 <div class="card-body">
@@ -671,8 +624,6 @@
                     <a href="https://www.gujiantang.com/" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-
-            <!-- 新增4：MapChart 自定义历史地图 -->
             <div class="world-card" data-name="MapChart 自定义历史地图">
                 <div class="card-banner">古地图集</div>
                 <div class="card-body">
@@ -681,8 +632,6 @@
                     <a href="https://mapchart.net/" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-
-            <!-- 新增5：PhET 在线仿真实验室 -->
             <div class="world-card" data-name="PhET 在线仿真实验室">
                 <div class="card-banner">虚拟实验室</div>
                 <div class="card-body">
@@ -691,8 +640,6 @@
                     <a href="https://phet.colorado.edu/zh_cn/" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-
-            <!-- 新增6：埃及考古数字博物馆 -->
             <div class="world-card" data-name="埃及考古数字博物馆">
                 <div class="card-banner">埃及文物</div>
                 <div class="card-body">
@@ -701,8 +648,6 @@
                     <a href="https://egyptianmuseumcairo.eg/virtual-tour/" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-
-            <!-- 新增7：Neal.fun 趣味互动合集 -->
             <div class="world-card" data-name="Neal.fun 趣味互动合集">
                 <div class="card-banner">趣味互动</div>
                 <div class="card-body">
@@ -711,8 +656,6 @@
                     <a href="https://neal.fun/" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-
-            <!-- 新增8：PDF24 免费在线PDF工具 -->
             <div class="world-card" data-name="PDF24 免费在线PDF工具">
                 <div class="card-banner">PDF工具</div>
                 <div class="card-body">
@@ -721,217 +664,288 @@
                     <a href="https://tools.pdf24.org/zh/" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-
-            <!-- 愿望记录专属卡片（固定在最后） -->
             <div class="world-card" data-name="愿望需求记录">
                 <div class="card-banner banner-wish">愿望清单</div>
                 <div class="card-body">
                     <h3>💡 我还想要的工具/网址记录</h3>
-                    <p class="desc">点击右下角「想要什么请点我」按钮提交，本地永久保存，按时间倒序展示，可单独删除或一键清空</p>
-                    <div class="wish-list" id="wishListBox">
-                        <!-- JS动态渲染记录 -->
-                    </div>
+                    <p class="desc">点击右下角「想要什么请点我」按钮提交，云端同步保存，按时间倒序展示，可单独删除或一键清空</p>
+                    <div class="sync-status" id="syncStatus">正在同步数据...</div>
+                    <div class="wish-list" id="wishListBox"></div>
                     <button class="wish-clear-all" id="clearAllWish">一键清空全部记录</button>
                 </div>
             </div>
         </section>
-
         <footer>
             <p>环游世界线上数字展馆合集 | 全部资源免费开放，链接新标签页打开</p>
         </footer>
     </main>
 
     <script>
-        // 获取DOM元素
-        const galleryWrap = document.getElementById('galleryWrap');
-        const cards = document.querySelectorAll('.world-card');
-        const navList = document.getElementById('navList');
-        const searchInput = document.getElementById('search-input');
-        const searchBtn = document.getElementById('search-btn');
-        const toggleBtn = document.getElementById('toggleBtn');
-        const sidebar = document.querySelector('.sidebar-nav');
+      
+        // ====================== Supabase 配置（替换为你的真实配置）======================
+            if (!window.__SUPABASE_CLIENT__) {
+                    window.__SUPABASE_CLIENT__ = supabase.createClient(
+                        "https://biwthpkgkveoojuzbcar.supabase.co",
+                        "sb_publishable_CV17Lu6I4LE9g4XTIU-fRA_rEdiY7IW"
+                    );
+                }
 
-        // 弹窗DOM
-        const openModalBtn = document.getElementById('openModalBtn');
-        const modalMask = document.getElementById('modalMask');
-        const closeModalBtn = document.getElementById('closeModalBtn');
-        const submitModalBtn = document.getElementById('submitModalBtn');
-        const wishTextarea = document.getElementById('wish-textarea');
+                const supabaseClient = window.__SUPABASE_CLIENT__;
+            // =====================================================================
 
-        // 愿望列表DOM
-        const wishListBox = document.getElementById('wishListBox');
-        const clearAllWishBtn = document.getElementById('clearAllWish');
-        const STORAGE_KEY = "wish_record_list";
+            const galleryWrap = document.getElementById('galleryWrap');
+            const cards = document.querySelectorAll('.world-card');
+            const navList = document.getElementById('navList');
+            const searchInput = document.getElementById('search-input');
+            const searchBtn = document.getElementById('search-btn');
+            const toggleBtn = document.getElementById('toggleBtn');
+            const sidebar = document.querySelector('.sidebar-nav');
+            const openModalBtn = document.getElementById('openModalBtn');
+            const modalMask = document.getElementById('modalMask');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const submitModalBtn = document.getElementById('submitModalBtn');
+            const wishTextarea = document.getElementById('wish-textarea');
+            const wishListBox = document.getElementById('wishListBox');
+            const clearAllWishBtn = document.getElementById('clearAllWish');
+            const syncStatus = document.getElementById('syncStatus');
+            const STORAGE_KEY = "wish_record_list";
 
-        let isScrollingToCard = false; // 滚动锁定标记，解决第一次远距离滚动高亮消失BUG
+            let isScrollingToCard = false;
+            let realtimeChannel = null;
+            let isLoading = false; // 新增：加载锁
+            let searchTimer = null; // 新增：搜索防抖计时器
 
-        // 清除所有卡片高亮
-        function clearAllActiveCard() {
-            cards.forEach(card => card.classList.remove('active-card'));
-        }
+            // 同步状态提示
+            function updateSyncStatus(text, success = true) {
+                syncStatus.textContent = text;
+                syncStatus.className = `sync-status ${success ? 'success' : 'error'}`;
+            }
 
-        // 1. 自动生成侧边目录
-        function buildNav() {
-            navList.innerHTML = '';
-            cards.forEach((card, idx) => {
-                const name = card.dataset.name;
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                a.textContent = name;
-                a.href = '#';
-                a.dataset.target = idx;
-                a.onclick = (e) => {
-                    e.preventDefault();
-                    clearAllActiveCard();
-                    isScrollingToCard = true; // 标记正在定向滚动，屏蔽全局滚动清除
-                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    setTimeout(() => {
-                        card.classList.add('active-card');
-                        // 滚动动画结束，恢复全局滚动清除
-                        setTimeout(() => {
-                            isScrollingToCard = false;
-                        }, 600);
-                    }, 400);
-                    // 移动端点击关闭侧边栏
-                    if (window.innerWidth <= 992) {
-                        sidebar.classList.remove('show');
-                    }
+            // 本地缓存降级
+            function getLocalWishList() {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                return raw ? JSON.parse(raw) : [];
+            }
+            function saveLocalWishList(list) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+            }
+
+            // 从云端读取全部数据（新增加载锁）
+            async function fetchWishList() {
+                if (isLoading) return;
+                isLoading = true;
+                updateSyncStatus("正在拉取云端数据...");
+                try {
+                    const { data, error } = await supabaseClient
+                        .from('wish_list')
+                        .select('*')
+                        .order('time', { ascending: false });
+                    if (error) throw error;
+                    saveLocalWishList(data);
+                    renderWishList(data);
+                    updateSyncStatus("✅ 云端同步正常");
+                } catch (err) {
+                    console.error("读取失败", err);
+                    const local = getLocalWishList();
+                    renderWishList(local);
+                    updateSyncStatus("⚠️ 云端连接失败，使用本地缓存", false);
+                } finally {
+                    isLoading = false;
+                }
+            }
+
+            // 新增一条愿望
+            async function addWish(text) {
+                const now = new Date();
+                const timeStr = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+                const newItem = {
+                    id: Date.now().toString(),
+                    text,
+                    time: timeStr
                 };
-                li.appendChild(a);
-                navList.appendChild(li);
-            });
-        }
+                try {
+                    const { error } = await supabaseClient.from('wish_list').insert([newItem]);
+                    if (error) throw error;
+                    updateSyncStatus("✅ 已同步到云端");
+                    await fetchWishList(); // 新增：新增后刷新列表
+                } catch (err) {
+                    console.error(err);
+                    let list = getLocalWishList();
+                    list.push(newItem);
+                    saveLocalWishList(list);
+                    updateSyncStatus("⚠️ 云端写入失败，仅保存本地", false);
+                    await fetchWishList(); // 新增：新增后刷新列表
+                }
+            }
 
-        // 2. 模糊搜索过滤卡片
-        function filterCards() {
-            const keyword = searchInput.value.trim().toLowerCase();
-            clearAllActiveCard();
-            cards.forEach(card => {
-                const name = card.dataset.name.toLowerCase();
-                card.style.display = name.includes(keyword) ? 'block' : 'none';
-            });
-        }
+            // 删除单条
+            async function deleteWish(id) {
+                try {
+                    const { error } = await supabaseClient.from('wish_list').delete().eq('id', id);
+                    if (error) throw error;
+                } catch (err) {
+                    console.error(err);
+                    let arr = getLocalWishList().filter(i => i.id !== id);
+                    saveLocalWishList(arr);
+                }
+            }
 
-        // 3. 页面滚动清除高亮：定向滚动期间不执行清除
-        window.addEventListener('scroll', () => {
-            if (!isScrollingToCard) {
+            // 清空全部
+            async function clearAllWish() {
+                try {
+                    const { error } = await supabaseClient.from('wish_list').delete().neq('id', '');
+                    if (error) throw error;
+                } catch (err) {
+                    saveLocalWishList([]);
+                }
+            }
+
+            // 渲染列表
+            function renderWishList(list) {
+                wishListBox.innerHTML = "";
+                if (list.length === 0) {
+                    wishListBox.innerHTML = `<div class="wish-empty-tip">暂无记录，点击右下角按钮提交保存</div>`;
+                    return;
+                }
+                list.forEach((item, idx) => {
+                    const div = document.createElement('div');
+                    div.className = "wish-item";
+                    div.innerHTML = `
+            <div class="wish-text-box">
+                <div><span class="wish-no">${idx + 1}.</span>${item.text}</div>
+                <div class="wish-time">${item.time}</div>
+            </div>
+            <button class="wish-del-btn" data-id="${item.id}">删除</button>
+        `;
+                    wishListBox.appendChild(div);
+                });
+                // 删除按钮绑定（新增刷新逻辑）
+                document.querySelectorAll('.wish-del-btn').forEach(btn => {
+                    btn.onclick = async () => {
+                        const delId = btn.dataset.id;
+                        await deleteWish(delId);
+                        await fetchWishList(); // 删除后刷新
+                    }
+                })
+            }
+
+            // 开启实时监听（跨设备同步）
+            function startRealtime() {
+                realtimeChannel = supabaseClient.channel('wish_channel')
+                    .on('postgres_changes', {
+                        event: '*',
+                        schema: 'public',
+                        table: 'wish_list'
+                    }, async () => {
+                        await fetchWishList();
+                    })
+                    .subscribe();
+            }
+
+            // 弹窗逻辑
+            function openModal() { modalMask.classList.add('show'); wishTextarea.focus(); }
+            function closeModal() { modalMask.classList.remove('show'); wishTextarea.value = ""; }
+            async function submitWish() {
+                const text = wishTextarea.value.trim();
+                if (!text) return alert("请输入内容");
+                await addWish(text);
+                closeModal();
+            }
+
+            // 页面目录、搜索、移动端逻辑（优化）
+            function clearAllActiveCard() { cards.forEach(c => c.classList.remove('active-card')); }
+            function buildNav() {
+                navList.innerHTML = '';
+                cards.forEach((card, idx) => {
+                    const name = card.dataset.name;
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.textContent = name;
+                    a.href = '#';
+                    a.dataset.target = idx;
+                    a.onclick = e => {
+                        e.preventDefault();
+                        clearAllActiveCard();
+                        isScrollingToCard = true;
+                        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        setTimeout(() => {
+                            card.classList.add('active-card');
+                            setTimeout(() => isScrollingToCard = false, 600);
+                        }, 400);
+                        if (window.innerWidth <= 992) sidebar.classList.remove('show');
+                    };
+                    li.appendChild(a);
+                    navList.appendChild(li);
+                })
+            }
+
+            // 搜索防抖优化
+            function filterCards() {
+                const kw = searchInput.value.trim().toLowerCase();
                 clearAllActiveCard();
+                cards.forEach(c => {
+                    const n = c.dataset.name.toLowerCase();
+                    c.style.display = n.includes(kw) ? 'block' : 'none';
+                })
             }
-        })
-
-        // 4. 搜索绑定：点击按钮 + 回车键
-        searchBtn.addEventListener('click', filterCards);
-        searchInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') filterCards();
-        });
-
-        // ========== 弹窗控制逻辑 ==========
-        function openModal() {
-            modalMask.classList.add('show');
-            wishTextarea.focus();
-        }
-        function closeModal() {
-            modalMask.classList.remove('show');
-            wishTextarea.value = "";
-        }
-        openModalBtn.addEventListener('click', openModal);
-        closeModalBtn.addEventListener('click', closeModal);
-        // 遮罩点击关闭
-        modalMask.addEventListener('click', (e) => {
-            if (e.target === modalMask) closeModal();
-        })
-
-        // ========== 愿望记录核心逻辑 ==========
-        // 读取本地存储
-        function getWishList() {
-            const raw = localStorage.getItem(STORAGE_KEY);
-            return raw ? JSON.parse(raw) : [];
-        }
-        // 保存到本地存储
-        function saveWishList(list) {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
-        }
-        // 渲染愿望列表
-        function renderWishList() {
-            const list = getWishList();
-            wishListBox.innerHTML = "";
-            if (list.length === 0) {
-                wishListBox.innerHTML = `<div class="wish-empty-tip">暂无记录，点击右下角按钮提交保存</div>`;
-                return;
+            function debounceFilter() {
+                clearTimeout(searchTimer);
+                searchTimer = setTimeout(filterCards, 300);
             }
-            // 倒序：最新的在最上面
-            list.reverse().forEach((item, index) => {
-                const realNo = list.length - index;
-                const div = document.createElement('div');
-                div.className = "wish-item";
-                div.innerHTML = `
-                    <div class="wish-text-box">
-                        <div><span class="wish-no">${realNo}.</span>${item.text}</div>
-                        <div class="wish-time">${item.time}</div>
-                    </div>
-                    <button class="wish-del-btn" data-id="${item.id}">删除</button>
-                `;
-                wishListBox.appendChild(div);
-            })
-            // 绑定单条删除
-            document.querySelectorAll('.wish-del-btn').forEach(btn => {
-                btn.onclick = function () {
-                    const delId = this.dataset.id;
-                    let arr = getWishList();
-                    arr = arr.filter(i => i.id !== delId);
-                    saveWishList(arr);
-                    renderWishList();
+
+            // 事件绑定
+            window.addEventListener('scroll', () => { if (!isScrollingToCard) clearAllActiveCard(); })
+            searchBtn.addEventListener('click', filterCards);
+            searchInput.addEventListener('input', debounceFilter); // 实时搜索（防抖）
+            searchInput.addEventListener('keydown', e => e.key === 'Enter' && filterCards());
+
+            openModalBtn.addEventListener('click', openModal);
+            closeModalBtn.addEventListener('click', closeModal);
+            modalMask.addEventListener('click', e => e.target === modalMask && closeModal());
+            submitModalBtn.addEventListener('click', submitWish);
+
+            // 愿望输入框：Shift+Enter换行，Enter提交
+            wishTextarea.addEventListener('keydown', e => {
+                if (e.key === 'Enter') {
+                    if (e.shiftKey) return;
+                    e.preventDefault();
+                    submitWish();
                 }
             })
-        }
-        // 提交新愿望
-        function submitWish() {
-            const text = wishTextarea.value.trim();
-            if (!text) return alert("请输入你想要的工具或网址需求");
-            const list = getWishList();
-            const now = new Date();
-            const timeStr = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
-            const newItem = {
-                id: Date.now().toString(),
-                text: text,
-                time: timeStr
-            };
-            list.push(newItem);
-            saveWishList(list);
-            renderWishList();
-            closeModal();
-        }
-        // 提交绑定：按钮 + 文本域回车
-        submitModalBtn.addEventListener('click', submitWish);
-        wishTextarea.addEventListener('keydown', e => {
-            // 单独回车提交，Shift+Enter换行
-            if (e.key === "Enter" && !e.shiftKey) {
-                e.preventDefault();
-                submitWish();
-            }
-        })
-        // 一键清空全部
-        clearAllWishBtn.addEventListener('click', () => {
-            if (confirm("确定要清空所有愿望记录吗？删除后无法恢复")) {
-                saveWishList([]);
-                renderWishList();
-            }
-        })
 
-        // 5. 移动端侧边栏切换按钮显示控制
-        function checkScreen() {
-            toggleBtn.style.display = window.innerWidth <= 992 ? 'block' : 'none';
-            if (window.innerWidth > 992) sidebar.classList.remove('show');
-        }
-        toggleBtn.addEventListener('click', () => sidebar.classList.toggle('show'));
-        window.addEventListener('resize', checkScreen);
+            // 清空全部（新增刷新）
+            clearAllWishBtn.addEventListener('click', async () => {
+                if (confirm("确定清空所有记录？")) {
+                    await clearAllWish();
+                    await fetchWishList();
+                }
+            })
 
-        // 页面初始化执行
-        window.addEventListener('DOMContentLoaded', () => {
-            buildNav();
-            checkScreen();
-            renderWishList(); // 加载愿望记录
-        });
+            // 移动端适配
+            function checkScreen() {
+                toggleBtn.style.display = window.innerWidth <= 992 ? 'block' : 'none';
+                if (window.innerWidth > 992) sidebar.classList.remove('show');
+            }
+            toggleBtn.addEventListener('click', () => sidebar.classList.toggle('show'));
+            window.addEventListener('resize', checkScreen);
+
+            // 移动端点击空白处关闭侧边栏
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992 && sidebar.classList.contains('show')) {
+                    const isClickOutside = !sidebar.contains(e.target) && e.target !== toggleBtn;
+                    if (isClickOutside) {
+                        sidebar.classList.remove('show');
+                    }
+                }
+            });
+
+            // 页面初始化
+            window.addEventListener('DOMContentLoaded', async () => {
+                buildNav();
+                checkScreen();
+                await fetchWishList();
+                startRealtime();
+            })
     </script>
 </body>
 
