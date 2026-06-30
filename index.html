@@ -243,6 +243,10 @@
             box-shadow: 0 6px 20px rgba(0, 30, 70, 0.15);
             transition: all 0.3s ease;
             border: 3px solid transparent;
+            /* ✅ 新增：固定高度 + 弹性布局 */
+            height: 420px;              
+            display: flex;
+            flex-direction: column;
         }
 
 
@@ -270,6 +274,10 @@
 
         .card-body {
             padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
         }
 
         .card-body h3 {
@@ -286,7 +294,7 @@
         }
 
         .wish-list {
-            max-height: 360px;
+            flex: 1;
             overflow-y: auto;
             margin: 16px 0;
             border: 1px solid #eee;
@@ -402,7 +410,104 @@
             box-shadow: 0 12px 32px rgba(0, 30, 70, 0.25);
             border-color: rgba(15, 76, 129, 0.1); 
         }
+        /* =========================================
+   愿望清单卡片专属样式 (wish-card)
+   ========================================= */
 
+/* 1. 限制卡片整体高度，防止无限撑开 */
+.wish-card {
+    max-height: 420px; /* 可以根据你的设计调整，比如 400px 或 450px */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* 关键：隐藏超出部分，保持圆角美观 */
+}
+
+/* 2. 调整 card-body 布局，让内容区自适应 */
+.wish-card .card-body {
+    flex: 1; /* 占据剩余空间 */
+    display: flex;
+    flex-direction: column;
+    padding: 15px; /* 稍微调整内边距，让内容更紧凑 */
+    gap: 10px;
+    overflow: hidden; /* 防止内部溢出 */
+}
+
+/* 3. 头部信息区固定高度，不挤压列表空间 */
+.wish-card h3,
+.wish-card .desc,
+.wish-card .sync-status {
+    flex-shrink: 0; /* 关键：禁止这三个元素被压缩 */
+    margin: 0;
+    line-height: 1.4;
+}
+
+.wish-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.wish-card .desc {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.wish-card .sync-status {
+    font-size: 12px;
+    color: #28a745; /* 绿色同步状态 */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* 4. 列表包裹层：核心逻辑 */
+.wish-list-wrapper {
+    flex: 1; /* 占据 card-body 剩余的所有空间 */
+    min-height: 0; /* 关键：允许 flex item 收缩到比内容小 */
+    overflow-y: auto; /* 如果超过最大高度，这里会出现滚动条，而不是撑大卡片 */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 8px;
+    background: #fafafa;
+}
+
+/* 5. 列表项样式微调（确保紧凑） */
+.wish-list-wrapper .wish-item {
+    padding: 8px 0;
+    border-bottom: 1px dashed #ddd;
+    font-size: 14px;
+}
+
+.wish-list-wrapper .wish-item:last-child {
+    border-bottom: none;
+}
+
+/* 6. 清空按钮固定在底部 */
+.wish-card .wish-clear-all {
+    flex-shrink: 0; /* 禁止按钮被压缩 */
+    margin-top: 10px;
+    width: 100%;
+    height: 36px;
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.wish-card .wish-clear-all:hover {
+    background: #5a6268;
+}
+
+/* 7. 空状态提示样式 */
+.wish-empty-tip {
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+    padding: 20px 0;
+}
         @media screen and (max-width: 992px) {
             body {
                 padding-left: 16px;
@@ -901,13 +1006,17 @@
                     <a href="https://moyuhot.com/bold" target="_blank" class="visit-btn">立即前往游览</a>
                 </div>
             </div>
-            <div class="world-card" data-name="愿望需求记录">
+            <!-- 在 class 中新增 wish-card 类 -->
+            <div class="world-card wish-card" data-name="愿望需求记录">
                 <div class="card-banner banner-wish">愿望清单</div>
                 <div class="card-body">
                     <h3>💡 我还想要的工具/网址记录</h3>
-                    <p class="desc">点击右下角「想要什么请点我」按钮提交，云端同步保存，按时间倒序展示，可单独删除或一键清空</p>
+                    <p class="desc">云端同步保存，按时间倒序展示
                     <div class="sync-status" id="syncStatus">正在同步数据...</div>
-                    <div class="wish-list" id="wishListBox"></div>
+                    <!-- 数据展示区：新增 wish-list-wrapper 包裹层 -->
+                    <div class="wish-list-wrapper">
+                        <div class="wish-list" id="wishListBox"></div>
+                    </div>
                     <button class="wish-clear-all" id="clearAllWish">一键清空全部记录</button>
                 </div>
             </div>
@@ -975,6 +1084,7 @@
                     const { data, error } = await supabaseClient
                         .from('wish_list')
                         .select('*')
+                        .eq('delete', 'false')
                         .order('time', { ascending: false });
                     if (error) throw error;
                     saveLocalWishList(data);
@@ -1016,23 +1126,42 @@
 
             // 删除单条
             async function deleteWish(id) {
+                const now = new Date();
+                const timeStr = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+
                 try {
-                    const { error } = await supabaseClient.from('wish_list').delete().eq('id', id);
+                    const { error } = await supabaseClient
+                        .from('wish_list')
+                        .update({
+                            delete: 'true',
+                            delete_time: timeStr
+                        })
+                        .eq('id', id);
+
                     if (error) throw error;
-                } catch (err) {
+                    await fetchWishList();
+                    }catch (err) {
                     console.error(err);
-                    let arr = getLocalWishList().filter(i => i.id !== id);
-                    saveLocalWishList(arr);
                 }
             }
-
             // 清空全部
             async function clearAllWish() {
+                const now = new Date();
+                const timeStr = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+
                 try {
-                    const { error } = await supabaseClient.from('wish_list').delete().neq('id', '');
+                    const { error } = await supabaseClient
+                        .from('wish_list')
+                        .update({
+                            delete: 'true',
+                            delete_time: timeStr
+                        })
+                        .eq('delete', 'false');
+
                     if (error) throw error;
+                    await fetchWishList();
                 } catch (err) {
-                    saveLocalWishList([]);
+                    console.error(err);
                 }
             }
 
