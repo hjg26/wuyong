@@ -926,7 +926,7 @@
                         "sb_publishable_CV17Lu6I4LE9g4XTIU-fRA_rEdiY7IW"
                     );
                 }
-                const supabase = window.__SUPABASE_CLIENT__;
+                window.supabaseClient = window.__SUPABASE_CLIENT__;
             // =====================================================================
 
             const galleryWrap = document.getElementById('galleryWrap');
@@ -972,7 +972,7 @@
                 isLoading = true;
                 updateSyncStatus("正在拉取云端数据...");
                 try {
-                    const { data, error } = await supabase
+                    const { data, error } = await supabaseClient
                         .from('wish_list')
                         .select('*')
                         .order('time', { ascending: false });
@@ -1000,7 +1000,7 @@
                     time: timeStr
                 };
                 try {
-                    const { error } = await supabase.from('wish_list').insert([newItem]);
+                    const { error } = await supabaseClient.from('wish_list').insert([newItem]);
                     if (error) throw error;
                     updateSyncStatus("✅ 已同步到云端");
                     await fetchWishList(); // 新增：新增后刷新列表
@@ -1017,7 +1017,7 @@
             // 删除单条
             async function deleteWish(id) {
                 try {
-                    const { error } = await supabase.from('wish_list').delete().eq('id', id);
+                    const { error } = await supabaseClient.from('wish_list').delete().eq('id', id);
                     if (error) throw error;
                 } catch (err) {
                     console.error(err);
@@ -1029,7 +1029,7 @@
             // 清空全部
             async function clearAllWish() {
                 try {
-                    const { error } = await supabase.from('wish_list').delete().neq('id', '');
+                    const { error } = await supabaseClient.from('wish_list').delete().neq('id', '');
                     if (error) throw error;
                 } catch (err) {
                     saveLocalWishList([]);
@@ -1067,7 +1067,7 @@
 
             // 开启实时监听（跨设备同步）
             function startRealtime() {
-                realtimeChannel = supabase.channel('wish_channel')
+                realtimeChannel = supabaseClient.channel('wish_channel')
                     .on('postgres_changes', {
                         event: '*',
                         schema: 'public',
