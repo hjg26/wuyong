@@ -542,6 +542,107 @@
             font-size:14px; font-weight:600; cursor:pointer;
         }
         #proxyDirect:hover { background:#3b7de6; }
+
+        /* ========== CARD MODAL (放大动画卡片) ========== */
+        .card-modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,.5);
+            z-index: 350;
+            display: flex; align-items: center; justify-content: center;
+            animation: overlayFadeIn .3s ease;
+            padding: 16px;
+        }
+        .card-modal-overlay.closing {
+            animation: overlayFadeOut .25s ease forwards;
+        }
+        @keyframes overlayFadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes overlayFadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+        .card-modal {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px 32px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 24px 64px rgba(0,0,0,.3);
+            position: relative;
+            animation: cardZoomIn .45s cubic-bezier(.34,1.56,.64,1);
+        }
+        .card-modal.closing {
+            animation: cardZoomOut .25s ease forwards;
+        }
+        @keyframes cardZoomIn {
+            0%   { transform: scale(.3); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes cardZoomOut {
+            0%   { transform: scale(1); opacity: 1; }
+            100% { transform: scale(.3); opacity: 0; }
+        }
+
+        .card-modal-close {
+            position: absolute;
+            top: 12px; right: 16px;
+            background: none; border: none;
+            font-size: 22px; cursor: pointer;
+            color: #9ca3af; line-height: 1;
+            border-radius: 50%; width: 34px; height: 34px;
+            display: flex; align-items: center; justify-content: center;
+            transition: background .2s, color .2s;
+        }
+        .card-modal-close:hover { background: #f3f4f6; color: #1f2937; }
+
+        .card-modal-icon {
+            font-size: 44px; margin-bottom: 10px; text-align: center;
+        }
+        .card-modal-name {
+            font-size: 21px; font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text);
+            text-align: center;
+        }
+        .card-modal-desc {
+            font-size: 14px; color: var(--text-secondary);
+            line-height: 1.7; margin-bottom: 16px;
+            text-align: center;
+        }
+        .card-modal-url {
+            font-size: 12px; color: #9ca3af;
+            font-family: "SF Mono","Consolas",monospace;
+            word-break: break-all;
+            margin-bottom: 20px;
+            background: var(--tag-bg);
+            padding: 10px 14px; border-radius: 8px;
+            text-align: center;
+        }
+        .card-modal-actions {
+            display: flex; gap: 10px; justify-content: center;
+        }
+        .card-modal-btn {
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 14px; font-weight: 600;
+            cursor: pointer;
+            transition: background .2s, transform .15s;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+        }
+        .card-modal-btn:hover { transform: translateY(-1px); }
+        .card-modal-btn-primary {
+            background: var(--accent); color: #fff;
+        }
+        .card-modal-btn-primary:hover { background: #3b7de6; }
+        .card-modal-btn-secondary {
+            background: var(--tag-bg); color: var(--text);
+        }
+        .card-modal-btn-secondary:hover { background: #e5e7eb; }
+
+        @media (max-width: 768px) {
+            .card-modal { padding: 24px 20px; }
+            .card-modal-name { font-size: 18px; }
+            .card-modal-desc { font-size: 13px; }
+        }
     </style>
 </head>
 <body>
