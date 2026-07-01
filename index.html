@@ -201,6 +201,35 @@
             display: none;
             line-height: 1;
         }
+        .search-btn {
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-size: 13px; font-weight: 600;
+            cursor: pointer;
+            border: none;
+            background: var(--accent);
+            color: #fff;
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: background .2s, transform .12s;
+            display: flex; align-items: center; gap: 4px;
+        }
+        .search-btn:hover { background: #3b7de6; transform: translateY(-1px); }
+        .reset-btn {
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-size: 13px; font-weight: 600;
+            cursor: pointer;
+            border: 1.5px solid var(--border);
+            background: #fff;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: background .2s, color .2s, border-color .2s;
+            display: flex; align-items: center; gap: 4px;
+        }
+        .reset-btn:hover { background: #f3f4f6; color: #ef4444; border-color: #ef4444; }
+        .reset-btn:active { transform: scale(.96); }
 
         .result-info {
             font-size: 13px;
@@ -346,7 +375,9 @@
             .menu-toggle { display: block; }
             .card-grid { grid-template-columns: 1fr; }
             .content { padding: 16px 12px 32px; }
-            .top-bar { padding: 12px 16px; }
+            .top-bar { padding: 12px 16px; flex-wrap: wrap; gap: 8px; }
+            .search-wrap { max-width: 100%; }
+            .search-btn, .reset-btn { font-size: 12px; padding: 8px 12px; }
         }
 
         /* ========== WISH MODULE ========== */
@@ -562,9 +593,11 @@
         <button class="menu-toggle" title="菜单">☰</button>
         <div class="search-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="text" class="search-input" id="searchInput" placeholder="搜索网站名称、简介...">
-            <button class="search-clear" id="searchClear">✕</button>
+            <input type="text" class="search-input" id="searchInput" placeholder="搜索网站名称、简介..." autocomplete="off">
+            <button class="search-clear" id="searchClear" title="清空">✕</button>
         </div>
+        <button class="search-btn" id="searchBtn" title="搜索">🔍 搜索</button>
+        <button class="reset-btn" id="resetBtn" title="重置">↻ 重置</button>
         <span class="result-info" id="resultInfo"></span>
     </div>
     <div class="content" id="contentArea"></div>
