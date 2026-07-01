@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正在跳转...</title>
+    <script>
+    (function(){
+        var path = location.pathname;
+        // 判断部署基础路径：根目录或仓库子目录（仓库名通常不是纯数字）
+        var parts = path.split('/').filter(Boolean);
+        var base = '/';
+        if (parts.length && !/^\d+$/.test(parts[0])) {
+            base = '/' + parts[0] + '/';
+        }
+        // 保存原始完整路径，返回首页后用 history.replaceState 还原
+        sessionStorage.setItem('__spa_route', path);
+        location.replace(base);
+    })();
+    </script>
+</head>
+<body>
+    <p>正在跳转...</p>
+</body>
+</html>

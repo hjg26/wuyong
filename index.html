@@ -512,7 +512,7 @@
         }
         #proxyLoading {
             display:flex; align-items:center; justify-content:center;
-            flex:1; font-size:13px; color:#9ca3af;
+            flex:1; font-size:13px; color:#9ca3af; gap:8px;
         }
         #proxyLoader {
             width:20px; height:20px; border:2px solid #e5e7eb;
@@ -520,6 +520,13 @@
             animation:spin .7s linear infinite; margin-right:8px;
         }
         @keyframes spin { to{transform:rotate(360deg)} }
+        #proxyDirectTop {
+            background: var(--accent); color: #fff; text-decoration: none;
+            padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 600;
+            flex-shrink: 0; white-space: nowrap;
+            transition: background .2s;
+        }
+        #proxyDirectTop:hover { background: #3b7de6; }
         #proxyFrame {
             width:100%; flex:1; border:none;
         }
@@ -538,7 +545,7 @@
     </style>
 </head>
 <body>
-<script>(function(){var m=window.location.pathname.match(/^\/(\d+)$/);if(m){document.documentElement.classList.add('proxy-mode');window.__proxyIdx=parseInt(m[1]);window.__onProxy=!0}})();</script>
+<script>(function(){var sr=sessionStorage.getItem('__spa_route');if(sr){sessionStorage.removeItem('__spa_route');try{history.replaceState(null,null,sr)}catch(e){}}var m=window.location.pathname.match(/\/(\d+)$/);if(m){document.documentElement.classList.add('proxy-mode');window.__proxyIdx=parseInt(m[1]);window.__onProxy=!0}})();</script>
 
 <div class="sidebar-overlay" id="overlay"></div>
 
@@ -582,9 +589,10 @@
 <!-- PROXY VIEW -->
 <div id="proxyView">
     <div id="proxyBar">
-        <button id="proxyBack" onclick="location.href='/'">← 返回目录</button>
+        <button id="proxyBack" onclick="location.href='./'">← 返回目录</button>
         <span id="proxyTitle">加载中...</span>
         <span id="proxyDesc"></span>
+        <a id="proxyDirectTop" href="#" target="_blank" rel="noopener">直接访问 ↗</a>
     </div>
     <div id="proxyLoading">
         <div id="proxyLoader"></div>
@@ -592,8 +600,8 @@
     </div>
     <iframe id="proxyFrame" allowfullscreen></iframe>
     <div id="proxyFallback">
-        <p>⚠️ 该网站不允许被嵌入显示</p>
-        <a id="proxyDirect" target="_blank" rel="noopener">在新标签页中打开</a>
+        <p>⚠️ 该网站禁止被嵌入显示（X-Frame-Options/CSP 限制）</p>
+        <a id="proxyDirect" target="_blank" rel="noopener">直接访问原站</a>
     </div>
 </div>
 

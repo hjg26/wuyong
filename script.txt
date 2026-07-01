@@ -1,0 +1,333 @@
+(function () {
+            'use strict';
+            const params = new URLSearchParams(window.location.search);
+            const isDebug = params.get('debug') === '1126';
+            if (isDebug) { console.log('%c你是管理员，已放行 👋', 'color:green;font-size:16px;'); return; }
+            document.addEventListener('contextmenu', e => { e.preventDefault(); return false; });
+            document.addEventListener('keydown', e => {
+                if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key.toUpperCase()))) {
+                    e.preventDefault(); alert('开发者工具已被禁用'); return false;
+                }
+            });
+            function devtoolsDetect() {
+                const threshold = 160;
+                setInterval(() => {
+                    const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+                    const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+                    if (widthThreshold || heightThreshold) {
+                        document.body.innerHTML = '<h1 style="color:red;text-align:center;">检测到开发者工具，已终止访问</h1>';
+                        throw new Error('DevTools detected');
+                    }
+                }, 500);
+            }
+            function blockDebugger() {
+                (function loop() { debugger; requestAnimationFrame(loop); })();
+            }
+            devtoolsDetect();
+            blockDebugger();
+        })();
+
+        if (!window.__SUPABASE_CLIENT__) {
+            window.__SUPABASE_CLIENT__ = window.supabase.createClient(
+                "https://biwthpkgkveoojuzbcar.supabase.co",
+                "sb_publishable_CV17Lu6I4LE9g4XTIU-fRA_rEdiY7IW"
+            );
+        }
+        window.supabaseClient = window.__SUPABASE_CLIENT__;
+
+        const galleryWrap = document.getElementById('galleryWrap');
+        const cards = document.querySelectorAll('.world-card');
+        const navList = document.getElementById('navList');
+        const categoryBar = document.getElementById('categoryBar');
+        const searchInput = document.getElementById('search-input');
+        const searchBtn = document.getElementById('search-btn');
+        const toggleBtn = document.getElementById('toggleBtn');
+        const sidebar = document.querySelector('.sidebar-nav');
+        const openModalBtn = document.getElementById('openModalBtn');
+        const modalMask = document.getElementById('modalMask');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const submitModalBtn = document.getElementById('submitModalBtn');
+        const wishTextarea = document.getElementById('wish-textarea');
+        const wishListBox = document.getElementById('wishListBox');
+        const clearAllWishBtn = document.getElementById('clearAllWish');
+        const syncStatus = document.getElementById('syncStatus');
+        const STORAGE_KEY = "wish_record_list";
+        let isScrollingToCard = false;
+        let realtimeChannel = null;
+        let isLoading = false;
+        let searchTimer = null;
+        let currentCategory = '全部';
+
+        function updateSyncStatus(text, success = true) {
+            syncStatus.textContent = text;
+            syncStatus.className = 'sync-status ' + (success ? 'success' : 'error');
+        }
+        function getLocalWishList() {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            return raw ? JSON.parse(raw) : [];
+        }
+        function saveLocalWishList(list) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+        }
+        async function fetchWishList() {
+            if (isLoading) return;
+            isLoading = true;
+            updateSyncStatus("正在拉取云端数据...");
+            try {
+                const { data, error } = await supabaseClient.from('wish_list').select('*').eq('delete', 'false').order('time', { ascending: false });
+                if (error) throw error;
+                saveLocalWishList(data);
+                renderWishList(data);
+                updateSyncStatus("✅ 云端同步正常");
+            } catch (err) {
+                console.error("读取失败", err);
+                const local = getLocalWishList();
+                renderWishList(local);
+                updateSyncStatus("⚠️ 云端连接失败，使用本地缓存", false);
+            } finally { isLoading = false; }
+        }
+        async function addWish(text) {
+            const now = new Date();
+            const timeStr = now.getFullYear() + '-' + (now.getMonth() + 1).toString().padStart(2, '0') + '-' + now.getDate().toString().padStart(2, '0') + ' ' + now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+            const newItem = { id: Date.now().toString(), text, time: timeStr };
+            try {
+                const { error } = await supabaseClient.from('wish_list').insert([newItem]);
+                if (error) throw error;
+                updateSyncStatus("✅ 已同步到云端");
+                await fetchWishList();
+            } catch (err) {
+                console.error(err);
+                let list = getLocalWishList();
+                list.push(newItem);
+                saveLocalWishList(list);
+                updateSyncStatus("⚠️ 云端写入失败，仅保存本地", false);
+                await fetchWishList();
+            }
+        }
+        async function deleteWish(id) {
+            const now = new Date();
+            const timeStr = now.getFullYear() + '-' + (now.getMonth() + 1).toString().padStart(2, '0') + '-' + now.getDate().toString().padStart(2, '0') + ' ' + now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+            try {
+                const { error } = await supabaseClient.from('wish_list').update({ delete: 'true', delete_time: timeStr }).eq('id', id);
+                if (error) throw error;
+                await fetchWishList();
+            } catch (err) { console.error(err); }
+        }
+        async function clearAllWish() {
+            const now = new Date();
+            const timeStr = now.getFullYear() + '-' + (now.getMonth() + 1).toString().padStart(2, '0') + '-' + now.getDate().toString().padStart(2, '0') + ' ' + now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+            try {
+                const { error } = await supabaseClient.from('wish_list').update({ delete: 'true', delete_time: timeStr }).eq('delete', 'false');
+                if (error) throw error;
+                await fetchWishList();
+            } catch (err) { console.error(err); }
+        }
+        function renderWishList(list) {
+            wishListBox.innerHTML = "";
+            if (list.length === 0) {
+                wishListBox.innerHTML = '<div class="wish-empty-tip">暂无记录，点击右下角按钮提交保存</div>';
+                return;
+            }
+            list.forEach((item, idx) => {
+                const div = document.createElement('div');
+                div.className = "wish-item";
+                div.innerHTML = '<div class="wish-text-box"><div><span class="wish-no">' + (idx + 1) + '.</span>' + item.text + '</div><div class="wish-time">' + item.time + '</div></div><button class="wish-del-btn" data-id="' + item.id + '">删除</button>';
+                wishListBox.appendChild(div);
+            });
+            document.querySelectorAll('.wish-del-btn').forEach(btn => {
+                btn.onclick = async () => {
+                    const delId = btn.dataset.id;
+                    await deleteWish(delId);
+                    await fetchWishList();
+                };
+            });
+        }
+        function startRealtime() {
+            realtimeChannel = supabaseClient.channel('wish_channel')
+                .on('postgres_changes', { event: '*', schema: 'public', table: 'wish_list' }, async () => { await fetchWishList(); })
+                .subscribe();
+        }
+        function openModal() { modalMask.classList.add('show'); wishTextarea.focus(); }
+        function closeModal() { modalMask.classList.remove('show'); wishTextarea.value = ""; }
+        async function submitWish() {
+            const text = wishTextarea.value.trim();
+            if (!text) return alert("请输入内容");
+            await addWish(text);
+            closeModal();
+        }
+        function clearAllActiveCard() { cards.forEach(c => c.classList.remove('active-card')); }
+        function buildNav() {
+            navList.innerHTML = '';
+            cards.forEach((card, idx) => {
+                const name = card.dataset.name;
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.textContent = name;
+                a.href = '#';
+                a.dataset.target = idx;
+                a.onclick = e => {
+                    e.preventDefault();
+                    clearAllActiveCard();
+                    isScrollingToCard = true;
+                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    setTimeout(() => { card.classList.add('active-card'); setTimeout(() => isScrollingToCard = false, 600); }, 400);
+                    if (window.innerWidth <= 992) sidebar.classList.remove('show');
+                };
+                li.appendChild(a);
+                navList.appendChild(li);
+            });
+        }
+
+        // ========== 分类标签栏 ==========
+        function buildCategoryBar() {
+            const categorySections = document.querySelectorAll('.category-section-title');
+            const categories = [];
+            categorySections.forEach(section => {
+                const cat = section.dataset.category;
+                const iconEl = section.querySelector('.cat-icon');
+                const icon = iconEl ? iconEl.textContent.trim() : '';
+                categories.push({ name: cat, icon: icon });
+            });
+            categoryBar.innerHTML = '';
+            const allTag = document.createElement('span');
+            allTag.className = 'category-tag active';
+            allTag.dataset.category = '全部';
+            allTag.textContent = '🎯 全部';
+            allTag.addEventListener('click', () => filterByCategory('全部'));
+            categoryBar.appendChild(allTag);
+            categories.forEach(cat => {
+                const tag = document.createElement('span');
+                tag.className = 'category-tag';
+                tag.dataset.category = cat.name;
+                tag.textContent = cat.icon + ' ' + cat.name;
+                tag.addEventListener('click', () => filterByCategory(cat.name));
+                categoryBar.appendChild(tag);
+            });
+        }
+        function filterByCategory(category) {
+            currentCategory = category;
+            document.querySelectorAll('.category-tag').forEach(tag => {
+                tag.classList.toggle('active', tag.dataset.category === category);
+            });
+            const navLinks = navList.querySelectorAll('a');
+            navLinks.forEach(a => a.classList.remove('active'));
+            const sectionTitles = document.querySelectorAll('.category-section-title');
+            if (category === '全部') {
+                cards.forEach(c => { c.classList.remove('category-hidden'); });
+                sectionTitles.forEach(s => { s.classList.remove('category-hidden'); });
+                const firstCard = cards[0];
+                if (firstCard) firstCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                sectionTitles.forEach(section => {
+                    section.classList.toggle('category-hidden', section.dataset.category !== category);
+                });
+                cards.forEach(card => {
+                    card.classList.toggle('category-hidden', card.dataset.category !== category);
+                });
+                const targetSection = document.querySelector('.category-section-title[data-category="' + category + '"]');
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+            updateCatCount();
+        }
+        function updateCatCount() {
+            const sections = document.querySelectorAll('.category-section-title');
+            sections.forEach(section => {
+                const cat = section.dataset.category;
+                const countEl = section.querySelector('.cat-count');
+                if (!countEl) return;
+                if (currentCategory !== '全部' && cat !== currentCategory) return;
+                const visibleCards = document.querySelectorAll('.world-card[data-category="' + cat + '"]:not(.category-hidden)');
+                countEl.textContent = visibleCards.length + '个';
+            });
+        }
+
+        function filterCards() {
+            const kw = searchInput.value.trim().toLowerCase();
+            clearAllActiveCard();
+            const sectionTitles = document.querySelectorAll('.category-section-title');
+            if (currentCategory === '全部') {
+                cards.forEach(c => {
+                    c.classList.toggle('category-hidden', !c.dataset.name.toLowerCase().includes(kw));
+                });
+                sectionTitles.forEach(s => s.classList.remove('category-hidden'));
+            } else {
+                sectionTitles.forEach(section => {
+                    const cat = section.dataset.category;
+                    if (cat !== currentCategory) { section.classList.add('category-hidden'); return; }
+                    const catCards = document.querySelectorAll('.world-card[data-category="' + cat + '"]');
+                    let hasVisible = false;
+                    catCards.forEach(c => {
+                        const match = c.dataset.name.toLowerCase().includes(kw);
+                        c.classList.toggle('category-hidden', !match);
+                        if (match) hasVisible = true;
+                    });
+                    section.classList.toggle('category-hidden', !hasVisible);
+                });
+            }
+            updateCatCount();
+        }
+        function debounceFilter() {
+            clearTimeout(searchTimer);
+            searchTimer = setTimeout(filterCards, 300);
+        }
+
+        window.addEventListener('scroll', () => { if (!isScrollingToCard) clearAllActiveCard(); });
+        searchBtn.addEventListener('click', filterCards);
+        searchInput.addEventListener('input', debounceFilter);
+        searchInput.addEventListener('keydown', e => e.key === 'Enter' && filterCards());
+        openModalBtn.addEventListener('click', openModal);
+        closeModalBtn.addEventListener('click', closeModal);
+        modalMask.addEventListener('click', e => e.target === modalMask && closeModal());
+        submitModalBtn.addEventListener('click', submitWish);
+        wishTextarea.addEventListener('keydown', e => {
+            if (e.key === 'Enter') { if (e.shiftKey) return; e.preventDefault(); submitWish(); }
+        });
+        clearAllWishBtn.addEventListener('click', async () => {
+            if (confirm("确定清空所有记录？")) { await clearAllWish(); await fetchWishList(); }
+        });
+        function checkScreen() {
+            toggleBtn.style.display = window.innerWidth <= 992 ? 'block' : 'none';
+            if (window.innerWidth > 992) sidebar.classList.remove('show');
+        }
+        toggleBtn.addEventListener('click', () => sidebar.classList.toggle('show'));
+        window.addEventListener('resize', checkScreen);
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992 && sidebar.classList.contains('show')) {
+                const isClickOutside = !sidebar.contains(e.target) && e.target !== toggleBtn;
+                if (isClickOutside) sidebar.classList.remove('show');
+            }
+        });
+        window.addEventListener('DOMContentLoaded', async () => {
+            buildNav();
+            buildCategoryBar();
+            checkScreen();
+            updateCatCount();
+            await fetchWishList();
+            startRealtime();
+        });
+        const btn = document.getElementById('backToTop');
+        (function () {
+            const topBtn = document.createElement('button');
+            topBtn.id = 'backToTop';
+            topBtn.className = 'back-to-top';
+            topBtn.setAttribute('aria-label', '回到顶部');
+            topBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="6 15 12 9 18 15"></polyline></svg>';
+            document.body.appendChild(topBtn);
+            const bottomBtn = document.createElement('button');
+            bottomBtn.id = 'backToBottom';
+            bottomBtn.className = 'back-to-bottom';
+            bottomBtn.setAttribute('aria-label', '回到底部');
+            bottomBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="18 9 12 15 6 9"></polyline></svg>';
+            document.body.appendChild(bottomBtn);
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const viewHeight = window.innerHeight;
+                const pageHeight = document.documentElement.scrollHeight;
+                if (scrollTop > viewHeight) { topBtn.classList.add('show'); } else { topBtn.classList.remove('show'); }
+                if (pageHeight - scrollTop - viewHeight > 200) { bottomBtn.classList.add('show'); } else { bottomBtn.classList.remove('show'); }
+            });
+            topBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+            bottomBtn.addEventListener('click', () => { window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' }); });
+        })();

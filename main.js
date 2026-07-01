@@ -65,7 +65,7 @@ function Y0(R,g){
    var sn=fnd?fnd.name:'';
    if(msub>1&&sn&&sn!==z(43))h+='<div class="'+z(23)+'">'+z(36)+' '+sn+'</div>';
    h+='<div class="'+z(29)+'">';
-   sg.it.forEach(function(i){var idx=I0.indexOf(i);h+='<a class="'+z(24)+'" data-idx="'+idx+'" href="/'+idx+'" title="'+i.d+'"><div class="'+z(25)+'">'+i.n+'<span class="'+z(28)+'">↗</span></div><div class="'+z(26)+'">'+i.d+'</div></a>'});
+   sg.it.forEach(function(i){var idx=I0.indexOf(i);h+='<a class="'+z(24)+'" data-idx="'+idx+'" href="./'+idx+'" title="'+i.d+'"><div class="'+z(25)+'">'+i.n+'<span class="'+z(28)+'">↗</span></div><div class="'+z(26)+'">'+i.d+'</div></a>'});
    h+='</div>';
   }
   h+='</div>';
@@ -113,7 +113,7 @@ document.getElementById($0(0)).addEventListener('click',function(e){
  var t=e.target.closest('.'+$0(11));if(!t)return;
  if(t.classList.contains('tree-leaf')){
   e.preventDefault();
-  location.href='/'+t.dataset.idx;
+  location.href='./'+t.dataset.idx;
   return;
  }
  var cat=t.dataset.cat,sub=t.dataset.sub;
@@ -130,22 +130,20 @@ if(window.__proxyIdx!==undefined){
  var pi=window.__proxyIdx,it=I0[pi];
  if(it){
   document.title=it.n;
-  var tl=document.getElementById('proxyTitle'),dl=document.getElementById('proxyDesc'),ld=document.getElementById('proxyLoading'),fr=document.getElementById('proxyFrame'),fb=document.getElementById('proxyFallback'),dr=document.getElementById('proxyDirect');
+  var tl=document.getElementById('proxyTitle'),dl=document.getElementById('proxyDesc'),ld=document.getElementById('proxyLoading'),fr=document.getElementById('proxyFrame'),fb=document.getElementById('proxyFallback'),dr=document.getElementById('proxyDirect'),drTop=document.getElementById('proxyDirectTop');
   if(tl)tl.textContent=it.n;
   if(dl)dl.textContent=it.d;
   if(fr){
    fr.src=it.u;
-   var ok=!1;
-   fr.onload=function(){ok=!0;if(ld)ld.style.display='none';fr.style.display=''};
+   fr.onload=function(){if(ld)ld.style.display='none';fr.style.display=''};
    setTimeout(function(){
-    if(!ok){
-     if(ld)ld.style.display='none';
-     if(fr)fr.style.display='none';
-     if(fb)fb.classList.add('show');
-     if(dr){dr.href=it.u;dr.textContent='直接访问: '+it.n}
+    if(ld&&ld.style.display!=='none'){
+     window.location.href=it.u;
     }
-   },5000);
+   },1500);
   }
- }else{location.replace('/')}
+  if(dr){dr.href=it.u;dr.textContent='直接访问: '+it.n}
+  if(drTop){drTop.href=it.u;drTop.textContent='直接访问 ↗'}
+ }else{location.replace('./')}
 }
 }();
