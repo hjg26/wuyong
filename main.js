@@ -113,7 +113,7 @@ document.getElementById($0(0)).addEventListener('click',function(e){
  var t=e.target.closest('.'+$0(11));if(!t)return;
  if(t.classList.contains('tree-leaf')){
   e.preventDefault();
-  location.href='./'+t.dataset.idx;
+  scrollToCard(parseInt(t.dataset.idx));
   return;
  }
  var cat=t.dataset.cat,sub=t.dataset.sub;
@@ -126,6 +126,22 @@ document.getElementById($0(7)).addEventListener('click',B0);
 document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();document.getElementById($0(4)).focus()}});
 document.addEventListener('click',function(e){if(window.innerWidth<=768&&e.target.closest('.'+$0(11))){setTimeout(B0,200)}});
 R0();Y0(I0,$0(35));
+
+/* ==== SCROLL TO CARD & HIGHLIGHT ==== */
+function scrollToCard(idx){
+ var z=$0;
+ document.getElementById(z(4)).value='';document.getElementById(z(5)).style.display='none';q0='';c0=null;
+ R0();Y0(I0,z(35));
+ setTimeout(function(){
+  var card=document.querySelector('.'+z(24)+'[data-idx="'+idx+'"]');
+  if(card){
+   card.scrollIntoView({behavior:'smooth',block:'center'});
+   card.classList.add('card-highlight');
+   setTimeout(function(){card.classList.remove('card-highlight')},1200);
+  }
+ },200);
+}
+
 if(window.__proxyIdx!==undefined){
  var pi=window.__proxyIdx,it=I0[pi];
  if(it){
