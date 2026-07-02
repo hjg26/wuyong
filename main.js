@@ -65,7 +65,7 @@ function Y0(R,g){
    var sn=fnd?fnd.name:'';
    if(msub>1&&sn&&sn!==z(43))h+='<div class="'+z(23)+'">'+z(36)+' '+sn+'</div>';
    h+='<div class="'+z(29)+'">';
-   sg.it.forEach(function(i){var idx=I0.indexOf(i);h+='<a class="'+z(24)+'" data-idx="'+idx+'" href="./'+idx+'" title="'+i.d+'"><div class="'+z(25)+'">'+i.n+'<span class="'+z(28)+'">↗</span></div><div class="'+z(26)+'">'+i.d+'</div></a>'});
+   sg.it.forEach(function(i){var idx=I0.indexOf(i);h+='<a class="'+z(24)+'" data-idx="'+idx+'" href="'+i.u+'" target="_blank" rel="noopener noreferrer" title="'+i.d+'"><div class="'+z(25)+'">'+i.n+'<span class="'+z(28)+'">↗</span></div><div class="'+z(26)+'">'+i.d+'</div></a>'});
    h+='</div>';
   }
   h+='</div>';
