@@ -1,0 +1,2620 @@
+/* 分批扩充数据：window.__extraSites
+ * 每个分类：{id, icon, name, children:[{id, name, items:[{n,u,d}]}]}
+ * 由 main.js 在初始化时合并进 C0。可继续在此文件后追加新批次分类。
+ */
+window.__extraSites=[
+{id:"movie",icon:"🎬",name:"影视 / 视频",children:[
+ {id:"movie-video",name:"视频平台",items:[
+  {n:"YouTube",u:"https://www.youtube.com",d:"全球最大视频分享平台"},
+  {n:"Bilibili",u:"https://www.bilibili.com",d:"国内知名弹幕视频社区"},
+  {n:"Netflix",u:"https://www.netflix.com",d:"全球流媒体影视巨头"},
+  {n:"Vimeo",u:"https://vimeo.com",d:"高质量创作者视频平台"},
+  {n:"优酷",u:"https://www.youku.com",d:"阿里旗下视频平台"},
+  {n:"爱奇艺",u:"https://www.iqiyi.com",d:"百度旗下视频平台"},
+  {n:"腾讯视频",u:"https://v.qq.com",d:"腾讯视频点播平台"},
+  {n:"芒果TV",u:"https://www.mgtv.com",d:"湖南卫视旗下视频"},
+  {n:"抖音",u:"https://www.douyin.com",d:"短视频社交平台"},
+  {n:"TikTok",u:"https://www.tiktok.com",d:"国际版抖音短视频"},
+  {n:"Twitch",u:"https://www.twitch.tv",d:"游戏直播平台"},
+  {n:"Dailymotion",u:"https://www.dailymotion.com",d:"法国视频分享网站"},
+  {n:"西瓜视频",u:"https://www.ixigua.com",d:"字节旗下中视频平台"},
+  {n:"AcFun",u:"https://www.acfun.cn",d:"弹幕视频社区"},
+  {n:"搜狐视频",u:"https://tv.sohu.com",d:"搜狐视频点播"},
+  {n:"1905电影网",u:"https://www.1905.com",d:"官方电影资讯平台"},
+  {n:"Disney+",u:"https://www.disneyplus.com",d:"迪士尼流媒体"},
+  {n:"Hulu",u:"https://www.hulu.com",d:"美国流媒体平台"},
+  {n:"HBO Max",u:"https://www.max.com",d:"华纳兄弟流媒体"},
+  {n:"Crunchyroll",u:"https://www.crunchyroll.com",d:"正版动漫流媒体"},
+  {n:"Apple TV+",u:"https://www.apple.com/apple-tv-plus",d:"苹果原创影视"},
+  {n:"Prime Video",u:"https://www.amazon.com/gp/video",d:"亚马逊影视"},
+  {n:"Peacock",u:"https://www.peacocktv.com",d:"NBC旗下流媒体"},
+  {n:"IMDb",u:"https://www.imdb.com",d:"全球电影资料库"},
+  {n:"Rotten Tomatoes",u:"https://www.rottentomatoes.com",d:"影评聚合网站"},
+  {n:"Letterboxd",u:"https://letterboxd.com",d:"电影爱好者社交记录"},
+  {n:"MyAnimeList",u:"https://myanimelist.net",d:"日本动漫数据库"},
+  {n:"AniList",u:"https://anilist.co",d:"动漫追踪社区"},
+  {n:"豆瓣电影",u:"https://movie.douban.com",d:"中文电影评分社区"},
+  {n:"PPTV",u:"https://www.pptv.com",d:"体育影视视频"}
+ ]}
+,{id:"movie-live",name:"直播平台",items:[
+  {n:"斗鱼",u:"https://www.douyu.com",d:"国内知名游戏直播平台"},
+  {n:"虎牙直播",u:"https://www.huya.com",d:"游戏互动直播平台"},
+  {n:"快手",u:"https://www.kuaishou.com",d:"短视频与直播社区"},
+  {n:"B站直播",u:"https://live.bilibili.com",d:"弹幕互动直播"},
+  {n:"战旗直播",u:"https://www.zhanqi.tv",d:"游戏电竞直播"},
+  {n:"YY直播",u:"https://www.yy.com",d:"老牌娱乐直播平台"}
+ ]}
+,{id:"movie-res",name:"影视资源 / 下载",items:[
+  {n:"电影天堂",u:"https://www.dytt8.net",d:"电影电视剧资源下载"},
+  {n:"人人影视",u:"https://www.YYeTs.com",d:"美剧字幕与资源下载"},
+  {n:"字幕库",u:"https://www.zimuku.cn",d:"中文字幕下载站"},
+  {n:"6V电影网",u:"https://www.6vhao.net",d:"在线高清影视"},
+  {n:"飘花影视",u:"https://www.piaohua.com",d:"电影下载与在线观看"}
+ ]}
+,{id:"movie-anime",name:"动漫番剧",items:[
+  {n:"蜜柑计划",u:"https://mikanani.me",d:"动漫磁力订阅与下载"},
+  {n:"动漫花园",u:"https://dmhy.org",d:"动漫BT资源下载"}
+ ]}
+,{id:"movie-short",name:"短视频 / 社交视频",items:[
+  {n:"微视",u:"https://weishi.qq.com",d:"腾讯短视频平台"},
+  {n:"小红书",u:"https://www.xiaohongshu.com",d:"图文短视频社区"},
+  {n:"好看视频",u:"https://haokan.baidu.com",d:"百度短视频平台"}
+ ]}
+]},
+{id:"music",icon:"🎵",name:"音乐 / 音频",children:[
+ {id:"music-stream",name:"音乐平台",items:[
+  {n:"Spotify",u:"https://www.spotify.com",d:"全球最大音乐流媒体"},
+  {n:"Apple Music",u:"https://music.apple.com",d:"苹果音乐服务"},
+  {n:"网易云音乐",u:"https://music.163.com",d:"国内主流音乐平台"},
+  {n:"QQ音乐",u:"https://y.qq.com",d:"腾讯音乐平台"},
+  {n:"酷狗音乐",u:"https://www.kugou.com",d:"老牌音乐播放器"},
+  {n:"酷我音乐",u:"https://www.kuwo.cn",d:"音乐聚合平台"},
+  {n:"咪咕音乐",u:"https://music.migu.cn",d:"移动旗下音乐"},
+  {n:"SoundCloud",u:"https://soundcloud.com",d:"独立音乐人社区"},
+  {n:"Pandora",u:"https://www.pandora.com",d:"电台式音乐推荐"},
+  {n:"Tidal",u:"https://tidal.com",d:"高保真音乐平台"},
+  {n:"Deezer",u:"https://www.deezer.com",d:"法国音乐流媒体"},
+  {n:"Bandcamp",u:"https://bandcamp.com",d:"音乐人直营商店"},
+  {n:"Last.fm",u:"https://www.last.fm",d:"音乐品味记录"},
+  {n:"喜马拉雅",u:"https://www.ximalaya.com",d:"国内音频分享平台"},
+  {n:"蜻蜓FM",u:"https://www.qingting.fm",d:"网络电台平台"},
+  {n:"荔枝FM",u:"https://www.lizhi.fm",d:"语音直播电台"},
+  {n:"猫耳FM",u:"https://www.missevan.com",d:"二次元广播剧"},
+  {n:"Gaana",u:"https://gaana.com",d:"印度音乐平台"},
+  {n:"JOOX",u:"https://www.joox.com",d:"东南亚音乐平台"},
+  {n:"Audiomack",u:"https://audiomack.com",d:"嘻哈音乐平台"},
+  {n:"Mixcloud",u:"https://www.mixcloud.com",d:"DJ混音电台"},
+  {n:"MusicBrainz",u:"https://musicbrainz.org",d:"开放音乐元数据库"}
+ ]}
+,{id:"music-down",name:"音乐下载 / 搜索",items:[
+  {n:"音乐搜索",u:"https://music.sonimei.cn",d:"全网音乐一键搜索与下载"},
+  {n:"歌曲大全",u:"https://www.songtj.com",d:"在线听歌与下载"},
+  {n:"51APE",u:"https://www.51ape.com",d:"无损音乐下载"},
+  {n:"无损音乐网",u:"https://www.owearmusic.com",d:"无损音乐资源"}
+ ]}
+,{id:"music-k",name:"在线 K 歌",items:[
+  {n:"唱吧",u:"https://www.changba.com",d:"手机K歌社区"},
+  {n:"全民K歌",u:"https://kg.qq.com",d:"腾讯K歌平台"}
+ ]}
+,{id:"music-podcast",name:"播客 / 电台",items:[
+  {n:"小宇宙",u:"https://www.xiaoyuzhoufm.com",d:"中文播客平台"},
+  {n:"Apple Podcasts",u:"https://podcasts.apple.com",d:"苹果播客"},
+  {n:"网易云播客",u:"https://podcast.163.com",d:"网易云音乐播客"},
+  {n:"Google Podcasts",u:"https://podcasts.google.com",d:"谷歌播客"}
+ ]}
+]},
+{id:"news",icon:"📰",name:"新闻 / 资讯",children:[
+ {id:"news-cn",name:"新闻门户",items:[
+  {n:"新华网",u:"https://www.news.cn",d:"新华社官方网站"},
+  {n:"人民网",u:"https://www.people.com.cn",d:"人民日报官方网站"},
+  {n:"央视网",u:"https://www.cctv.com",d:"中央电视台官网"},
+  {n:"中国新闻网",u:"https://www.chinanews.com",d:"中新社新闻门户"},
+  {n:"环球网",u:"https://www.huanqiu.com",d:"环球时报旗下"},
+  {n:"澎湃新闻",u:"https://www.thepaper.cn",d:"东方早报新媒体"},
+  {n:"界面新闻",u:"https://www.jiemian.com",d:"财经商业新闻"},
+  {n:"财新网",u:"https://www.caixin.com",d:"深度财经媒体"},
+  {n:"第一财经",u:"https://www.yicai.com",d:"财经资讯平台"},
+  {n:"参考消息",u:"https://www.cankaoxiaoxi.com",d:"国际参考消息"},
+  {n:"BBC",u:"https://www.bbc.com",d:"英国广播公司"},
+  {n:"CNN",u:"https://www.cnn.com",d:"美国有线电视新闻"},
+  {n:"Reuters",u:"https://www.reuters.com",d:"路透社新闻"},
+  {n:"The New York Times",u:"https://www.nytimes.com",d:"纽约时报"},
+  {n:"The Guardian",u:"https://www.theguardian.com",d:"英国卫报"},
+  {n:"Al Jazeera",u:"https://www.aljazeera.com",d:"半岛电视台"},
+  {n:"联合早报",u:"https://www.zaobao.com",d:"新加坡华文媒体"},
+  {n:"36氪",u:"https://36kr.com",d:"创投科技媒体"},
+  {n:"虎嗅",u:"https://www.huxiu.com",d:"商业科技资讯"},
+  {n:"钛媒体",u:"https://www.tmtpost.com",d:"科技财经媒体"},
+  {n:"雷锋网",u:"https://www.leiphone.com",d:"人工智能媒体"},
+  {n:"爱范儿",u:"https://www.ifanr.com",d:"数字生活方式媒体"},
+  {n:"品玩",u:"https://www.pingwest.com",d:"科技商业媒体"},
+  {n:"IT之家",u:"https://www.ithome.com",d:"IT资讯门户"},
+  {n:"驱动之家",u:"https://www.mydrivers.com",d:"硬件驱动资讯"}
+ ]}
+]},
+{id:"shop",icon:"🛒",name:"购物 / 电商",children:[
+ {id:"shop-cn",name:"综合电商",items:[
+  {n:"淘宝",u:"https://www.taobao.com",d:"阿里综合购物平台"},
+  {n:"天猫",u:"https://www.tmall.com",d:"品牌商城"},
+  {n:"京东",u:"https://www.jd.com",d:"自营电商巨头"},
+  {n:"拼多多",u:"https://www.pinduoduo.com",d:"社交拼团电商"},
+  {n:"苏宁易购",u:"https://www.suning.com",d:"家电零售电商"},
+  {n:"唯品会",u:"https://www.vip.com",d:"特卖电商"},
+  {n:"当当",u:"https://www.dangdang.com",d:"图书电商"},
+  {n:"亚马逊",u:"https://www.amazon.com",d:"全球电商巨头"},
+  {n:"eBay",u:"https://www.ebay.com",d:"拍卖式电商"},
+  {n:"AliExpress",u:"https://www.aliexpress.com",d:"阿里国际版"},
+  {n:"Wish",u:"https://www.wish.com",d:"低价跨境电商"},
+  {n:"Walmart",u:"https://www.walmart.com",d:"沃尔玛电商"},
+  {n:"Target",u:"https://www.target.com",d:"美国零售电商"},
+  {n:"Best Buy",u:"https://www.bestbuy.com",d:"电子产品电商"},
+  {n:"Etsy",u:"https://www.etsy.com",d:"手工创意商店"},
+  {n:"网易严选",u:"https://you.163.com",d:"ODM精选电商"},
+  {n:"小米商城",u:"https://www.mi.com",d:"小米官方商城"},
+  {n:"Apple Store",u:"https://www.apple.com",d:"苹果官方商店"},
+  {n:"考拉海购",u:"https://www.kaola.com",d:"跨境母婴电商"},
+  {n:"蘑菇街",u:"https://www.mogu.com",d:"女性时尚电商"},
+  {n:"小红书",u:"https://www.xiaohongshu.com",d:"种草社区电商"},
+  {n:"1号店",u:"https://www.yhd.com",d:"网上超市"},
+  {n:"国美",u:"https://www.gome.com.cn",d:"家电零售电商"},
+  {n:"Shopify",u:"https://www.shopify.com",d:"独立站建店平台"},
+  {n:" Rakuten",u:"https://www.rakuten.com",d:"日本乐天电商"}
+ ]}
+]},
+{id:"social",icon:"💬",name:"社交 / 社区",children:[
+ {id:"social-main",name:"社交平台",items:[
+  {n:"微信",u:"https://weixin.qq.com",d:"腾讯即时通讯"},
+  {n:"微博",u:"https://weibo.com",d:"新浪社交媒体"},
+  {n:"QQ",u:"https://im.qq.com",d:"腾讯即时通讯"},
+  {n:"知乎",u:"https://www.zhihu.com",d:"问答知识社区"},
+  {n:"豆瓣",u:"https://www.douban.com",d:"文艺生活社区"},
+  {n:"百度贴吧",u:"https://tieba.baidu.com",d:"兴趣主题社区"},
+  {n:"Reddit",u:"https://www.reddit.com",d:"国际论坛 aggregator"},
+  {n:"X (Twitter)",u:"https://x.com",d:"国际社交媒体"},
+  {n:"Facebook",u:"https://www.facebook.com",d:"社交网络巨头"},
+  {n:"Instagram",u:"https://www.instagram.com",d:"图片社交"},
+  {n:"Telegram",u:"https://telegram.org",d:"加密即时通讯"},
+  {n:"WhatsApp",u:"https://www.whatsapp.com",d:"全球通讯应用"},
+  {n:"Discord",u:"https://discord.com",d:"游戏社群通讯"},
+  {n:"LinkedIn",u:"https://www.linkedin.com",d:"职场社交"},
+  {n:"Pinterest",u:"https://www.pinterest.com",d:"图文收藏社区"},
+  {n:"Tumblr",u:"https://www.tumblr.com",d:"轻博客社区"},
+  {n:"即刻",u:"https://web.okjike.com",d:"兴趣社交平台"},
+  {n:"脉脉",u:"https://maimai.cn",d:"职场社交"},
+  {n:"探探",u:"https://www.tantanapp.com",d:"陌生人社交"},
+  {n:"陌陌",u:"https://www.immomo.com",d:"位置社交"},
+  {n:"Signal",u:"https://signal.org",d:"隐私加密通讯"},
+  {n:"Mastodon",u:"https://mastodon.social",d:"去中心化社交"},
+  {n:"Threads",u:"https://www.threads.net",d:"Meta图文社交"},
+  {n:"Quora",u:"https://www.quora.com",d:"英文问答社区"}
+ ]}
+]},
+{id:"edu",icon:"🎓",name:"教育 / 学习平台",children:[
+ {id:"edu-online",name:"在线课程",items:[
+  {n:"中国大学MOOC",u:"https://www.icourse163.org",d:"国家精品课程平台"},
+  {n:"学堂在线",u:"https://www.xuetangx.com",d:"清华旗下慕课"},
+  {n:"Coursera",u:"https://www.coursera.org",d:"全球名校在线课程"},
+  {n:"edX",u:"https://www.edx.org",d:"哈佛MIT慕课"},
+  {n:"Udemy",u:"https://www.udemy.com",d:"技能付费课程"},
+  {n:"Khan Academy",u:"https://www.khanacademy.org",d:"免费基础教育"},
+  {n:"网易公开课",u:"https://open.163.com",d:"名校公开课"},
+  {n:"腾讯课堂",u:"https://ke.qq.com",d:"职业技能课程"},
+  {n:"极客时间",u:"https://time.geekbang.org",d:"IT技术专栏"},
+  {n:"慕课网",u:"https://www.imooc.com",d:"IT技能学习"},
+  {n:"可汗学院",u:"https://zh.khanacademy.org",d:"免费学习平台"},
+  {n:"Duolingo",u:"https://www.duolingo.com",d:"游戏化语言学习"},
+  {n:"Codecademy",u:"https://www.codecademy.com",d:"交互编程学习"},
+  {n:"freeCodeCamp",u:"https://www.freecodecamp.org",d:"免费编程认证"},
+  {n:"作业帮",u:"https://www.zuoyebang.com",d:"中小学解题"},
+  {n:"小猿搜题",u:"https://www.yuanfudao.com",d:"拍照搜题"},
+  {n:"学而思网校",u:"https://www.xueersi.com",d:"K12在线教育"},
+  {n:"新东方在线",u:"https://www.koolearn.com",d:"语言考试培训"},
+  {n:"沪江网校",u:"https://www.hujiang.com",d:"多语种学习"},
+  {n:"英语流利说",u:"https://www.liulishuo.com",d:"口语练习"},
+  {n:"TED",u:"https://www.ted.com",d:"思想演讲视频"},
+  {n:"译学馆",u:"https://www.yxgapp.com",d:"字幕翻译学习"},
+  {n:"万门大学",u:"https://www.wanmen.org",d:"通识教育平台"},
+  {n:"Brainscape",u:"https://www.brainscape.com",d:"记忆卡片学习"},
+  {n:"Brilliant",u:"https://brilliant.org",d:"数学科学互动课"}
+ ]}
+]},
+{id:"read",icon:"📖",name:"阅读 / 文学",children:[
+ {id:"read-novel",name:"小说 / 文学",items:[
+  {n:"起点中文网",u:"https://www.qidian.com",d:"阅文旗下小说平台"},
+  {n:"纵横中文网",u:"https://www.zongheng.com",d:"中文小说平台"},
+  {n:"晋江文学城",u:"https://www.jjwxc.net",d:"女性向小说站"},
+  {n:"红袖添香",u:"https://www.hongxiu.com",d:"言情小说站"},
+  {n:"小说阅读网",u:"https://www.readnovel.com",d:"综合小说站"},
+  {n:"豆瓣阅读",u:"https://read.douban.com",d:"严肃文学阅读"},
+  {n:"微信读书",u:"https://weread.qq.com",d:"腾讯电子书"},
+  {n:"掌阅",u:"https://www.zhangyue.com",d:"移动阅读平台"},
+  {n:"得到",u:"https://www.dedao.cn",d:"知识服务电子书"},
+  {n:"藏书馆",u:"https://www.csusg.com",d:"公益电子书馆"},
+  {n:"Z-Library",u:"https://zh.b-ok.cc",d:"电子书资源库"},
+  {n:"Project Gutenberg",u:"https://www.gutenberg.org",d:"公版电子书"},
+  {n:"古诗文网",u:"https://www.gushiwen.cn",d:"古诗词文库"},
+  {n:"汉典",u:"https://www.zdic.net",d:"汉语字典查询"},
+  {n:"全历史",u:"https://www.allhistory.com",d:"历史文化平台"},
+  {n:"维基文库",u:"https://zh.wikisource.org",d:"自由文库"},
+  {n:"笔趣阁",u:"https://www.biquge.com",d:"免费小说阅读"},
+  {n:"刺猬猫",u:"https://www.ciweimao.com",d:"轻小说平台"},
+  {n:"SF轻小说",u:"https://book.sfacg.com",d:"轻小说社区"},
+  {n:"不可能的世界",u:"https://www.8kana.com",d:"二次元小说"}
+ ]}
+]},
+{id:"map",icon:"🗺️",name:"地图 / 出行",children:[
+ {id:"map-nav",name:"地图导航",items:[
+  {n:"高德地图",u:"https://www.amap.com",d:"阿里地图导航"},
+  {n:"百度地图",u:"https://map.baidu.com",d:"百度地图服务"},
+  {n:"腾讯地图",u:"https://map.qq.com",d:"腾讯地图"},
+  {n:"Google Maps",u:"https://maps.google.com",d:"谷歌地图"},
+  {n:"Apple Maps",u:"https://www.apple.com/maps",d:"苹果地图"},
+  {n:"OpenStreetMap",u:"https://www.openstreetmap.org",d:"开放地图"},
+  {n:"搜狗地图",u:"https://map.sogou.com",d:"搜狗地图"},
+  {n:"北斗地图",u:"https://www.bdmap.com",d:"北斗导航"},
+  {n:"滴滴出行",u:"https://www.didiglobal.com",d:"网约车平台"},
+  {n:"高德打车",u:"https://www.amap.com",d:"聚合打车"},
+  {n:"美团打车",u:"https://www.meituan.com",d:"美团出行"},
+  {n:"12306",u:"https://www.12306.cn",d:"铁路购票官网"},
+  {n:"航旅纵横",u:"https://www.umetrip.com",d:"航班值机服务"},
+  {n:"飞常准",u:"https://www.variflight.com",d:"航班动态查询"},
+  {n:"亿地图",u:"https://www.yiditu.com",d:"地图服务"},
+  {n:"图吧",u:"https://www.mapbar.com",d:"导航地图"}
+ ]}
+]},
+{id:"gov",icon:"🏛️",name:"政府 / 政务",children:[
+ {id:"gov-cn",name:"政务平台",items:[
+  {n:"中国政府网",u:"https://www.gov.cn",d:"中央人民政府门户"},
+  {n:"国家政务服务平台",u:"https://gjzwfw.www.gov.cn",d:"全国一体化政务"},
+  {n:"最高人民法院",u:"https://www.court.gov.cn",d:"最高法院官网"},
+  {n:"国家移民管理局",u:"https://www.nia.gov.cn",d:"出入境管理"},
+  {n:"海关总署",u:"https://www.customs.gov.cn",d:"海关官网"},
+  {n:"国家税务总局",u:"https://www.chinatax.gov.cn",d:"税务官网"},
+  {n:"人力资源和社会保障部",u:"https://www.mohrss.gov.cn",d:"人社官网"},
+  {n:"教育部",u:"https://www.moe.gov.cn",d:"教育官网"},
+  {n:"国家卫健委",u:"https://www.nhc.gov.cn",d:"卫生健康官网"},
+  {n:"公安部",u:"https://www.mps.gov.cn",d:"公安官网"},
+  {n:"外交部",u:"https://www.mfa.gov.cn",d:"外交官网"},
+  {n:"国家市场监督管理总局",u:"https://www.samr.gov.cn",d:"市场监管"},
+  {n:"信用中国",u:"https://www.creditchina.gov.cn",d:"信用信息公示"},
+  {n:"国家企业信用信息公示",u:"https://www.gsxt.gov.cn",d:"企业信用查询"},
+  {n:"中国裁判文书网",u:"https://wenshu.court.gov.cn",d:"裁判文书公开"},
+  {n:"国家知识产权局",u:"https://www.cnipa.gov.cn",d:"专利商标"},
+  {n:"国家统计局",u:"https://www.stats.gov.cn",d:"统计数据中心"},
+  {n:"中国人民银行",u:"https://www.pbc.gov.cn",d:"央行官网"},
+  {n:"中国证监会",u:"https://www.csrc.gov.cn",d:"证券监管"},
+  {n:"国家外汇管理局",u:"https://www.safe.gov.cn",d:"外汇管理"}
+ ]}
+]},
+{id:"bank",icon:"🏦",name:"银行 / 金融",children:[
+ {id:"bank-cn",name:"银行理财",items:[
+  {n:"工商银行",u:"https://www.icbc.com.cn",d:"工行网银"},
+  {n:"建设银行",u:"https://www.ccb.com",d:"建行官网"},
+  {n:"农业银行",u:"https://www.abchina.com",d:"农行官网"},
+  {n:"中国银行",u:"https://www.boc.cn",d:"中行官网"},
+  {n:"交通银行",u:"https://www.bankcomm.com",d:"交行官网"},
+  {n:"招商银行",u:"https://www.cmbchina.com",d:"招行官网"},
+  {n:"邮储银行",u:"https://www.psbc.com",d:"邮储官网"},
+  {n:"中信银行",u:"https://www.citicbank.com",d:"中信官网"},
+  {n:"浦发银行",u:"https://www.spdb.com.cn",d:"浦发官网"},
+  {n:"民生银行",u:"https://www.cmbc.com.cn",d:"民生官网"},
+  {n:"兴业银行",u:"https://www.cib.com.cn",d:"兴业官网"},
+  {n:"平安银行",u:"https://bank.pingan.com",d:"平安官网"},
+  {n:"支付宝",u:"https://www.alipay.com",d:"蚂蚁支付"},
+  {n:"微信支付",u:"https://pay.weixin.qq.com",d:"腾讯支付"},
+  {n:"云闪付",u:"https://www.unionpay.com",d:"银联支付"},
+  {n:"雪球",u:"https://xueqiu.com",d:"投资社交平台"},
+  {n:"东方财富",u:"https://www.eastmoney.com",d:"财经门户"},
+  {n:"同花顺",u:"https://www.10jqka.com.cn",d:"炒股软件"},
+  {n:"新浪财经",u:"https://finance.sina.com.cn",d:"财经资讯"},
+  {n:"腾讯财经",u:"https://finance.qq.com",d:"财经频道"},
+  {n:"和讯",u:"https://www.hexun.com",d:"财经网络"},
+  {n:"金十数据",u:"https://www.jin10.com",d:"财经快讯"},
+  {n:"英为财情",u:"https://cn.investing.com",d:"全球行情"},
+  {n:"TradingView",u:"https://cn.tradingview.com",d:"图表分析"},
+  {n:"富途牛牛",u:"https://www.futunn.com",d:"港美股券商"},
+  {n:"老虎证券",u:"https://www.tigerbrokers.com",d:"美股券商"}
+ ]}
+]},
+{id:"tech",icon:"💡",name:"科技 / 数码",children:[
+ {id:"tech-media",name:"科技媒体",items:[
+  {n:"中关村在线",u:"https://www.zol.com.cn",d:"IT产品报价"},
+  {n:"太平洋电脑网",u:"https://www.pconline.com.cn",d:"数码资讯"},
+  {n:"什么值得买",u:"https://www.smzdm.com",d:"优惠导购社区"},
+  {n:"数字尾巴",u:"https://www.dgtle.com",d:"数码生活社区"},
+  {n:"少数派",u:"https://sspai.com",d:"效率工具媒体"},
+  {n:"极客公园",u:"https://www.geekpark.net",d:"科技商业媒体"},
+  {n:"威锋网",u:"https://www.weiphone.com",d:"苹果爱好者"},
+  {n:"电玩巴士",u:"https://www.tgbus.com",d:"游戏资讯"},
+  {n:"AnandTech",u:"https://www.anandtech.com",d:"硬件评测"},
+  {n:"The Verge",u:"https://www.theverge.com",d:"科技文化媒体"},
+  {n:"TechCrunch",u:"https://techcrunch.com",d:"创业科技"},
+  {n:"Wired",u:"https://www.wired.com",d:"连线杂志"},
+  {n:"Engadget",u:"https://www.engadget.com",d:"瘾科技"},
+  {n:"Ars Technica",u:"https://arstechnica.com",d:"深度技术"},
+  {n:"极客湾",u:"https://www.bilibili.com",d:"数码评测UP"},
+  {n:"硬件茶谈",u:"https://www.bilibili.com",d:"硬件科普"},
+  {n:"笔吧评测室",u:"https://www.bilibili.com",d:"笔记本评测"},
+  {n:"Chiphell",u:"https://www.chiphell.com",d:"硬件论坛"},
+  {n:"App Store",u:"https://apps.apple.com",d:"苹果应用商店"},
+  {n:"Google Play",u:"https://play.google.com",d:"安卓应用商店"}
+ ]}
+]},
+{id:"game",icon:"🕹️",name:"游戏",children:[
+ {id:"game-platform",name:"游戏平台",items:[
+  {n:"Steam",u:"https://store.steampowered.com",d:"PC游戏平台"},
+  {n:"Epic Games",u:"https://www.epicgames.com",d:"E宝游戏商城"},
+  {n:"WeGame",u:"https://www.wegame.com",d:"腾讯游戏平台"},
+  {n:"育碧",u:"https://www.ubisoft.com",d:"Ubisoft官网"},
+  {n:"战网",u:"https://www.blizzard.com",d:"暴雪游戏"},
+  {n:"杉果",u:"https://www.sonkwo.com",d:"游戏商城"},
+  {n:"4399",u:"https://www.4399.com",d:"小游戏平台"},
+  {n:"7k7k",u:"https://www.7k7k.com",d:"小游戏平台"},
+  {n:"腾讯游戏",u:"https://game.qq.com",d:"腾讯游戏"},
+  {n:"网易游戏",u:"https://game.163.com",d:"网易游戏"},
+  {n:"米游社",u:"https://www.miyoushe.com",d:"米哈游社区"},
+  {n:"Roblox",u:"https://www.roblox.com",d:"沙盒游戏平台"},
+  {n:"GOG",u:"https://www.gog.com",d:"无DRM游戏"},
+  {n:"Humble Bundle",u:"https://www.humblebundle.com",d:"游戏慈善包"},
+  {n:"游民星空",u:"https://www.gamersky.com",d:"游戏资讯"},
+  {n:"3DM",u:"https://www.3dmgame.com",d:"游戏下载"},
+  {n:"A9VG",u:"https://www.a9vg.com",d:"电视游戏网"},
+  {n:"小黑盒",u:"https://www.xiaoheihe.cn",d:"游戏社区"},
+  {n:"触乐",u:"https://www.chuapp.com",d:"游戏媒体"},
+  {n:"篝火营地",u:"https://www.gouhuo.com",d:"游戏社区"},
+  {n:"Origin",u:"https://www.ea.com",d:"EA游戏平台"},
+  {n:"Uplay",u:"https://ubisoftconnect.com",d:"育碧客户端"}
+ ]}
+]},
+{id:"life",icon:"🏠",name:"生活 / 服务",children:[
+ {id:"life-service",name:"生活服务",items:[
+  {n:"美团",u:"https://www.meituan.com",d:"本地生活服务"},
+  {n:"大众点评",u:"https://www.dianping.com",d:"商户点评"},
+  {n:"饿了么",u:"https://www.ele.me",d:"外卖平台"},
+  {n:"58同城",u:"https://www.58.com",d:"分类信息平台"},
+  {n:"赶集网",u:"https://www.ganji.com",d:"分类信息"},
+  {n:"贝壳找房",u:"https://www.ke.com",d:"房产交易"},
+  {n:"链家",u:"https://www.lianjia.com",d:"房产中介"},
+  {n:"安居客",u:"https://www.anjuke.com",d:"房产平台"},
+  {n:"搜房网",u:"https://www.fang.com",d:"房地产门户"},
+  {n:"途家",u:"https://www.tujia.com",d:"短租民宿"},
+  {n:"小猪短租",u:"https://www.xiaozhu.com",d:"民宿短租"},
+  {n:"京东到家",u:"https://www.jddj.com",d:"即时零售"},
+  {n:"盒马",u:"https://www.freshippo.com",d:"生鲜超市"},
+  {n:"叮咚买菜",u:"https://www.100.me",d:"生鲜电商"},
+  {n:"永辉生活",u:"https://www.yonghui.com",d:"超市到家"},
+  {n:"顺丰",u:"https://www.sf-express.com",d:"快递物流"},
+  {n:"菜鸟",u:"https://www.cainiao.com",d:"物流平台"},
+  {n:"中通快递",u:"https://www.zto.com",d:"快递查询"},
+  {n:"圆通",u:"https://www.yto.net.cn",d:"快递查询"},
+  {n:"京东物流",u:"https://www.jdl.com",d:"京东快递"},
+  {n:"货拉拉",u:"https://www.huolala.cn",d:"货运搬家"},
+  {n:"闪送",u:"https://www.ishansong.com",d:"同城速递"},
+  {n:"口碑",u:"https://www.koubei.com",d:"本地优惠"},
+  {n:"美团外卖",u:"https://waimai.meituan.com",d:"外卖订餐"}
+ ]}
+]},
+{id:"health",icon:"⚕️",name:"健康 / 医疗",children:[
+ {id:"health-med",name:"医疗健康",items:[
+  {n:"丁香医生",u:"https://dxy.com",d:"健康科普平台"},
+  {n:"好大夫在线",u:"https://www.haodf.com",d:"在线问诊"},
+  {n:"春雨医生",u:"https://www.chunyuyisheng.com",d:"移动问诊"},
+  {n:"平安好医生",u:"https://www.jk.cn",d:"医疗健康"},
+  {n:"微医",u:"https://www.guahao.com",d:"互联网医院"},
+  {n:"京东健康",u:"https://www.jd.com",d:"医药健康"},
+  {n:"阿里健康",u:"https://www.alihealth.cn",d:"医药电商"},
+  {n:"丁香园",u:"https://www.dxy.cn",d:"医生社区"},
+  {n:"默沙东诊疗手册",u:"https://www.msdmanuals.com",d:"医学手册"},
+  {n:"腾讯医典",u:"https://baike.qq.com",d:"医学科普"},
+  {n:"医脉通",u:"https://www.medlive.cn",d:"临床医生平台"},
+  {n:"用药助手",u:"https://drugs.dxy.cn",d:"药品查询"},
+  {n:"薄荷健康",u:"https://www.boohee.com",d:"热量管理"},
+  {n:"Keep",u:"https://www.keep.com",d:"健身运动"},
+  {n:"悦跑圈",u:"https://www.yuepaoquan.com",d:"跑步社区"},
+  {n:"咕咚",u:"https://www.codoon.com",d:"运动健身"},
+  {n:"美柚",u:"https://www.meiyou.com",d:"女性健康"},
+  {n:"宝宝树",u:"https://www.babytree.com",d:"育儿社区"},
+  {n:"WebMD",u:"https://www.webmd.com",d:"美国医疗信息"},
+  {n:"Mayo Clinic",u:"https://www.mayoclinic.org",d:"梅奥诊所"},
+  {n:"Medscape",u:"https://www.medscape.com",d:"医生资源"},
+  {n:"Healthline",u:"https://www.healthline.com",d:"健康资讯"}
+ ]}
+]},
+{id:"travel",icon:"✈️",name:"旅游 / 攻略",children:[
+ {id:"travel-book",name:"旅游预订",items:[
+  {n:"携程",u:"https://www.ctrip.com",d:"综合旅游预订"},
+  {n:"去哪儿",u:"https://www.qunar.com",d:"机票酒店搜索"},
+  {n:"飞猪",u:"https://www.fliggy.com",d:"阿里旅行"},
+  {n:"马蜂窝",u:"https://www.mafengwo.cn",d:"旅游攻略社区"},
+  {n:"途牛",u:"https://www.tuniu.com",d:"跟团游平台"},
+  {n:"同程旅行",u:"https://www.ly.com",d:"旅游预订"},
+  {n:"艺龙",u:"https://www.elong.com",d:"酒店预订"},
+  {n:"驴妈妈",u:"https://www.lvmama.com",d:"景区门票"},
+  {n:"穷游",u:"https://www.qyer.com",d:"自助游社区"},
+  {n:"TripAdvisor",u:"https://www.tripadvisor.cn",d:"猫途鹰点评"},
+  {n:"Booking",u:"https://www.booking.com",d:"全球酒店预订"},
+  {n:"Airbnb",u:"https://www.airbnb.com",d:"民宿短租"},
+  {n:"Agoda",u:"https://www.agoda.com",d:"亚洲酒店"},
+  {n:"Expedia",u:"https://www.expedia.com",d:"旅游打包"},
+  {n:"春秋航空",u:"https://www.ch.com",d:"廉价航空"},
+  {n:"中国国航",u:"https://www.airchina.com",d:"国航官网"},
+  {n:"南方航空",u:"https://www.csair.com",d:"南航官网"},
+  {n:"东方航空",u:"https://www.ceair.com",d:"东航官网"},
+  {n:"海南航空",u:"https://www.hainanairlines.com",d:"海航官网"},
+  {n:"高铁管家",u:"https://www.gtgj.com",d:"抢票助手"},
+  {n:"智行火车票",u:"https://www.zhixing.com",d:"火车票预订"},
+  {n:"Klook",u:"https://www.klook.com",d:"客路玩乐"}
+ ]}
+]},
+{id:"job",icon:"💼",name:"招聘 / 职场",children:[
+ {id:"job-main",name:"招聘平台",items:[
+  {n:"前程无忧",u:"https://www.51job.com",d:"综合招聘"},
+  {n:"智联招聘",u:"https://www.zhaopin.com",d:"综合招聘"},
+  {n:"BOSS直聘",u:"https://www.zhipin.com",d:"直聊招聘"},
+  {n:"猎聘",u:"https://www.liepin.com",d:"中高端招聘"},
+  {n:"拉勾",u:"https://www.lagou.com",d:"互联网招聘"},
+  {n:"看准",u:"https://www.kanzhun.com",d:"公司点评"},
+  {n:"牛客网",u:"https://www.nowcoder.com",d:"求职刷题"},
+  {n:"应届生求职",u:"https://www.yingjiesheng.com",d:"校园招聘"},
+  {n:"海投网",u:"https://www.haitou.cc",d:"校招平台"},
+  {n:"实习僧",u:"https://www.shixiseng.com",d:"实习招聘"},
+  {n:"中华英才网",u:"https://www.chinahr.com",d:"招聘门户"},
+  {n:"内推网",u:"https://www.neitui.me",d:"内推招聘"},
+  {n:"LinkedIn",u:"https://www.linkedin.com",d:"职场社交"},
+  {n:"刺猬实习",u:"https://www.ciweishixi.com",d:"实习机会"},
+  {n:"猎聘简历",u:"https://www.liepin.com",d:"简历管理"}
+ ]}
+]},
+{id:"photo",icon:"📷",name:"图片 / 摄影",children:[
+ {id:"photo-stock",name:"图片素材",items:[
+  {n:"Unsplash",u:"https://unsplash.com",d:"免费高清摄影图"},
+  {n:"Pexels",u:"https://www.pexels.com",d:"免费图片视频"},
+  {n:"Pixabay",u:"https://pixabay.com",d:"免费图库"},
+  {n:"Flickr",u:"https://www.flickr.com",d:"雅虎摄影社区"},
+  {n:"500px",u:"https://500px.com",d:"摄影作品社区"},
+  {n:"站酷",u:"https://www.zcool.com.cn",d:"设计师社区"},
+  {n:"视觉中国",u:"https://www.vcg.com",d:"商业图库"},
+  {n:"昵图网",u:"https://www.nipic.com",d:"图片素材"},
+  {n:"千图网",u:"https://www.58pic.com",d:"设计素材"},
+  {n:"包图网",u:"https://www.ibaotu.com",d:"办公素材"},
+  {n:"摄图网",u:"https://699pic.com",d:"正版图片"},
+  {n:"图虫",u:"https://tuchong.com",d:"摄影社区"},
+  {n:"花瓣网",u:"https://huaban.com",d:"图片采集"},
+  {n:"堆糖",u:"https://www.duitang.com",d:"兴趣图片"},
+  {n:"DeviantArt",u:"https://www.deviantart.com",d:"艺术社区"},
+  {n:"色影无忌",u:"https://www.xitek.com",d:"摄影论坛"},
+  {n:"蜂鸟网",u:"https://www.fengniao.com",d:"摄影门户"},
+  {n:"图虫创意",u:"https://creative.threadco.com",d:"创意图片"}
+ ]}
+]},
+{id:"book",icon:"📚",name:"图书 / 知识库",children:[
+ {id:"book-ref",name:"百科知识",items:[
+  {n:"维基百科",u:"https://zh.wikipedia.org",d:"自由百科全书"},
+  {n:"百度百科",u:"https://baike.baidu.com",d:"中文百科"},
+  {n:"搜狗百科",u:"https://baike.sogou.com",d:"搜狗百科"},
+  {n:"互动百科",u:"https://www.baike.com",d:"百科平台"},
+  {n:"中国知网",u:"https://www.cnki.net",d:"学术文献库"},
+  {n:"万方数据",u:"https://www.wanfangdata.com.cn",d:"学术数据库"},
+  {n:"维普",u:"https://www.cqvip.com",d:"期刊数据库"},
+  {n:"读秀",u:"https://www.duxiu.com",d:"图书搜索"},
+  {n:"超星",u:"https://www.chaoxing.com",d:"数字图书馆"},
+  {n:"国家图书馆",u:"https://www.nlc.cn",d:"国家数字图书馆"},
+  {n:"Open Library",u:"https://openlibrary.org",d:"开放图书"},
+  {n:"Google Books",u:"https://books.google.com",d:"谷歌图书"},
+  {n:"大英百科",u:"https://www.britannica.com",d:"不列颠百科"},
+  {n:"百度学术",u:"https://xueshu.baidu.com",d:"学术搜索"},
+  {n:"Semantic Scholar",u:"https://www.semanticscholar.org",d:"AI学术搜索"},
+  {n:"arXiv",u:"https://arxiv.org",d:"预印本论文库"}
+ ]}
+]},
+{id:"ai2",icon:"🤖",name:"AI 工具（补充）",children:[
+ {id:"ai2-main",name:"AI 平台",items:[
+  {n:"ChatGPT",u:"https://chat.openai.com",d:"OpenAI对话模型"},
+  {n:"Claude",u:"https://claude.ai",d:"Anthropic对话"},
+  {n:"Gemini",u:"https://gemini.google.com",d:"谷歌AI"},
+  {n:"Midjourney",u:"https://www.midjourney.com",d:"AI绘画"},
+  {n:"Stable Diffusion",u:"https://stability.ai",d:"开源绘图"},
+  {n:"Runway",u:"https://runwayml.com",d:"AI视频生成"},
+  {n:"Hugging Face",u:"https://huggingface.co",d:"AI模型社区"},
+  {n:"Krea",u:"https://www.krea.ai",d:"实时AI绘画"},
+  {n:"Leonardo",u:"https://leonardo.ai",d:"游戏素材AI"},
+  {n:"Suno",u:"https://suno.com",d:"AI音乐生成"},
+  {n:"Udio",u:"https://udio.com",d:"AI音乐"},
+  {n:"HeyGen",u:"https://www.heygen.com",d:"AI数字人视频"},
+  {n:"Pika",u:"https://pika.art",d:"AI视频"},
+  {n:"Luma",u:"https://lumalabs.ai",d:"AI视频3D"},
+  {n:"Perchance",u:"https://perchance.org",d:"免费AI工具"},
+  {n:"Removed",u:"https://removed.app",d:"AI去背景"},
+  {n:"Viggle",u:"https://viggle.ai",d:"AI角色动画"},
+  {n:"Kling",u:"https://klingai.com",d:"可灵AI视频"}
+ ]}
+]},
+{id:"design2",icon:"🎨",name:"设计素材（补充）",children:[
+ {id:"design2-main",name:"设计资源",items:[
+  {n:"Behance",u:"https://www.behance.net",d:"作品展示社区"},
+  {n:"Dribbble",u:"https://dribbble.com",d:"设计师社区"},
+  {n:"Figma",u:"https://www.figma.com",d:"协作设计工具"},
+  {n:"Canva",u:"https://www.canva.com",d:"在线设计排版"},
+  {n:"Adobe Express",u:"https://www.adobe.com/express",d:"轻量设计"},
+  {n:"Flaticon",u:"https://www.flaticon.com",d:"图标库"},
+  {n:"Iconfinder",u:"https://www.iconfinder.com",d:"图标搜索"},
+  {n:"Freepik",u:"https://www.freepik.com",d:"矢量素材"},
+  {n:"Mockup World",u:"https://www.mockupworld.co",d:"样机素材"},
+  {n:"FontAwesome",u:"https://fontawesome.com",d:"图标字体"},
+  {n:"Google Fonts",u:"https://fonts.google.com",d:"免费字体"},
+  {n:"DaFont",u:"https://www.dafont.com",d:"字体下载"},
+  {n:"Pinterest 设计",u:"https://www.pinterest.com",d:"设计灵感"},
+  {n:"Awwwards",u:"https://www.awwwards.com",d:"网页设计奖"},
+  {n:"LogoMakr",u:"https://logomakr.com",d:"在线logo"},
+  {n:"Looka",u:"https://looka.com",d:"AI设计logo"}
+ ]}
+]},
+{id:"sport",icon:"⚽",name:"体育 / 运动",children:[
+ {id:"sport-main",name:"体育资讯",items:[
+  {n:"腾讯体育",u:"https://sports.qq.com",d:"体育直播"},
+  {n:"新浪体育",u:"https://sports.sina.com.cn",d:"体育门户"},
+  {n:"虎扑",u:"https://www.hupu.com",d:"体育社区"},
+  {n:"懂球帝",u:"https://www.dongqiudi.com",d:"足球社区"},
+  {n:"直播吧",u:"https://www.zhibo8.com",d:"体育直播"},
+  {n:"NBA官网",u:"https://www.nba.com",d:"篮球赛事"},
+  {n:"ESPN",u:"https://www.espn.com",d:"体育媒体"},
+  {n:"FIFA",u:"https://www.fifa.com",d:"国际足联"},
+  {n:"UEFA",u:"https://www.uefa.com",d:"欧足联"},
+  {n:" Olympics",u:"https://www.olympics.com",d:"奥林匹克"},
+  {n:"Strava",u:"https://www.strava.com",d:"运动记录"},
+  {n:"虎嗅运动",u:"https://www.hupu.com",d:"运动社区"},
+  {n:"悦动圈",u:"https://www.yd.cn",d:"运动APP"},
+  {n:"马拉松报名",u:"https://www.marathonmap.com",d:"赛事报名"}
+ ]}
+]},
+{id:"food",icon:"🍜",name:"美食 / 菜谱",children:[
+ {id:"food-main",name:"美食菜谱",items:[
+  {n:"下厨房",u:"https://www.xiachufang.com",d:"菜谱社区"},
+  {n:"美食杰",u:"https://www.meishij.net",d:"菜谱大全"},
+  {n:"豆果美食",u:"https://www.douguo.com",d:"美食分享"},
+  {n:"大众点评美食",u:"https://www.dianping.com",d:"探店点评"},
+  {n:"美团美食",u:"https://www.meituan.com",d:"附近美食"},
+  {n:"食谱网",u:"https://www.xinshipu.com",d:"家常菜谱"},
+  {n:"Yummly",u:"https://www.yummly.com",d:"英文菜谱"},
+  {n:"Allrecipes",u:"https://www.allrecipes.com",d:"美食社区"},
+  {n:"Food Network",u:"https://www.foodnetwork.com",d:"美食频道"},
+  {n:"香哈菜谱",u:"https://m.xiangha.com",d:"菜谱大全"},
+  {n:"烘焙配方",u:"https://www.bakehouse.com",d:"烘焙教程"},
+  {n:"咖啡之家",u:"https://www.coffee.cn",d:"咖啡文化"}
+ ]}
+]},
+{id:"car",icon:"🚗",name:"汽车 / 出行",children:[
+ {id:"car-main",name:"汽车资讯",items:[
+  {n:"汽车之家",u:"https://www.autohome.com.cn",d:"汽车门户"},
+  {n:"懂车帝",u:"https://www.dongchedi.com",d:"汽车内容平台"},
+  {n:"易车",u:"https://www.yiche.com",d:"汽车报价"},
+  {n:"太平洋汽车",u:"https://www.pcauto.com.cn",d:"汽车资讯"},
+  {n:"爱卡汽车",u:"https://www.xcar.com.cn",d:"汽车社区"},
+  {n:"新浪汽车",u:"https://auto.sina.com.cn",d:"汽车频道"},
+  {n:"瓜子二手车",u:"https://www.guazi.com",d:"二手车交易"},
+  {n:"优信",u:"https://www.youxin.com",d:"二手车"},
+  {n:"人人车",u:"https://www.renrenche.com",d:"二手车"},
+  {n:"高德车服",u:"https://www.amap.com",d:"车主服务"},
+  {n:"特斯拉",u:"https://www.tesla.cn",d:"官网预订"},
+  {n:"蔚来",u:"https://www.nio.cn",d:"新能源车"},
+  {n:"小鹏",u:"https://www.xiaopeng.com",d:"新能源车"},
+  {n:"理想",u:"https://www.lixiang.com",d:"新能源车"}
+ ]}
+]},
+{id:"science",icon:"🔬",name:"科学 / 天文",children:[
+ {id:"science-main",name:"科学探索",items:[
+  {n:"NASA",u:"https://www.nasa.gov",d:"美国宇航局"},
+  {n:"SpaceX",u:"https://www.spacex.com",d:"太空探索"},
+  {n:"ESA",u:"https://www.esa.int",d:"欧洲航天局"},
+  {n:"CERN",u:"https://home.cern",d:"欧洲核子中心"},
+  {n:"Nature",u:"https://www.nature.com",d:"自然期刊"},
+  {n:"Science",u:"https://www.science.org",d:"科学期刊"},
+  {n:"科学网",u:"https://www.sciencenet.cn",d:"科学社区"},
+  {n:"果壳网",u:"https://www.guokr.com",d:"科普网站"},
+  {n:"科学松鼠会",u:"https://songshuhui.net",d:"科普团体"},
+  {n:"中国国家天文",u:"https://www.astron.ac.cn",d:"天文科普"},
+  {n:"Stellarium",u:"https://stellarium.org",d:"虚拟星图"},
+  {n:"SETI",u:"https://www.seti.org",d:"地外文明搜索"},
+  {n:"World Wildlife",u:"https://www.worldwildlife.org",d:"野生动物保护"},
+  {n:"国家地理",u:"https://www.nationalgeographic.com",d:"国家地理"}
+ ]}
+]},
+{id:"law",icon:"⚖️",name:"法律 / 法务",children:[
+ {id:"law-main",name:"法律资源",items:[
+  {n:"中国法律服务网",u:"https://www.12348.gov.cn",d:"法援服务平台"},
+  {n:"北大法宝",u:"https://www.pkulaw.com",d:"法律数据库"},
+  {n:"无讼",u:"https://www.wusong.com",d:"法律平台"},
+  {n:"法信",u:"https://www.faxin.cn",d:"法律检索"},
+  {n:"找法网",u:"https://www.findlaw.cn",d:"法律咨询"},
+  {n:"华律网",u:"https://www.66law.cn",d:"律师咨询"},
+  {n:"法律快车",u:"https://www.lawtime.cn",d:"法律咨询"},
+  {n:"中国法院网",u:"https://www.chinacourt.org",d:"法院门户"},
+  {n:"Legal Information",u:"https://www.law.cornell.edu",d:"美国法律"},
+  {n:"Justia",u:"https://www.justia.com",d:"法律资源"}
+ ]}
+]},
+{id:"anime",icon:"🌸",name:"动漫 / 二次元",children:[
+ {id:"anime-main",name:"动漫平台",items:[
+  {n:"哔哩哔哩番剧",u:"https://www.bilibili.com",d:"正版番剧"},
+  {n:"樱花动漫",u:"https://www.yhmao.com",d:"在线番剧"},
+  {n:"动漫花园",u:"https://www.dmhy.org",d:"动漫字幕组"},
+  {n:"动漫之家",u:"https://www.dmzj.com",d:"动漫资讯"},
+  {n:"风车动漫",u:"https://www.fengchedm.com",d:"免费番剧"},
+  {n:"咪咪动漫",u:"https://www.mimidm.com",d:"在线动漫"},
+  {n:"Anime1",u:"https://anime1.me",d:"台番平台"},
+  {n:"9anime",u:"https://9anime.to",d:"英文番剧"},
+  {n:"KissAnime",u:"https://kissanime.com.ru",d:"经典番剧"},
+  {n:"AnimeDao",u:"https://animedao.to",d:"高清番剧"},
+  {n:"Crunchyroll",u:"https://www.crunchyroll.com",d:"正版动漫"},
+  {n:"Funimation",u:"https://www.funimation.com",d:"英文配音番"},
+  {n:"AnimeLab",u:"https://www.animelab.com",d:"澳新番剧"},
+  {n:"Bangumi",u:"https://bgm.tv",d:"番剧评分"},
+  {n:"番组计划",u:"https://bgm.tv",d:"追番管理"}
+ ]}
+]},
+{id:"comic",icon:"📓",name:"漫画",children:[
+ {id:"comic-main",name:"漫画平台",items:[
+  {n:"快看漫画",u:"https://www.kuaikanmanhua.com",d:"移动漫画"},
+  {n:"腾讯动漫",u:"https://ac.qq.com",d:"腾讯漫画"},
+  {n:"有妖气",u:"https://www.u17.com",d:"原创漫画"},
+  {n:"漫画堆",u:"https://www.manhuadui.com",d:"在线漫画"},
+  {n:"知音漫客",u:"https://www.zymk.cn",d:"漫画杂志"},
+  {n:"漫画DB",u:"https://www.manhuadb.com",d:"漫画数据库"},
+  {n:"Webtoon",u:"https://www.webtoons.com",d:"条漫平台"},
+  {n:"漫画人",u:"https://www.manhuaren.com",d:"在线漫画"},
+  {n:"鼠绘漫画",u:"https://www.shuhui.com",d:"漫画分享"},
+  {n:"漫画柜",u:"https://www.manhuagui.com",d:"漫画库"},
+  {n:"动漫屋",u:"https://www.dm5.com",d:"在线漫画"},
+  {n:"漫画补档",u:"https://www.mhbdm.com",d:"漫画补档"},
+  {n:"咪咕漫画",u:"https://www.migudm.cn",d:"移动漫画"}
+ ]}
+]},
+{id:"kid",icon:"🍼",name:"母婴 / 儿童",children:[
+ {id:"kid-main",name:"育儿母婴",items:[
+  {n:"宝宝树",u:"https://www.babytree.com",d:"育儿社区"},
+  {n:"育儿网",u:"https://www.ci123.com",d:"育儿门户"},
+  {n:"妈妈帮",u:"https://www.mama.cn",d:"妈妈社区"},
+  {n:"太平洋亲子",u:"https://www.pcbaby.com.cn",d:"亲子门户"},
+  {n:"宝宝知道",u:"https://baobao.baidu.com",d:"百度育儿"},
+  {n:"亲宝宝",u:"https://www.qbb6.com",d:"成长记录"},
+  {n:"贝瓦儿歌",u:"https://www.beva.com",d:"儿童儿歌"},
+  {n:"儿歌多多",u:"https://www.ergezhiduo.com",d:"儿歌动画"},
+  {n:"凯叔讲故事",u:"https://www.kaishu8.com",d:"儿童故事"},
+  {n:"宝宝巴士",u:"https://www.babybus.com",d:"儿童启蒙"},
+  {n:"洪恩",u:"https://www.ihuman.com",d:"儿童教育"},
+  {n:"叽里呱啦",u:"https://www.jiliguala.com",d:"英语启蒙"},
+  {n:"斑马AI",u:"https://www.banma.cn",d:"少儿AI课"},
+  {n:"小猿口算",u:"https://www.xiaoyuan.com",d:"口算练习"},
+  {n:"火花思维",u:"https://www.huohua.cn",d:"思维训练"},
+  {n:"编程猫",u:"https://www.codemao.cn",d:"少儿编程"}
+ ]}
+]},
+{id:"pet",icon:"🐾",name:"宠物",children:[
+ {id:"pet-main",name:"宠物服务",items:[
+  {n:"波奇宠物",u:"https://www.boqii.com",d:"宠物电商"},
+  {n:"狗民网",u:"https://www.goumin.com",d:"养狗社区"},
+  {n:"E宠",u:"https://www.epet.com",d:"宠物商城"},
+  {n:"宠物联萌",u:"https://www.petunion.com",d:"宠物社区"},
+  {n:"猫扑",u:"https://www.mopup.com",d:"宠物论坛"},
+  {n:"萌宠圈",u:"https://www.mengchong.com",d:"萌宠社区"},
+  {n:"新瑞鹏",u:"https://www.purrweb.com",d:"宠物医疗"},
+  {n:"宠物之家",u:"https://www.petfamily.com",d:"宠物平台"}
+ ]}
+]},
+{id:"finance2",icon:"📈",name:"投资 / 理财",children:[
+ {id:"finance2-main",name:"理财平台",items:[
+  {n:"天天基金",u:"https://www.1234567.com.cn",d:"基金申购"},
+  {n:"蚂蚁财富",u:"https://www.fund.eastmoney.com",d:"理财平台"},
+  {n:"蛋卷基金",u:"https://www.danjuanapp.com",d:"指数基金"},
+  {n:"且慢",u:"https://www.qieman.com",d:"理财规划"},
+  {n:"好买基金",u:"https://www.howbuy.com",d:"基金销售"},
+  {n:"盈米基金",u:"https://www.yingmi.cn",d:"基金投顾"},
+  {n:"理财魔方",u:"https://www.licaimofang.com",d:"智能投顾"},
+  {n:"雪球基金",u:"https://xueqiu.com",d:"基金讨论"},
+  {n:"同花顺理财",u:"https://www.10jqka.com.cn",d:"炒股软件"},
+  {n:"金投网",u:"https://www.cngold.org",d:"黄金投资"},
+  {n:"和讯理财",u:"https://money.hexun.com",d:"理财资讯"}
+ ]}
+]},
+{id:"insurance",icon:"🛡️",name:"保险",children:[
+ {id:"insurance-main",name:"保险服务",items:[
+  {n:"众安保险",u:"https://www.zhongan.com",d:"互联网保险"},
+  {n:"蚂蚁保",u:"https://www.antins.com",d:"蚂蚁保险"},
+  {n:"水滴保",u:"https://www.shuidi.cn",d:"保险商城"},
+  {n:"微保",u:"https://www.weibo.com",d:"微信保险"},
+  {n:"平安保险",u:"https://www.pingan.com",d:"综合保险"},
+  {n:"中国人寿",u:"https://www.e-chinalife.com",d:"寿险官网"},
+  {n:"泰康在线",u:"https://www.tk.cn",d:"泰康保险"},
+  {n:"太平洋保险",u:"https://www.cpic.com.cn",d:"太保官网"},
+  {n:"人保财险",u:"https://www.epicc.com.cn",d:"人保官网"},
+  {n:"新华保险",u:"https://www.newchinalife.com",d:"寿险"}
+ ]}
+]},
+{id:"realhome",icon:"🪑",name:"家居 / 装修",children:[
+ {id:"realhome-main",name:"家居装修",items:[
+  {n:"齐家网",u:"https://www.jia.com",d:"装修平台"},
+  {n:"土巴兔",u:"https://www.tubaobao.com",d:"装修管家"},
+  {n:"好好住",u:"https://www.haohaozhu.com",d:"家居社区"},
+  {n:"一兜糖",u:"https://www.yidoutang.com",d:"家居分享"},
+  {n:"酷家乐",u:"https://www.kujiale.com",d:"云设计"},
+  {n:"三维家",u:"https://www.3vjia.com",d:"家居设计"},
+  {n:"房天下",u:"https://www.fang.com",d:"房产家居"},
+  {n:"诸葛找房",u:"https://www.zhuge.com",d:"房产数据"},
+  {n:"欧派",u:"https://www.oppein.com",d:"定制家居"},
+  {n:"索菲亚",u:"https://www.sfy.com.cn",d:"衣柜定制"}
+ ]}
+]},
+{id:"astro",icon:"🔮",name:"星座 / 命理",children:[
+ {id:"astro-main",name:"星座运势",items:[
+  {n:"星座屋",u:"https://www.xingzuowu.com",d:"星座查询"},
+  {n:"新浪星座",u:"https://astro.sina.com.cn",d:"星座频道"},
+  {n:"腾讯星座",u:"https://astro.qq.com",d:"星座运势"},
+  {n:"第一星座",u:"https://www.d1xz.net",d:"星座网"},
+  {n:"占星网",u:"https://www.xingzuo360.com",d:"占星"},
+  {n:"同道大叔",u:"https://www.52tangdao.cn",d:"星座IP"},
+  {n:"测测",u:"https://www.cece.com",d:"命理测试"},
+  {n:"灵机文化",u:"https://www.lingji.com",d:"风水命理"}
+ ]}
+]},
+{id:"search",icon:"🔎",name:"搜索引擎",children:[
+ {id:"search-main",name:"搜索导航",items:[
+  {n:"百度",u:"https://www.baidu.com",d:"中文搜索"},
+  {n:"Google",u:"https://www.google.com",d:"全球搜索"},
+  {n:"Bing",u:"https://www.bing.com",d:"微软搜索"},
+  {n:"搜狗",u:"https://www.sogou.com",d:"搜狐搜索"},
+  {n:"360搜索",u:"https://www.so.com",d:"360搜索"},
+  {n:"神马",u:"https://www.sm.cn",d:"移动搜索"},
+  {n:"DuckDuckGo",u:"https://duckduckgo.com",d:"隐私搜索"},
+  {n:"Yandex",u:"https://www.yandex.com",d:"俄搜索"},
+  {n:"Yahoo",u:"https://www.yahoo.com",d:"门户搜索"},
+  {n:"头条搜索",u:"https://so.toutiao.com",d:"字节搜索"},
+  {n:"夸克搜索",u:"https://www.quark.cn",d:"夸克搜索"},
+  {n:"微信搜一搜",u:"https://weixin.qq.com",d:"微信搜索"},
+  {n:"秘塔搜索",u:"https://metaso.cn",d:"AI搜索"},
+  {n:"Brave Search",u:"https://search.brave.com",d:"隐私搜索"}
+ ]}
+]},
+{id:"code",icon:"💻",name:"开源 / 代码托管",children:[
+ {id:"code-main",name:"代码平台",items:[
+  {n:"GitHub",u:"https://github.com",d:"全球代码托管"},
+  {n:"GitLab",u:"https://gitlab.com",d:"代码协作"},
+  {n:"Bitbucket",u:"https://bitbucket.org",d:"Atlassian代码"},
+  {n:"Gitee",u:"https://gitee.com",d:"码云托管"},
+  {n:"Coding",u:"https://coding.net",d:"腾讯云代码"},
+  {n:"SourceForge",u:"https://sourceforge.net",d:"老牌开源"},
+  {n:"npm",u:"https://www.npmjs.com",d:"Node包管理"},
+  {n:"PyPI",u:"https://pypi.org",d:"Python包"},
+  {n:"Maven",u:"https://mvnrepository.com",d:"Java包"},
+  {n:"Docker Hub",u:"https://hub.docker.com",d:"容器镜像"},
+  {n:"Crates",u:"https://crates.io",d:"Rust包"},
+  {n:"Packagist",u:"https://packagist.org",d:"PHP包"},
+  {n:"CodePen",u:"https://codepen.io",d:"前端演示"},
+  {n:"JSFiddle",u:"https://jsfiddle.net",d:"前端沙盒"},
+  {n:"StackBlitz",u:"https://stackblitz.com",d:"在线IDE"},
+  {n:"CodeSandbox",u:"https://codesandbox.io",d:"云端IDE"},
+  {n:"Glitch",u:"https://glitch.com",d:"协作编程"},
+  {n:"Hugging Face",u:"https://huggingface.co",d:"AI模型库"}
+ ]}
+]},
+{id:"framework",icon:"🧩",name:"开发框架文档",children:[
+ {id:"framework-main",name:"框架文档",items:[
+  {n:"React",u:"https://react.dev",d:"前端框架"},
+  {n:"Vue",u:"https://vuejs.org",d:"渐进式框架"},
+  {n:"Angular",u:"https://angular.dev",d:"谷歌框架"},
+  {n:"Svelte",u:"https://svelte.dev",d:"编译框架"},
+  {n:"Next.js",u:"https://nextjs.org",d:"React框架"},
+  {n:"Nuxt",u:"https://nuxt.com",d:"Vue框架"},
+  {n:"Node.js",u:"https://nodejs.org",d:"服务端JS"},
+  {n:"Deno",u:"https://deno.com",d:"安全运行时"},
+  {n:"Bun",u:"https://bun.sh",d:"JS运行时"},
+  {n:"Django",u:"https://www.djangoproject.com",d:"Python框架"},
+  {n:"Flask",u:"https://flask.palletsprojects.com",d:"轻量Python"},
+  {n:"Spring",u:"https://spring.io",d:"Java框架"},
+  {n:"Laravel",u:"https://laravel.com",d:"PHP框架"},
+  {n:"Rails",u:"https://rubyonrails.org",d:"Ruby框架"},
+  {n:"TensorFlow",u:"https://www.tensorflow.org",d:"深度学习"},
+  {n:"PyTorch",u:"https://pytorch.org",d:"AI框架"},
+  {n:"Kubernetes",u:"https://kubernetes.io",d:"容器编排"},
+  {n:"Electron",u:"https://www.electronjs.org",d:"桌面应用"}
+ ]}
+]},
+{id:"os",icon:"🖥️",name:"操作系统",children:[
+ {id:"os-main",name:"系统与发行版",items:[
+  {n:"Windows",u:"https://www.microsoft.com/windows",d:"微软系统"},
+  {n:"macOS",u:"https://www.apple.com/macos",d:"苹果系统"},
+  {n:"Ubuntu",u:"https://ubuntu.com",d:"主流Linux"},
+  {n:"Debian",u:"https://www.debian.org",d:"稳定发行版"},
+  {n:"Fedora",u:"https://fedoraproject.org",d:"红帽社区"},
+  {n:"Arch Linux",u:"https://archlinux.org",d:"滚动发行"},
+  {n:"Linux Mint",u:"https://linuxmint.com",d:"易用Linux"},
+  {n:"deepin",u:"https://www.deepin.org",d:"国产系统"},
+  {n:"统信UOS",u:"https://www.uniontech.com",d:"国产OS"},
+  {n:"优麒麟",u:"https://www.ubuntukylin.com",d:"麒麟系统"},
+  {n:"Android",u:"https://www.android.com",d:"谷歌移动"},
+  {n:"iOS",u:"https://www.apple.com/ios",d:"苹果移动"},
+  {n:"HarmonyOS",u:"https://www.harmonyos.com",d:"鸿蒙系统"},
+  {n:"ChromeOS",u:"https://www.google.com/chromebook",d:"谷歌笔记本"}
+ ]}
+]},
+{id:"security",icon:"🔐",name:"网络安全",children:[
+ {id:"security-main",name:"安全工具",items:[
+  {n:"火绒",u:"https://www.huorong.cn",d:"国产杀软"},
+  {n:"360安全卫士",u:"https://www.360.cn",d:"安全卫士"},
+  {n:"腾讯电脑管家",u:"https://guanjia.qq.com",d:"电脑管家"},
+  {n:"金山毒霸",u:"https://www.duba.net",d:"毒霸"},
+  {n:"卡巴斯基",u:"https://www.kaspersky.com",d:"俄杀软"},
+  {n:"Avast",u:"https://www.avast.com",d:"免费杀软"},
+  {n:"AVG",u:"https://www.avg.com",d:"免费杀软"},
+  {n:"Bitdefender",u:"https://www.bitdefender.com",d:"防病毒"},
+  {n:"Norton",u:"https://www.norton.com",d:"诺顿安全"},
+  {n:"Malwarebytes",u:"https://www.malwarebytes.com",d:"反恶意"},
+  {n:"VirusTotal",u:"https://www.virustotal.com",d:"文件扫描"},
+  {n:"Have I Been Pwned",u:"https://haveibeenpwned.com",d:"密码泄露查询"},
+  {n:"1Password",u:"https://1password.com",d:"密码管理"},
+  {n:"LastPass",u:"https://www.lastpass.com",d:"密码管理"},
+  {n:"KeePass",u:"https://keepass.info",d:"开源密码"},
+  {n:"奇安信",u:"https://www.qianxin.com",d:"企业安全"},
+  {n:"深信服",u:"https://www.sangfor.com",d:"网络安全"}
+ ]}
+]},
+{id:"crypto",icon:"🪙",name:"区块链 / 加密货币",children:[
+ {id:"crypto-main",name:"加密货币",items:[
+  {n:"Binance",u:"https://www.binance.com",d:"币安交易所"},
+  {n:"OKX",u:"https://www.okx.com",d:"欧易交易所"},
+  {n:"Coinbase",u:"https://www.coinbase.com",d:"美国交易所"},
+  {n:"Huobi",u:"https://www.huobi.com",d:"火币"},
+  {n:"Kraken",u:"https://www.kraken.com",d:"老牌交易所"},
+  {n:"Bybit",u:"https://www.bybit.com",d:"衍生品交易"},
+  {n:"Gate.io",u:"https://www.gate.io",d:"gate交易所"},
+  {n:"Etherscan",u:"https://etherscan.io",d:"以太坊浏览器"},
+  {n:"BscScan",u:"https://bscscan.com",d:"币安链浏览器"},
+  {n:"CoinGecko",u:"https://www.coingecko.com",d:"行情数据"},
+  {n:"CoinMarketCap",u:"https://coinmarketcap.com",d:"市值排行"},
+  {n:"非小号",u:"https://www.fxh.io",d:"中文行情"},
+  {n:"MyToken",u:"https://www.mytoken.org",d:"行情APP"},
+  {n:"律动BlockBeats",u:"https://www.theblockbeats.info",d:"加密媒体"},
+  {n:"链闻",u:"https://www.chainnews.com",d:"链闻媒体"}
+ ]}
+]},
+{id:"forum",icon:"🗨️",name:"论坛 / 社区",children:[
+ {id:"forum-main",name:"网络论坛",items:[
+  {n:"V2EX",u:"https://www.v2ex.com",d:"创意论坛"},
+  {n:"NGA",u:"https://nga.178.com",d:"游戏论坛"},
+  {n:"吾爱破解",u:"https://www.52pojie.cn",d:"安全逆向"},
+  {n:"精易论坛",u:"https://bbs.125.la",d:"易语言论坛"},
+  {n:"卡饭论坛",u:"https://bbs.kafan.cn",d:"安全论坛"},
+  {n:"远景论坛",u:"https://bbs.pcbeta.com",d:"系统论坛"},
+  {n:"天涯社区",u:"https://bbs.tianya.cn",d:"综合论坛"},
+  {n:"铁血社区",u:"https://bbs.tiexue.net",d:"军事论坛"},
+  {n:"19楼",u:"https://www.19lou.com",d:"城市论坛"},
+  {n:"宽带山",u:"https://www.kdslife.com",d:"上海论坛"},
+  {n:"Hostloc",u:"https://hostloc.com",d:"主机交流"},
+  {n:"全球主机交流",u:"https://www.hostloc.com",d:"服务器论坛"},
+  {n:"Chiphell",u:"https://www.chiphell.com",d:"硬件论坛"},
+  {n:"数字尾巴论坛",u:"https://www.dgtle.com",d:"数码论坛"}
+ ]}
+]},
+{id:"museum",icon:"🏛️",name:"博物馆 / 文化",children:[
+ {id:"museum-main",name:"文博场馆",items:[
+  {n:"故宫博物院",u:"https://www.dpm.org.cn",d:"故宫官网"},
+  {n:"中国国家博物馆",u:"https://www.chnmuseum.cn",d:"国博官网"},
+  {n:"上海博物馆",u:"https://www.shanghaimuseum.net",d:"上博"},
+  {n:"南京博物院",u:"https://www.njmuseum.com",d:"南博"},
+  {n:"陕西历史博物馆",u:"https://www.sxhm.com",d:"陕历博"},
+  {n:"湖南省博物馆",u:"https://www.hnmuseum.com",d:"湘博"},
+  {n:"浙江省博物馆",u:"https://www.zhejiangmuseum.com",d:"浙博"},
+  {n:"故宫数字文物",u:"https://digicol.dpm.org.cn",d:"数字文物库"},
+  {n:"大英博物馆",u:"https://www.britishmuseum.org",d:"大英博物"},
+  {n:"卢浮宫",u:"https://www.louvre.fr",d:"法国卢浮宫"},
+  {n:"大都会艺术",u:"https://www.metmuseum.org",d:"大都会"},
+  {n:"Google艺术",u:"https://artsandculture.google.com",d:"艺术文化"}
+ ]}
+]},
+{id:"tv",icon:"📺",name:"电视台",children:[
+ {id:"tv-main",name:"电视频道",items:[
+  {n:"芒果TV",u:"https://www.mgtv.com",d:"湖南卫视"},
+  {n:"咪咕视频",u:"https://www.miguvideo.com",d:"移动视频"},
+  {n:"百视TV",u:"https://www.bestv.com.cn",d:"上海广电"},
+  {n:"浙江卫视",u:"https://www.zjstv.com",d:"浙江电视"},
+  {n:"江苏卫视",u:"https://www.jstv.com",d:"江苏电视"},
+  {n:"东方卫视",u:"https://www.kankanews.com",d:"上海电视"},
+  {n:"北京卫视",u:"https://www.btv.org",d:"北京电视"},
+  {n:"TVB",u:"https://www.tvb.com",d:"香港无线"},
+  {n:"凤凰卫视",u:"https://www.ifeng.com",d:"凤凰电视"},
+  {n:"深圳卫视",u:"https://www.sztv.com.cn",d:"深圳电视"},
+  {n:"卡酷少儿",u:"https://www.kakucartoon.com",d:"少儿频道"}
+ ]}
+]},
+{id:"school",icon:"🏫",name:"高校 / 教育",children:[
+ {id:"school-cn",name:"国内高校",items:[
+  {n:"清华大学",u:"https://www.tsinghua.edu.cn",d:"清华官网"},
+  {n:"北京大学",u:"https://www.pku.edu.cn",d:"北大官网"},
+  {n:"复旦大学",u:"https://www.fudan.edu.cn",d:"复旦官网"},
+  {n:"上海交大",u:"https://www.sjtu.edu.cn",d:"交大官网"},
+  {n:"浙江大学",u:"https://www.zju.edu.cn",d:"浙大官网"},
+  {n:"中科大",u:"https://www.ustc.edu.cn",d:"中科大"},
+  {n:"南京大学",u:"https://www.nju.edu.cn",d:"南大官网"},
+  {n:"武汉大学",u:"https://www.whu.edu.cn",d:"武大官网"},
+  {n:"华中科大",u:"https://www.hust.edu.cn",d:"华科官网"},
+  {n:"中山大学",u:"https://www.sysu.edu.cn",d:"中山官网"},
+  {n:"哈工大",u:"https://www.hit.edu.cn",d:"哈工大"},
+  {n:"同济大学",u:"https://www.tongji.edu.cn",d:"同济官网"},
+  {n:"北航",u:"https://www.buaa.edu.cn",d:"北航官网"},
+  {n:"北邮",u:"https://www.bupt.edu.cn",d:"北邮官网"}
+ ]},
+ {id:"school-intl",name:"国外高校",items:[
+  {n:"MIT",u:"https://www.mit.edu",d:"麻省理工"},
+  {n:"Stanford",u:"https://www.stanford.edu",d:"斯坦福"},
+  {n:"Harvard",u:"https://www.harvard.edu",d:"哈佛"},
+  {n:"Cambridge",u:"https://www.cam.ac.uk",d:"剑桥"},
+  {n:"Oxford",u:"https://www.ox.ac.uk",d:"牛津"},
+  {n:"ETH Zurich",u:"https://ethz.ch",d:"苏黎世联邦"},
+  {n:"UC Berkeley",u:"https://www.berkeley.edu",d:"伯克利"},
+  {n:"Caltech",u:"https://www.caltech.edu",d:"加州理工"}
+ ]}
+]},
+{id:"exam",icon:"📝",name:"考试 / 考证",children:[
+ {id:"exam-main",name:"考试服务",items:[
+  {n:"考研帮",u:"https://www.kaoyan.com",d:"考研社区"},
+  {n:"粉笔",u:"https://www.fenbi.com",d:"公考培训"},
+  {n:"华图",u:"https://www.huatu.com",d:"公考机构"},
+  {n:"中公",u:"https://www.offcn.com",d:"公考机构"},
+  {n:"腰果公考",u:"https://www.ygkao.com",d:"公考"},
+  {n:"一起考教师",u:"https://www.yqkjs.com",d:"教师考试"},
+  {n:"研招网",u:"https://yz.chsi.com.cn",d:"研究生招生"},
+  {n:"学信网",u:"https://www.chsi.com.cn",d:"学籍查询"},
+  {n:"中国教育在线",u:"https://www.eol.cn",d:"教育门户"},
+  {n:"托福",u:"https://www.ets.org/toefl",d:"托福官网"},
+  {n:"雅思",u:"https://www.chinaielts.org",d:"雅思官网"},
+  {n:"GRE",u:"https://www.ets.org/gre",d:"GRE官网"},
+  {n:"GMAT",u:"https://www.mba.com",d:"GMAT官网"},
+  {n:"四六级",u:"https://cet.neea.edu.cn",d:"四六级报名"}
+ ]}
+]},
+{id:"lang",icon:"🗣️",name:"语言学习",children:[
+ {id:"lang-main",name:"语言工具",items:[
+  {n:"Memrise",u:"https://www.memrise.com",d:"记忆单词"},
+  {n:"Busuu",u:"https://www.busuu.com",d:"语言课程"},
+  {n:"Rosetta Stone",u:"https://www.rosettastone.com",d:"沉浸式学习"},
+  {n:"HelloTalk",u:"https://www.hellotalk.com",d:"语伴社区"},
+  {n:"Tandem",u:"https://www.tandem.net",d:"语言交换"},
+  {n:"italki",u:"https://www.italki.com",d:"外教平台"},
+  {n:"可可英语",u:"https://www.kekenet.com",d:"英语学习"},
+  {n:"每日英语听力",u:"https://www.eudic.net",d:"听力训练"},
+  {n:"VOA",u:"https://www.voachinese.com",d:"慢速英语"},
+  {n:"BBC Learning",u:"https://www.bbc.co.uk/learningenglish",d:"英式英语"},
+  {n:"沪江小D",u:"https://dict.hjenglish.com",d:"在线词典"},
+  {n:"海词",u:"https://www.dict.cn",d:"词典查询"}
+ ]}
+]},
+{id:"hobby",icon:"🎏",name:"兴趣爱好",children:[
+ {id:"hobby-main",name:"兴趣社区",items:[
+  {n:"模型天下",u:"https://www.moxing.net",d:"模型论坛"},
+  {n:"钓鱼人",u:"https://www.diaoyuren.com",d:"钓鱼社区"},
+  {n:"书法网",u:"https://www.shufa.com",d:"书法社区"},
+  {n:"围棋宝典",u:"https://www.weiqi.com",d:"围棋对弈"},
+  {n:"中国象棋",u:"https://www.xqbase.com",d:"象棋基地"},
+  {n:"手工客",u:"https://www.shougongke.com",d:"手作社区"},
+  {n:"编织人生",u:"https://www.bianzhirensheng.com",d:"编织社区"},
+  {n:"园艺网",u:"https://www.yuanyi.com",d:"园艺论坛"},
+  {n:"吉他社",u:"https://www.jitashe.org",d:"吉他谱"},
+  {n:"虫部落",u:"https://search.chongbuluo.com",d:"兴趣搜索"}
+ ]}
+]},
+{id:"charity",icon:"🤝",name:"公益 / 慈善",children:[
+ {id:"charity-main",name:"公益平台",items:[
+  {n:"腾讯公益",u:"https://gongyi.qq.com",d:"腾讯慈善"},
+  {n:"支付宝公益",u:"https://love.alipay.com",d:"蚂蚁公益"},
+  {n:"新浪公益",u:"https://gongyi.sina.com.cn",d:"新浪公益"},
+  {n:"壹基金",u:"https://www.onefoundation.cn",d:"公益基金会"},
+  {n:"联劝网",u:"https://www.lianquan.org",d:"公益捐赠"},
+  {n:"中华慈善总会",u:"https://www.chinacharityfederation.org",d:"慈善总会"},
+  {n:"公益时报",u:"https://www.gongyishibao.com",d:"公益媒体"}
+ ]}
+]},
+{id:"radio",icon:"📻",name:"电台 / 广播",children:[
+ {id:"radio-main",name:"广播电台",items:[
+  {n:"豆瓣FM",u:"https://fm.douban.com",d:"豆瓣电台"},
+  {n:"阿基米德",u:"https://www.aqd.cn",d:"广播APP"},
+  {n:"听听FM",u:"https://www.tingtingfm.com",d:"电台聚合"},
+  {n:"NPR",u:"https://www.npr.org",d:"美国公共广播"},
+  {n:"BBC Radio",u:"https://www.bbc.co.uk/sounds",d:"英广之声"},
+  {n:"中央人民广播",u:"https://www.cnr.cn",d:"国家电台"},
+  {n:"蜻蜓FM",u:"https://www.qingting.fm",d:"网络电台"}
+ ]}
+]},
+{id:"email",icon:"✉️",name:"邮箱服务",children:[
+ {id:"email-main",name:"电子邮箱",items:[
+  {n:"QQ邮箱",u:"https://mail.qq.com",d:"腾讯邮箱"},
+  {n:"163网易邮箱",u:"https://mail.163.com",d:"网易邮箱"},
+  {n:"Gmail",u:"https://mail.google.com",d:"谷歌邮箱"},
+  {n:"Outlook",u:"https://outlook.live.com",d:"微软邮箱"},
+  {n:"新浪邮箱",u:"https://mail.sina.com",d:"新浪邮箱"},
+  {n:"139邮箱",u:"https://mail.10086.cn",d:"移动邮箱"},
+  {n:"ProtonMail",u:"https://proton.me",d:"加密邮箱"},
+  {n:"Yahoo Mail",u:"https://mail.yahoo.com",d:"雅虎邮箱"},
+  {n:"Zoho Mail",u:"https://www.zoho.com/mail",d:"企业邮箱"},
+  {n:"阿里邮箱",u:"https://mail.aliyun.com",d:"阿里邮箱"},
+  {n:"腾讯企业邮",u:"https://exmail.qq.com",d:"企业邮箱"},
+  {n:"FastMail",u:"https://www.fastmail.com",d:"付费邮箱"},
+  {n:"Tutanota",u:"https://tutanota.com",d:"加密邮箱"}
+ ]}
+]},
+{id:"cloud",icon:"☁️",name:"网盘 / 云存储",children:[
+ {id:"cloud-main",name:"云盘存储",items:[
+  {n:"百度网盘",u:"https://pan.baidu.com",d:"百度云盘"},
+  {n:"阿里云盘",u:"https://www.aliyundrive.com",d:"阿里云盘"},
+  {n:"115网盘",u:"https://115.com",d:"115云盘"},
+  {n:"蓝奏云",u:"https://www.lanzou.com",d:"蓝奏云"},
+  {n:"腾讯微云",u:"https://www.weiyun.com",d:"腾讯云"},
+  {n:"天翼云盘",u:"https://cloud.189.cn",d:"电信云盘"},
+  {n:"移动云盘",u:"https://caiyun.139.com",d:"移动云"},
+  {n:"Dropbox",u:"https://www.dropbox.com",d:"Dropbox"},
+  {n:"Google Drive",u:"https://drive.google.com",d:"谷歌云盘"},
+  {n:"OneDrive",u:"https://onedrive.live.com",d:"微软云"},
+  {n:"pCloud",u:"https://www.pcloud.com",d:"pCloud"},
+  {n:"MEGA",u:"https://mega.nz",d:"加密云盘"},
+  {n:"MediaFire",u:"https://www.mediafire.com",d:"MediaFire"},
+  {n:"城通网盘",u:"https://www.ctfile.com",d:"城通云"}
+ ]}
+]},
+{id:"doc",icon:"📄",name:"文档 / 协作",children:[
+ {id:"doc-main",name:"协作文档",items:[
+  {n:"飞书",u:"https://www.feishu.cn",d:"字节协作"},
+  {n:"钉钉",u:"https://www.dingtalk.com",d:"阿里办公"},
+  {n:"企业微信",u:"https://work.weixin.qq.com",d:"腾讯办公"},
+  {n:"腾讯文档",u:"https://docs.qq.com",d:"在线文档"},
+  {n:"石墨文档",u:"https://shimo.im",d:"协作文档"},
+  {n:"金山文档",u:"https://www.kdocs.cn",d:"WPS云"},
+  {n:"语雀",u:"https://www.yuque.com",d:"知识库"},
+  {n:"Notion",u:"https://www.notion.so",d:"笔记知识"},
+  {n:"Coda",u:"https://coda.io",d:"文档表格"},
+  {n:"Airtable",u:"https://airtable.com",d:"数据库表"},
+  {n:"维格表",u:"https://vika.cn",d:"多维表格"},
+  {n:"印象笔记",u:"https://www.yinxiang.com",d:"Evernote"},
+  {n:"有道云笔记",u:"https://note.youdao.com",d:"网易笔记"},
+  {n:"OneNote",u:"https://www.onenote.com",d:"微软笔记"},
+  {n:"百度文库",u:"https://wenku.baidu.com",d:"文档分享"},
+  {n:"道客巴巴",u:"https://www.doc88.com",d:"文档下载"},
+  {n:"原创力文档",u:"https://max.book118.com",d:"文档库"}
+ ]}
+]},
+{id:"tool2",icon:"⚡",name:"效率 / 办公",children:[
+ {id:"tool2-main",name:"效率工具",items:[
+  {n:"百度脑图",u:"https://naotu.baidu.com",d:"在线思维导图"},
+  {n:"ProcessOn",u:"https://www.processon.com",d:"流程图"},
+  {n:"XMind",u:"https://xmind.cn",d:"思维导图"},
+  {n:"MindMaster",u:"https://www.edrawsoft.cn",d:"亿图脑图"},
+  {n:"腾讯文档",u:"https://docs.qq.com",d:"在线表格"},
+  {n:"飞书多维表",u:"https://www.feishu.cn",d:"多维表格"},
+  {n:"幕布",u:"https://mubu.com",d:"大纲笔记"},
+  {n:"滴答清单",u:"https://www.dida365.com",d:"任务管理"},
+  {n:"Todoist",u:"https://todoist.com",d:"待办清单"},
+  {n:"Trello",u:"https://trello.com",d:"看板管理"},
+  {n:"Teambition",u:"https://www.teambition.com",d:"团队协作"},
+  {n:"Worktile",u:"https://worktile.com",d:"项目管理"},
+  {n:"伙伴云",u:"https://www.huoban.com",d:"零代码"},
+  {n:"明道云",u:"https://www.mingdao.net",d:"零代码"}
+ ]}
+]},
+{id:"dating",icon:"💞",name:"婚恋 / 交友",children:[
+ {id:"dating-main",name:"婚恋平台",items:[
+  {n:"珍爱网",u:"https://www.zhenai.com",d:"婚恋交友"},
+  {n:"百合网",u:"https://www.baihe.com",d:"婚恋平台"},
+  {n:"世纪佳缘",u:"https://www.jiayuan.com",d:"婚恋交友"},
+  {n:"有缘网",u:"https://www.youyuan.com",d:"交友平台"},
+  {n:"网易花田",u:"https://love.163.com",d:"网易婚恋"},
+  {n:"一线姻缘",u:"https://www.yixian.com",d:"婚恋介绍"},
+  {n:"对对碰",u:"https://www.ddpai.com",d:"视频交友"},
+  {n:"伊对",u:"https://www.yidui.com",d:"恋爱社交"}
+ ]}
+]},
+{id:"secondhand",icon:"♻️",name:"二手 / 闲置",children:[
+ {id:"secondhand-main",name:"二手交易",items:[
+  {n:"闲鱼",u:"https://www.goofish.com",d:"阿里二手"},
+  {n:"转转",u:"https://www.zhuanzhuan.com",d:"58二手"},
+  {n:"拍拍",u:"https://www.paipai.com",d:"京东二手"},
+  {n:"孔夫子旧书",u:"https://www.kongfz.com",d:"旧书交易"},
+  {n:"多抓鱼",u:"https://www.duozhuayu.com",d:"二手书衣"},
+  {n:"红布林",u:"https://www.plum.com",d:"二手奢侈品"},
+  {n:"只二",u:"https://www.zhiyi.com",d:"二手女装"},
+  {n:"爱回收",u:"https://www.aihuishou.com",d:"数码回收"},
+  {n:"回收宝",u:"https://www.huishoubao.com",d:"手机回收"},
+  {n:"找靓机",u:"https://www.zhaoliangji.com",d:"二手手机"},
+  {n:"闲转",u:"https://www.xianzhuan.com",d:"校园二手"}
+ ]}
+]},
+{id:"outdoor",icon:"🏕️",name:"户外 / 旅行",children:[
+ {id:"outdoor-main",name:"户外攻略",items:[
+  {n:"8264户外",u:"https://www.8264.com",d:"户外门户"},
+  {n:"绿野",u:"https://www.lvye.com",d:"户外社区"},
+  {n:"磨房",u:"https://www.doyouhike.net",d:"户外论坛"},
+  {n:"两步路",u:"https://www.2bulu.com",d:"户外轨迹"},
+  {n:"六只脚",u:"https://www.foooooot.com",d:"徒步轨迹"},
+  {n:"户外资料网",u:"https://www.outdoors.com",d:"户外资讯"},
+  {n:"马蜂窝",u:"https://www.mafengwo.cn",d:"旅游攻略"},
+  {n:"游记攻略",u:"https://you.ctrip.com",d:"携程游记"}
+ ]}
+]},
+{id:"drink",icon:"🥤",name:"饮品 / 咖啡",children:[
+ {id:"drink-main",name:"饮品品牌",items:[
+  {n:"瑞幸咖啡",u:"https://www.luckincoffee.com",d:"瑞幸官网"},
+  {n:"星巴克",u:"https://www.starbucks.com.cn",d:"星巴克"},
+  {n:"喜茶",u:"https://www.heytea.com",d:"喜茶官网"},
+  {n:"奈雪的茶",u:"https://www.naixue.com",d:"奈雪官网"},
+  {n:"蜜雪冰城",u:"https://www.mxbc.com",d:"蜜雪官网"},
+  {n:"茶颜悦色",u:"https://www.chayanyue.com",d:"长沙茶饮"},
+  {n:"三顿半",u:"https://www.sanduanban.com",d:"精品咖啡"},
+  {n:"永璞",u:"https://www.yongpu.com",d:"咖啡液"},
+  {n:"Manner",u:"https://www.mannercoffee.com",d:"精品咖啡"},
+  {n:"库迪咖啡",u:"https://www.cotticoffee.com",d:"库迪"}
+ ]}
+]},
+{id:"motorcycle",icon:"🏍️",name:"摩托 / 自行车",children:[
+ {id:"motorcycle-main",name:"摩托骑行",items:[
+  {n:"摩托范",u:"https://www.motofan.cn",d:"摩托社区"},
+  {n:"牛摩网",u:"https://www.newmotor.com.cn",d:"摩托门户"},
+  {n:"自行车在线",u:"https://www.bikelife.com.cn",d:"骑行门户"},
+  {n:"骑行者",u:"https://www.cycling.cn",d:"骑行社区"},
+  {n:"美骑",u:"https://www.biketo.com",d:"自行车媒体"},
+  {n:"摩托迷",u:"https://www.moto8.com",d:"摩托论坛"}
+ ]}
+]},
+{id:"psych",icon:"🧠",name:"心理 / 情感",children:[
+ {id:"psych-main",name:"心理平台",items:[
+  {n:"壹心理",u:"https://www.xinli001.com",d:"心理服务平台"},
+  {n:"简单心理",u:"https://www.jiandanxinli.com",d:"专业心理咨询"},
+  {n:"看见心理",u:"https://www.kanjianxinli.com",d:"武志红心理"},
+  {n:"好心情",u:"https://www.haoxinqing.com",d:"心理医疗"},
+  {n:"BetterHelp",u:"https://www.betterhelp.com",d:"在线心理咨询"},
+  {n:"Talkspace",u:"https://www.talkspace.com",d:"心理治疗"},
+  {n:"KnowYourself",u:"https://www.knowyourself.cc",d:"自我探索"}
+ ]}
+]},
+{id:"art",icon:"🖼️",name:"艺术 / 美术馆",children:[
+ {id:"art-main",name:"艺术平台",items:[
+  {n:"雅昌艺术",u:"https://www.artron.net",d:"艺术门户"},
+  {n:"艺术中国",u:"https://www.artchina.com",d:"艺术媒体"},
+  {n:"中央美院",u:"https://www.cafa.edu.cn",d:"央美官网"},
+  {n:"中国美术馆",u:"https://www.namoc.org",d:"美术馆"},
+  {n:"美术网",u:"https://www.meishu.com",d:"美术资讯"},
+  {n:"涂鸦王国",u:"https://www.gracg.com",d:"插画社区"},
+  {n:"Zeitgeist",u:"https://www.zeither.com",d:"艺术杂志"},
+  {n:"Artsy",u:"https://www.artsy.net",d:"艺术交易"}
+ ]}
+]},
+{id:"weather",icon:"🌤️",name:"天气 / 气象",children:[
+ {id:"weather-main",name:"天气服务",items:[
+  {n:"中国天气网",u:"https://www.weather.com.cn",d:"官方天气"},
+  {n:"中央气象台",u:"https://www.nmc.cn",d:"气象预报"},
+  {n:"墨迹天气",u:"https://www.moji.com",d:"天气APP"},
+  {n:"彩云天气",u:"https://caiyunapp.com",d:"分钟级降雨"},
+  {n:"AccuWeather",u:"https://www.accuweather.com",d:"全球天气"},
+  {n:"Weather.com",u:"https://weather.com",d:"美天气"},
+  {n:"Windy",u:"https://www.windy.com",d:"风场可视化"},
+  {n:"和风天气",u:"https://www.qweather.com",d:"开发天气API"}
+ ]}
+]},
+{id:"finance3",icon:"🏦",name:"国际银行",children:[
+ {id:"finance3-main",name:"海外银行",items:[
+  {n:"HSBC",u:"https://www.hsbc.com",d:"汇丰银行"},
+  {n:"Citibank",u:"https://www.citibank.com",d:"花旗银行"},
+  {n:"Bank of America",u:"https://www.bankofamerica.com",d:"美银"},
+  {n:"Chase",u:"https://www.chase.com",d:"摩根大通"},
+  {n:"Wells Fargo",u:"https://www.wellsfargo.com",d:"富国银行"},
+  {n:"Barclays",u:"https://www.barclays.com",d:"巴克莱"},
+  {n:"Deutsche Bank",u:"https://www.db.com",d:"德银"},
+  {n:"Standard Chartered",u:"https://www.sc.com",d:"渣打银行"}
+ ]}
+]},
+{id:"insurance2",icon:"🛡️",name:"国际保险",children:[
+ {id:"insurance2-main",name:"海外保险",items:[
+  {n:"Allianz",u:"https://www.allianz.com",d:"安联保险"},
+  {n:"AXA",u:"https://www.axa.com",d:"安盛保险"},
+  {n:"State Farm",u:"https://www.statefarm.com",d:"州 farm"},
+  {n:"Geico",u:"https://www.geico.com",d:"车险"},
+  {n:"Prudential",u:"https://www.prudential.com",d:"保诚"},
+  {n:"AIG",u:"https://www.aig.com",d:"美亚保险"}
+ ]}
+]},
+{id:"studyabroad",icon:"✈️",name:"留学 / 出国",children:[
+ {id:"studyabroad-main",name:"留学服务",items:[
+  {n:"启德教育",u:"https://www.eic.org.cn",d:"留学机构"},
+  {n:"金吉列",u:"https://www.jjl.cn",d:"留学服务"},
+  {n:"澳际留学",u:"https://www.aoji.cn",d:"澳洲留学"},
+  {n:"啄木鸟",u:"https://www.zmnedu.com",d:"美国留学"},
+  {n:"顺顺留学",u:"https://www.shunshunliuxue.com",d:"留学平台"},
+  {n:"芥末留学",u:"https://www.jiemo.cn",d:"日本留学"},
+  {n:"一亩三分地",u:"https://www.1point3acres.com",d:"留学求职"},
+  {n:"未名空间",u:"https://www.mitbbs.com",d:"北美华人"}
+ ]}
+]},
+{id:"freelance",icon:"🧳",name:"自由职业 / 外包",children:[
+ {id:"freelance-main",name:"兼职外包",items:[
+  {n:"Upwork",u:"https://www.upwork.com",d:"国际外包"},
+  {n:"Fiverr",u:"https://www.fiverr.com",d:"任务外包"},
+  {n:"猪八戒",u:"https://www.zbj.com",d:"服务众包"},
+  {n:"码市",u:"https://codemart.com",d:"程序员外包"},
+  {n:"自由人",u:"https://www.freeman.com",d:"创意外包"},
+  {n:"云沃客",u:"https://www.clouderwork.com",d:"兼职平台"},
+  {n:"圆领",u:"https://www.yuanling.com",d:"远程工作"},
+  {n:"英选",u:"https://www.yingxuan.com",d:"技术外包"}
+ ]}
+]},
+{id:"cloud2",icon:"🌐",name:"云计算 / 服务商",children:[
+ {id:"cloud2-main",name:"云服务",items:[
+  {n:"阿里云",u:"https://www.aliyun.com",d:"阿里云"},
+  {n:"腾讯云",u:"https://cloud.tencent.com",d:"腾讯云"},
+  {n:"华为云",u:"https://www.huaweicloud.com",d:"华为云"},
+  {n:"百度智能云",u:"https://cloud.baidu.com",d:"百度云"},
+  {n:"AWS",u:"https://aws.amazon.com",d:"亚马逊云"},
+  {n:"Azure",u:"https://azure.microsoft.com",d:"微软云"},
+  {n:"Google Cloud",u:"https://cloud.google.com",d:"谷歌云"},
+  {n:"七牛云",u:"https://www.qiniu.com",d:"对象存储"},
+  {n:"又拍云",u:"https://www.upyun.com",d:"CDN云"},
+  {n:"青云",u:"https://www.qingcloud.com",d:"企业云"},
+  {n:"UCloud",u:"https://www.ucloud.cn",d:"云计算"},
+  {n:"京东云",u:"https://www.jdcloud.com",d:"京东云"},
+  {n:"Cloudflare",u:"https://www.cloudflare.com",d:"网络加速"},
+  {n:"Vercel",u:"https://vercel.com",d:"前端部署"}
+ ]}
+]},
+{id:"aimodel",icon:"🧠",name:"AI 大模型",children:[
+ {id:"aimodel-main",name:"大模型平台",items:[
+  {n:"智谱清言",u:"https://chatglm.cn",d:"智谱AI"},
+  {n:"Kimi",u:"https://kimi.moonshot.cn",d:"月之暗面"},
+  {n:"百川",u:"https://www.baichuan-ai.com",d:"百川智能"},
+  {n:"零一万物",u:"https://www.lingyiwanwu.com",d:"零一万物"},
+  {n:"DeepSeek",u:"https://www.deepseek.com",d:"深度求索"},
+  {n:"MiniMax",u:"https://www.minimax.chat",d:"MiniMax"},
+  {n:"阶跃星辰",u:"https://www.stepfun.com",d:"阶跃星辰"},
+  {n:"通义千问",u:"https://tongyi.aliyun.com",d:"阿里通义"},
+  {n:"文心一言",u:"https://yiyan.baidu.com",d:"百度文心"},
+  {n:"讯飞星火",u:"https://xinghuo.xfyun.cn",d:"讯飞星火"},
+  {n:"Meta AI",u:"https://www.meta.ai",d:"Meta大模型"},
+  {n:"Mistral",u:"https://mistral.ai",d:"法国模型"},
+  {n:"Cohere",u:"https://cohere.com",d:"企业模型"},
+  {n:"Replicate",u:"https://replicate.com",d:"模型部署"}
+ ]}
+]},
+{id:"videoedit",icon:"🎞️",name:"视频剪辑",children:[
+ {id:"videoedit-main",name:"剪辑工具",items:[
+  {n:"剪映",u:"https://www.capcut.cn",d:"字节剪辑"},
+  {n:"必剪",u:"https://bcut.bilibili.com",d:"B站剪辑"},
+  {n:"快影",u:"https://www.kuaishou.com",d:"快手剪辑"},
+  {n:"CapCut",u:"https://www.capcut.com",d:"国际剪映"},
+  {n:"秒剪",u:"https://shuqi.com",d:"微信剪辑"},
+  {n:"快剪辑",u:"https://www.kuaijian.com",d:"360剪辑"},
+  {n:"爱剪辑",u:"https://www.ajianji.com",d:"易用剪辑"},
+  {n:"Premiere",u:"https://www.adobe.com/products/premiere",d:"PR剪辑"},
+  {n:"Final Cut",u:"https://www.apple.com/final-cut-pro",d:"苹果剪辑"},
+  {n:"DaVinci",u:"https://www.blackmagicdesign.com",d:"达芬奇调色"}
+ ]}
+]},
+{id:"photoedit",icon:"🎚️",name:"图片修图",children:[
+ {id:"photoedit-main",name:"修图工具",items:[
+  {n:"美图秀秀",u:"https://xiuxiu.meitu.com",d:"美图工具"},
+  {n:"醒图",u:"https://www.xingtu.com",d:"手机修图"},
+  {n:"Snapseed",u:"https://snapseed.com",d:"谷歌修图"},
+  {n:"VSCO",u:"https://vsco.co",d:"胶片滤镜"},
+  {n:"黄油相机",u:"https://www.huangyou.com",d:"文字滤镜"},
+  {n:"天天P图",u:"https://www.tiantianp.com",d:"人像美容"},
+  {n:"Lightroom",u:"https://www.adobe.com/products/photoshop-lightroom",d:"LR修图"},
+  {n:"泼辣修图",u:"https://www.polaxiong.com",d:"专业修图"}
+ ]}
+]},
+{id:"music_make",icon:"🎹",name:"编曲 / 音乐制作",children:[
+ {id:"music_make-main",name:"编曲软件",items:[
+  {n:"FL Studio",u:"https://www.image-line.com",d:"水果编曲"},
+  {n:"Cubase",u:"https://www.steinberg.net",d:"steinberg"},
+  {n:"Ableton",u:"https://www.ableton.com",d:"现场编曲"},
+  {n:"Logic Pro",u:"https://www.apple.com/logic-pro",d:"苹果编曲"},
+  {n:"GarageBand",u:"https://www.apple.com/mac/garageband",d:"苹果入门"},
+  {n:"唱鸭",u:"https://www.changya.com",d:"弹唱APP"},
+  {n:"全民K歌",u:"https://kg.qq.com",d:"K歌平台"}
+ ]}
+]},
+{id:"listenbook",icon:"🎧",name:"听书 / 有声",children:[
+ {id:"listenbook-main",name:"有声读物",items:[
+  {n:"懒人听书",u:"https://www.lanren.cn",d:"听书平台"},
+  {n:"企鹅FM",u:"https://fm.qzone.qq.com",d:"腾讯有声"},
+  {n:"酷我听书",u:"https://www.kuwo.cn",d:"听书频道"},
+  {n:"微信听书",u:"https://weread.qq.com",d:"微信听书"},
+  {n:"有声书",u:"https://www.iyuwen.com",d:"有声阅读"}
+ ]}
+]},
+{id:"sport2",icon:"🧘",name:"健身 / 瑜伽",children:[
+ {id:"sport2-main",name:"运动健康",items:[
+  {n:"每日瑜伽",u:"https://www.dailyyoga.com.cn",d:"瑜伽教学"},
+  {n:"瑜伽网",u:"https://www.yujia.com",d:"瑜伽社区"},
+  {n:"Fitbit",u:"https://www.fitbit.com",d:"运动手环"},
+  {n:"Nike Run Club",u:"https://www.nike.com",d:"耐克跑步"},
+  {n:"Adidas Running",u:"https://www.runtastic.com",d:"阿迪跑步"},
+  {n:"Keep",u:"https://www.keep.com",d:"健身平台"},
+  {n:"悦跑圈",u:"https://www.yuepaoquan.com",d:"跑步社区"}
+ ]}
+]},
+{id:"news3",icon:"🌍",name:"国际新闻",children:[
+ {id:"news3-main",name:"海外媒体",items:[
+  {n:"France 24",u:"https://www.france24.com",d:"法国国际"},
+  {n:"DW",u:"https://www.dw.com",d:"德国之声"},
+  {n:"NHK",u:"https://www.nhk.com",d:"日本放送"},
+  {n:"CBC",u:"https://www.cbc.ca",d:"加拿大广播"},
+  {n:"ABC News",u:"https://www.abc.net.au",d:"澳洲广播"},
+  {n:"SBS",u:"https://www.sbs.com.au",d:"多元文化"},
+  {n:"RT",u:"https://www.rt.com",d:"今日俄罗斯"},
+  {n:"The Economist",u:"https://www.economist.com",d:"经济学人"}
+ ]}
+]},
+{id:"law2",icon:"⚖️",name:"国际法律",children:[
+ {id:"law2-main",name:"海外法律",items:[
+  {n:"FindLaw",u:"https://www.findlaw.com",d:"法律搜索"},
+  {n:"Avvo",u:"https://www.avvo.com",d:"律师评价"},
+  {n:"LegalZoom",u:"https://www.legalzoom.com",d:"在线法务"},
+  {n:"Nolo",u:"https://www.nolo.com",d:"法律自助"}
+ ]}
+]},
+{id:"beauty",icon:"💄",name:"美妆 / 护肤",children:[
+ {id:"beauty-main",name:"美妆品牌",items:[
+  {n:"小红书",u:"https://www.xiaohongshu.com",d:"种草社区"},
+  {n:"美妆心得",u:"https://www.beauty.com",d:"美妆社区"},
+  {n:"丝芙兰",u:"https://www.sephora.com",d:"美妆零售"},
+  {n:"屈臣氏",u:"https://www.watsons.com.cn",d:"个护零售"},
+  {n:"完美日记",u:"https://www.perfectdiary.com",d:"国产彩妆"},
+  {n:"花西子",u:"https://www.huaxizi.com",d:"东方彩妆"},
+  {n:"雅诗兰黛",u:"https://www.estee-lauder.com.cn",d:"护肤品牌"},
+  {n:"兰蔻",u:"https://www.lancome.com.cn",d:"护肤彩妆"}
+ ]}
+]},
+{id:"home2",icon:"🔌",name:"家电 / 数码",children:[
+ {id:"home2-main",name:"家电品牌",items:[
+  {n:"美的",u:"https://www.midea.com",d:"美的官网"},
+  {n:"格力",u:"https://www.gree.com",d:"格力空调"},
+  {n:"海尔",u:"https://www.haier.com",d:"海尔智家"},
+  {n:"小米商城",u:"https://www.mi.com",d:"小米官网"},
+  {n:"华为商城",u:"https://www.vmall.com",d:"华为官方"},
+  {n:"OPPO",u:"https://www.oppo.com",d:"OPPO官网"},
+  {n:"vivo",u:"https://www.vivo.com.cn",d:"vivo官网"},
+  {n:"荣耀",u:"https://www.honor.com",d:"荣耀官网"},
+  {n:"三星",u:"https://www.samsung.com",d:"三星官网"},
+  {n:"索尼",u:"https://www.sony.com.cn",d:"索尼中国"}
+ ]}
+]},
+{id:"qa",icon:"❓",name:"问答 / 知识",children:[
+ {id:"qa-main",name:"问答社区",items:[
+  {n:"百度知道",u:"https://zhidao.baidu.com",d:"百度问答"},
+  {n:"搜狗问问",u:"https://wenwen.sogou.com",d:"搜狗问答"},
+  {n:"360问答",u:"https://wenda.so.com",d:"360问答"},
+  {n:"悟空问答",u:"https://www.wukong.com",d:"头条问答"},
+  {n:"Stack Overflow",u:"https://stackoverflow.com",d:"编程问答"},
+  {n:"Stack Exchange",u:"https://stackexchange.com",d:"综合问答"},
+  {n:"WikiHow",u:"https://zh.wikihow.com",d:"操作指南"},
+  {n:"百度经验",u:"https://jingyan.baidu.com",d:"经验分享"},
+  {n:"果壳问答",u:"https://www.guokr.com",d:"科普问答"},
+  {n:"知乎",u:"https://www.zhihu.com",d:"知识问答"}
+ ]}
+]},
+{id:"wikimedia",icon:"📚",name:"维基项目",children:[
+ {id:"wikimedia-main",name:"维基家族",items:[
+  {n:"维基百科",u:"https://zh.wikipedia.org",d:"自由百科"},
+  {n:"维基词典",u:"https://zh.wiktionary.org",d:"词典"},
+  {n:"维基语录",u:"https://zh.wikiquote.org",d:"语录"},
+  {n:"维基教科书",u:"https://zh.wikibooks.org",d:"教科书"},
+  {n:"维基导游",u:"https://zh.wikivoyage.org",d:"旅游指南"},
+  {n:"维基新闻",u:"https://zh.wikinews.org",d:"公民新闻"},
+  {n:"维基物种",u:"https://species.wikimedia.org",d:"物种库"},
+  {n:"维基数据",u:"https://www.wikidata.org",d:"结构化数据"},
+  {n:"全知识",u:"https://www.allhistory.com",d:"知识图谱"},
+  {n:"百度百科",u:"https://baike.baidu.com",d:"中文百科"}
+ ]}
+]},
+{id:"haitao",icon:"🛍️",name:"海淘 / 国际电商",children:[
+ {id:"haitao-main",name:"海淘平台",items:[
+  {n:"iHerb",u:"https://www.iherb.com",d:"保健海淘"},
+  {n:"Lookfantastic",u:"https://www.lookfantastic.com",d:"美妆海淘"},
+  {n:"Cult Beauty",u:"https://www.cultbeauty.co.uk",d:"美妆海淘"},
+  {n:"ASOS",u:"https://www.asos.com",d:"时尚电商"},
+  {n:"Zalando",u:"https://www.zalando.com",d:"欧洲时尚"},
+  {n:"Boohoo",u:"https://www.boohoo.com",d:"快时尚"},
+  {n:"SHEIN",u:"https://www.shein.com",d:"跨境快时尚"},
+  {n:"Gymshark",u:"https://www.gymshark.com",d:"运动服饰"},
+  {n:"Nike",u:"https://www.nike.com",d:"耐克官网"},
+  {n:"Adidas",u:"https://www.adidas.com",d:"阿迪官网"},
+  {n:"Wayfair",u:"https://www.wayfair.com",d:"家居海淘"},
+  {n:"Etsy",u:"https://www.etsy.com",d:"手作海淘"}
+ ]}
+]},
+{id:"fresh",icon:"🥬",name:"生鲜 / 商超",children:[
+ {id:"fresh-main",name:"生鲜电商",items:[
+  {n:"每日优鲜",u:"https://www.missfresh.cn",d:"生鲜前置仓"},
+  {n:"美团买菜",u:"https://www.meituan.com",d:"美团生鲜"},
+  {n:"朴朴",u:"https://www.pupu.com",d:"前置仓"},
+  {n:"多点",u:"https://www.dmall.com",d:"物美数字"},
+  {n:"京东到家",u:"https://www.jddj.com",d:"即时零售"},
+  {n:"盒马",u:"https://www.freshippo.com",d:"盒马鲜生"},
+  {n:"永辉生活",u:"https://www.yonghui.com",d:"永辉到家"},
+  {n:"叮咚买菜",u:"https://www.100.me",d:"生鲜电商"},
+  {n:"苏鲜生",u:"https://www.suning.com",d:"苏宁生鲜"},
+  {n:"大润发",u:"https://www.rt-mart.com",d:"大卖场"}
+ ]}
+]},
+{id:"carcare",icon:"🔧",name:"养车 / 车服",children:[
+ {id:"carcare-main",name:"汽车养护",items:[
+  {n:"途虎养车",u:"https://www.tuhu.cn",d:"养车平台"},
+  {n:"汽车超人",u:"https://www.chaoren.com",d:"养车服务"},
+  {n:"京东养车",u:"https://www.jd.com",d:"京东车服"},
+  {n:"瓜子二手车",u:"https://www.guazi.com",d:"二手车"},
+  {n:"车享家",u:"https://www.chexiang.com",d:"上汽养车"},
+  {n:"典典养车",u:"https://www.didiauto.com",d:"养车APP"}
+ ]}
+]},
+{id:"knowledgepay",icon:"📜",name:"知识付费",children:[
+ {id:"knowledgepay-main",name:"知识服务",items:[
+  {n:"得到",u:"https://www.dedao.cn",d:"罗辑思维"},
+  {n:"知乎盐选",u:"https://www.zhihu.com",d:"盐选会员"},
+  {n:"樊登读书",u:"https://www.fandengreading.com",d:"樊登读书"},
+  {n:"少年得到",u:"https://www.shaonaind.com",d:"少年课程"},
+  {n:"看理想",u:"https://www.kanxiangli.com",d:"文化音频"},
+  {n:"极客时间",u:"https://time.geekbang.org",d:"IT专栏"},
+  {n:"知乎大学",u:"https://www.zhihu.com",d:"知乎会员"},
+  {n:"喜马拉雅",u:"https://www.ximalaya.com",d:"音频付费"}
+ ]}
+]},
+{id:"gamemedia",icon:"🎮",name:"游戏媒体",children:[
+ {id:"gamemedia-main",name:"游戏资讯",items:[
+  {n:"游研社",u:"https://www.yystv.cn",d:"游戏文化"},
+  {n:"游戏时光",u:"https://www.vgtime.com",d:"游戏资讯"},
+  {n:"篝火营地",u:"https://www.gouhuo.com",d:"游戏社区"},
+  {n:"A9VG",u:"https://www.a9vg.com",d:"电视游戏"},
+  {n:"3DM",u:"https://www.3dmgame.com",d:"游戏下载"},
+  {n:"游民星空",u:"https://www.gamersky.com",d:"游戏门户"},
+  {n:"触乐",u:"https://www.chuapp.com",d:"游戏媒体"},
+  {n:"任天堂",u:"https://www.nintendo.com",d:"任天堂官网"},
+  {n:"PlayStation",u:"https://www.playstation.com",d:"索尼游戏"},
+  {n:"Xbox",u:"https://www.xbox.com",d:"微软游戏"}
+ ]}
+]},
+{id:"techreview",icon:"📊",name:"评测 / 排行",children:[
+ {id:"techreview-main",name:"消费评测",items:[
+  {n:"值和",u:"https://www.zhihu.com",d:"值友评价"},
+  {n:"买购",u:"https://www.maigoo.com",d:"品牌排行"},
+  {n:"盖得排行",u:"https://www.guaid.com",d:"消费排行"},
+  {n:"排行榜",u:"https://www.phb123.com",d:"各类排行"},
+  {n:"什么值得买",u:"https://www.smzdm.com",d:"优惠导购"},
+  {n:"消费者报告",u:"https://www.consumerreports.org",d:"美消费评测"},
+  {n:"爱否",u:"https://www.ifoxiao.com",d:"数码评测"}
+ ]}
+]},
+{id:"hotel",icon:"🏨",name:"酒店 / 住宿",children:[
+ {id:"hotel-main",name:"酒店预订",items:[
+  {n:"华住",u:"https://www.huazhu.com",d:"华住会"},
+  {n:"锦江",u:"https://www.jinjiang.com",d:"锦江酒店"},
+  {n:"首旅如家",u:"https://www.homeinns.com",d:"如家酒店"},
+  {n:"Airbnb",u:"https://www.airbnb.com",d:"民宿短租"},
+  {n:"途家",u:"https://www.tujia.com",d:"民宿"},
+  {n:"Booking",u:"https://www.booking.com",d:"全球酒店"},
+  {n:"Agoda",u:"https://www.agoda.com",d:"亚洲酒店"},
+  {n:"万豪",u:"https://www.marriott.com",d:"万豪酒店"}
+ ]}
+]},
+{id:"financenews",icon:"📋",name:"财经媒体",children:[
+ {id:"financenews-main",name:"财经资讯",items:[
+  {n:"华尔街见闻",u:"https://wallstreetcn.com",d:"财经快讯"},
+  {n:"经济观察报",u:"https://www.eeo.com.cn",d:"财经周报"},
+  {n:"21世纪经济",u:"https://www.21jingji.com",d:"财经报道"},
+  {n:"第一财经",u:"https://www.yicai.com",d:"财经电视"},
+  {n:"财新网",u:"https://www.caixin.com",d:"深度财经"},
+  {n:"金十数据",u:"https://www.jin10.com",d:"财经数据"},
+  {n:"FT中文网",u:"https://www.ftchinese.com",d:"金融时报"},
+  {n:"Bloomberg",u:"https://www.bloomberg.com",d:"彭博"}
+ ]}
+]},
+{id:"designinspire",icon:"💡",name:"设计灵感",children:[
+ {id:"designinspire-main",name:"灵感素材",items:[
+  {n:"优设",u:"https://www.uisdc.com",d:"设计师导航"},
+  {n:"优优",u:"https://www.uupoop.com",d:"设计教程"},
+  {n:"设计导航",u:"https://hao.uisdc.com",d:"设计导航站"},
+  {n:"花瓣网",u:"https://huaban.com",d:"图片采集"},
+  {n:"站酷",u:"https://www.zcool.com.cn",d:"设计师社区"},
+  {n:"Behance",u:"https://www.behance.net",d:"作品集"},
+  {n:"Dribbble",u:"https://dribbble.com",d:"设计灵感"},
+  {n:"Pinterest",u:"https://www.pinterest.com",d:"灵感板"}
+ ]}
+]},
+{id:"db",icon:"🗄️",name:"数据库",children:[
+ {id:"db-main",name:"数据库系统",items:[
+  {n:"MySQL",u:"https://www.mysql.com",d:"关系数据库"},
+  {n:"PostgreSQL",u:"https://www.postgresql.org",d:"开源数据库"},
+  {n:"MongoDB",u:"https://www.mongodb.com",d:"文档数据库"},
+  {n:"Redis",u:"https://redis.io",d:"缓存数据库"},
+  {n:"Elasticsearch",u:"https://www.elastic.co",d:"搜索引擎库"},
+  {n:"ClickHouse",u:"https://clickhouse.com",d:"列式数据库"},
+  {n:"SQLite",u:"https://www.sqlite.org",d:"嵌入式数据库"},
+  {n:"Oracle",u:"https://www.oracle.com/database",d:"甲骨文数据库"},
+  {n:"Cassandra",u:"https://cassandra.apache.org",d:"宽列数据库"},
+  {n:"Neo4j",u:"https://neo4j.com",d:"图数据库"}
+ ]}
+]},
+{id:"frontend",icon:"🌐",name:"前端资源",children:[
+ {id:"frontend-main",name:"前端文档",items:[
+  {n:"MDN",u:"https://developer.mozilla.org",d:"Web文档"},
+  {n:"Can I Use",u:"https://caniuse.com",d:"兼容性查询"},
+  {n:"W3Schools",u:"https://www.w3schools.com",d:"教程"},
+  {n:"JavaScript.info",u:"https://javascript.info",d:"JS教程"},
+  {n:"CSS-Tricks",u:"https://css-tricks.com",d:"CSS技巧"},
+  {n:"Smashing Mag",u:"https://www.smashingmagazine.com",d:"前端杂志"},
+  {n:"freeCodeCamp",u:"https://www.freecodecamp.org",d:"免费编程"},
+  {n:"前端早读课",u:"https://www.zaoduke.com",d:"前端资讯"}
+ ]}
+]},
+{id:"backendlang",icon:"🔧",name:"编程语言",children:[
+ {id:"backendlang-main",name:"语言官网",items:[
+  {n:"Python",u:"https://www.python.org",d:"Python官网"},
+  {n:"PHP",u:"https://www.php.net",d:"PHP官网"},
+  {n:"Rust",u:"https://www.rust-lang.org",d:"Rust官网"},
+  {n:"Go",u:"https://go.dev",d:"Golang官网"},
+  {n:"Java",u:"https://www.java.com",d:"Java官网"},
+  {n:"C++",u:"https://isocpp.org",d:"C++官网"},
+  {n:"Kotlin",u:"https://kotlinlang.org",d:"Kotlin官网"},
+  {n:"Swift",u:"https://www.swift.org",d:"Swift官网"},
+  {n:"TypeScript",u:"https://www.typescriptlang.org",d:"TS官网"},
+  {n:"Ruby",u:"https://www.ruby-lang.org",d:"Ruby官网"}
+ ]}
+]},
+{id:"mobilefw",icon:"📱",name:"移动开发",children:[
+ {id:"mobilefw-main",name:"移动框架",items:[
+  {n:"Flutter",u:"https://flutter.dev",d:"谷歌跨端"},
+  {n:"React Native",u:"https://reactnative.dev",d:"RN框架"},
+  {n:"Ionic",u:"https://ionicframework.com",d:"混合开发"},
+  {n:"SwiftUI",u:"https://developer.apple.com",d:"苹果UI"},
+  {n:"Jetpack",u:"https://developer.android.com",d:"安卓UI"},
+  {n:"Unity",u:"https://unity.com",d:"游戏引擎"},
+  {n:"Cocos",u:"https://www.cocos.com",d:"游戏引擎"},
+  {n:"uni-app",u:"https://uniapp.dcloud.net.cn",d:"跨端框架"}
+ ]}
+]},
+{id:"aiart",icon:"🎨",name:"AI 绘画",children:[
+ {id:"aiart-main",name:"绘画生成",items:[
+  {n:"Artbreeder",u:"https://www.artbreeder.com",d:"基因融合"},
+  {n:"This Person",u:"https://thispersondoesnotexist.com",d:"人脸生成"},
+  {n:"Wombo",u:"https://www.wombo.art",d:"AI绘画"},
+  {n:"StarryAI",u:"https://starryai.com",d:"星空AI"},
+  {n:"NightCafe",u:"https://creator.nightcafe.studio",d:"AI艺术"},
+  {n:"DreamStudio",u:"https://dreamstudio.ai",d:"SD官方"},
+  {n:"Lexica",u:"https://lexica.art",d:"提示词库"},
+  {n:"Playground",u:"https://playgroundai.com",d:"AI绘画"}
+ ]}
+]},
+{id:"convert",icon:"🔁",name:"格式转换",children:[
+ {id:"convert-main",name:"文件转换",items:[
+  {n:"OnlineConvert",u:"https://www.onlineconvert.com",d:"在线转换"},
+  {n:"Convertio",u:"https://convertio.co",d:"格式转换"},
+  {n:"Zamzar",u:"https://www.zamzar.com",d:"文件转换"},
+  {n:"CloudConvert",u:"https://cloudconvert.com",d:"云端转换"},
+  {n:"EZGif",u:"https://ezgif.com",d:"GIF工具"},
+  {n:"PDF2Docx",u:"https://www.pdf2docx.cn",d:"PDF转换"},
+  {n:"Aconvert",u:"https://www.aconvert.com",d:"格式转换"},
+  {n:"OfficeConverter",u:"https://www.office-converter.com",d:"办公转换"}
+ ]}
+]},
+{id:"subtitle",icon:"💬",name:"字幕 / 语音",children:[
+ {id:"subtitle-main",name:"字幕工具",items:[
+  {n:"Arctime",u:"https://www.arctime.org",d:"字幕软件"},
+  {n:"Aegisub",u:"https://aegisub.org",d:"字幕编辑"},
+  {n:"Subtitle Edit",u:"https://www.nikse.dk",d:"字幕制作"},
+  {n:"网易见外",u:"https://jianwai.netease.com",d:"语音转写"},
+  {n:"讯飞听见",u:"https://www.iflyrec.com",d:"语音转写"},
+  {n:"腾讯智影",u:"https://zenvideo.qq.com",d:"智能字幕"}
+ ]}
+]},
+{id:"score",icon:"🎼",name:"曲谱 / 乐谱",children:[
+ {id:"score-main",name:"曲谱平台",items:[
+  {n:"虫虫钢琴",u:"https://www.gangqinpu.com",d:"钢琴谱"},
+  {n:"吉他社",u:"https://www.jitashe.org",d:"吉他谱"},
+  {n:"MuseScore",u:"https://musescore.com",d:"乐谱库"},
+  {n:"Ultimate Guitar",u:"https://www.ultimate-guitar.com",d:"吉他谱"},
+  {n:"曲谱网",u:"https://www.qupu.com",d:"综合曲谱"},
+  {n:"找谱",u:"https://www.zhaopu.com",d:"曲谱搜索"}
+ ]}
+]},
+{id:"comicintl",icon:"📚",name:"国外漫画",children:[
+ {id:"comicintl-main",name:"海外漫画",items:[
+  {n:"Comixology",u:"https://www.amazon.com/kindle-comics",d:"亚马逊漫画"},
+  {n:"Tapas",u:"https://tapas.io",d:"条漫平台"},
+  {n:"MangaPlus",u:"https://mangaplus.shueisha.co.jp",d:"集英社"},
+  {n:"Viz",u:"https://www.viz.com",d:"美漫平台"},
+  {n:"Webtoons",u:"https://www.webtoons.com",d:"韩漫"},
+  {n:"Global Comix",u:"https://globalcomix.com",d:"数字漫画"}
+ ]}
+]},
+{id:"toy",icon:"🧸",name:"玩具 / 母婴",children:[
+ {id:"toy-main",name:"玩具商城",items:[
+  {n:"乐高",u:"https://www.lego.com",d:"乐高官网"},
+  {n:"玩具反斗城",u:"https://www.toysrus.com",d:"玩具零售"},
+  {n:"孩子王",u:"https://www.haiziwang.com",d:"母婴商城"},
+  {n:"贝贝网",u:"https://www.beibei.com",d:"母婴电商"},
+  {n:"蜜芽",u:"https://www.mia.com",d:"母婴特卖"},
+  {n:"巧虎",u:"https://www.qiaohu.com",d:"早教"}
+ ]}
+]},
+{id:"tcm",icon:"🌿",name:"中医 / 养生",children:[
+ {id:"tcm-main",name:"中医养生",items:[
+  {n:"中医世家",u:"https://www.zysj.com.cn",d:"中医典籍"},
+  {n:"中药材",u:"https://www.zhongyaocai.com",d:"药材查询"},
+  {n:"丁香妈妈",u:"https://www.dxy.com",d:"母婴健康"},
+  {n:"养生堂",u:"https://www.ys8.com",d:"养生资讯"},
+  {n:"大家中医",u:"https://www.dazhongyiyao.com",d:"中医平台"}
+ ]}
+]},
+{id:"localinfo",icon:"📍",name:"分类信息",children:[
+ {id:"localinfo-main",name:"本地信息",items:[
+  {n:"百姓网",u:"https://www.baixing.com",d:"分类信息"},
+  {n:"列表网",u:"https://www.liebiaoka.com",d:"信息分类"},
+  {n:"易登网",u:"https://www.edeng.cn",d:"分类信息"},
+  {n:"快点8",u:"https://www.kuaidian8.com",d:"本地信息"},
+  {n:"今题网",u:"https://www.jinti.com",d:"同城信息"},
+  {n:"站台网",u:"https://www.zhan.cn",d:"分类信息"}
+ ]}
+]},
+{id:"overseas",icon:"🌏",name:"海外生活",children:[
+ {id:"overseas-main",name:"华人生活",items:[
+  {n:"Yelp",u:"https://www.yelp.com",d:"商户点评"},
+  {n:"木瓜移动",u:"https://www.papayamobile.com",d:"海外广告"},
+  {n:"滴答网",u:"https://www.didadat.com",d:"华人资讯"},
+  {n:"华人头条",u:"https://www.52hrtt.com",d:"华文媒体"},
+  {n:"一亩三分地",u:"https://www.1point3acres.com",d:"留学求职"},
+  {n:"未名空间",u:"https://www.mitbbs.com",d:"北美华人"}
+ ]}
+]},
+{id:"fund",icon:"💰",name:"基金 / 数据",children:[
+ {id:"fund-main",name:"基金数据",items:[
+  {n:"晨星",u:"https://www.morningstar.com",d:"基金评级"},
+  {n:"济安金信",u:"https://www.jajx.com",d:"基金评价"},
+  {n:"中国证券投资基金",u:"https://www.amac.org.cn",d:"基金业协会"},
+  {n:"中国结算",u:"https://www.chinaclear.cn",d:"登记结算"},
+  {n:"天天基金",u:"https://www.1234567.com.cn",d:"基金申购"},
+  {n:"蛋卷基金",u:"https://www.danjuanapp.com",d:"指数基金"}
+ ]}
+]},
+{id:"charge",icon:"🔌",name:"充电 / 能源",children:[
+ {id:"charge-main",name:"充电服务",items:[
+  {n:"特来电",u:"https://www.teld.cn",d:"充电桩"},
+  {n:"星星充电",u:"https://www.starcpower.com",d:"充电网络"},
+  {n:"国家电网",u:"https://www.sgcc.com.cn",d:"电网官网"},
+  {n:"蔚来充电",u:"https://www.nio.cn",d:"换电补能"},
+  {n:"能链",u:"https://www.nengliang.com",d:"能源网络"}
+ ]}
+]},
+{id:"visa",icon:"🛂",name:"签证 / 出境",children:[
+ {id:"visa-main",name:"签证旅游",items:[
+  {n:"签证中心",u:"https://www.visaforchina.org",d:"中国签证"},
+  {n:"携程签证",u:"https://www.ctrip.com",d:"签证办理"},
+  {n:"中青旅",u:"https://www.aoyou.com",d:"出境旅游"},
+  {n:"凯撒旅游",u:"https://www.caissa.com.cn",d:"出境游"},
+  {n:"众信旅游",u:"https://www.utourworld.com",d:"出境游"},
+  {n:"百程旅行",u:"https://www.byecity.com",d:"签证服务"}
+ ]}
+]},
+{id:"live",icon:"📡",name:"直播平台",children:[
+ {id:"live-main",name:"直播平台",items:[
+  {n:"斗鱼",u:"https://www.douyu.com",d:"游戏直播"},
+  {n:"虎牙",u:"https://www.huya.com",d:"游戏直播"},
+  {n:"B站直播",u:"https://live.bilibili.com",d:"哔哩直播"},
+  {n:"快手直播",u:"https://www.kuaishou.com",d:"快手直播"},
+  {n:"YY直播",u:"https://www.yy.com",d:"语音直播"},
+  {n:"映客",u:"https://www.inke.cn",d:"视频直播"}
+ ]}
+]},
+{id:"socialintl",icon:"🌐",name:"海外社交",children:[
+ {id:"socialintl-main",name:"国际社交",items:[
+  {n:"VK",u:"https://vk.com",d:"俄社交"},
+  {n:"Line",u:"https://line.me",d:"日韩通讯"},
+  {n:"KakaoTalk",u:"https://www.kakaocorp.com",d:"韩通讯"},
+  {n:"Snapchat",u:"https://www.snapchat.com",d:"阅后即焚"},
+  {n:"WeChat",u:"https://weixin.qq.com",d:"微信国际"},
+  {n:"Viber",u:"https://www.viber.com",d:"通讯软件"}
+ ]}
+]},
+{id:"math",icon:"➗",name:"数学 / 工具",children:[
+ {id:"math-main",name:"数学计算",items:[
+  {n:"Wolfram Alpha",u:"https://www.wolframalpha.com",d:"计算引擎"},
+  {n:"Desmos",u:"https://www.desmos.com",d:"函数绘图"},
+  {n:"GeoGebra",u:"https://www.geogebra.org",d:"几何动态"},
+  {n:"Symbolab",u:"https://www.symbolab.com",d:"方程求解"},
+  {n:"Mathway",u:"https://www.mathway.com",d:"数学解题"},
+  {n:"Photomath",u:"https://photomath.com",d:"拍照解题"},
+  {n:"Brilliant",u:"https://brilliant.org",d:"数学互动"}
+ ]}
+]},
+{id:"appstore",icon:"📲",name:"应用商店",children:[
+ {id:"appstore-main",name:"应用市场",items:[
+  {n:"App Store",u:"https://apps.apple.com",d:"苹果商店"},
+  {n:"Google Play",u:"https://play.google.com",d:"安卓商店"},
+  {n:"华为应用",u:"https://appgallery.huawei.com",d:"华为商店"},
+  {n:"小米应用",u:"https://app.mi.com",d:"小米商店"},
+  {n:"应用宝",u:"https://sj.qq.com",d:"腾讯商店"},
+  {n:"360助手",u:"https://zhushou.360.cn",d:"360商店"},
+  {n:"豌豆荚",u:"https://www.wandoujia.com",d:"豌豆荚"},
+  {n:"OPPO商店",u:"https://store.oppo.com",d:"OPPO商店"},
+  {n:"vivo商店",u:"https://www.vivo.com.cn",d:"vivo商店"},
+  {n:"APKPure",u:"https://apkpure.com",d:"APK下载"},
+  {n:"APKMirror",u:"https://www.apkmirror.com",d:"APK镜像"},
+  {n:"F-Droid",u:"https://f-droid.org",d:"开源商店"},
+  {n:"Aurora",u:"https://auroraoss.com",d:"匿名商店"}
+ ]}
+]},
+{id:"podcast",icon:"🎙️",name:"播客 / 音频",children:[
+ {id:"podcast-main",name:"播客平台",items:[
+  {n:"小宇宙",u:"https://www.xiaoyuzhoufm.com",d:"中文播客"},
+  {n:"Apple Podcasts",u:"https://podcasts.apple.com",d:"苹果播客"},
+  {n:"Spotify",u:"https://www.spotify.com",d:"音乐播客"},
+  {n:"Google Podcasts",u:"https://podcasts.google.com",d:"谷歌播客"},
+  {n:"Pocket Casts",u:"https://pocketcasts.com",d:"播客APP"},
+  {n:"Overcast",u:"https://overcast.fm",d:"iOS播客"},
+  {n:"喜马拉雅",u:"https://www.ximalaya.com",d:"音频播客"}
+ ]}
+]},
+{id:"mooc_intl",icon:"🎓",name:"国际课程",children:[
+ {id:"mooc_intl-main",name:"名校公开课",items:[
+  {n:"edX",u:"https://www.edx.org",d:"名校慕课"},
+  {n:"Coursera",u:"https://www.coursera.org",d:"在线课程"},
+  {n:"Udacity",u:"https://www.udacity.com",d:"纳米学位"},
+  {n:"FutureLearn",u:"https://www.futurelearn.com",d:"英慕课"},
+  {n:"OpenLearn",u:"https://www.open.edu",d:"开放课程"},
+  {n:"MIT OCW",u:"https://ocw.mit.edu",d:"MIT公开课"},
+  {n:"Stanford Online",u:"https://online.stanford.edu",d:"斯坦福在线"},
+  {n:"Harvard Online",u:"https://online.harvard.edu",d:"哈佛在线"},
+  {n:"Yale",u:"https://www.yale.edu",d:"耶鲁课程"},
+  {n:"Khan Academy",u:"https://www.khanacademy.org",d:"免费教育"}
+ ]}
+]},
+{id:"startup",icon:"🚀",name:"创业 / 创投",children:[
+ {id:"startup-main",name:"创业资讯",items:[
+  {n:"创业邦",u:"https://www.cyzone.cn",d:"创业媒体"},
+  {n:"虎嗅",u:"https://www.huxiu.com",d:"商业媒体"},
+  {n:"钛媒体",u:"https://www.tmtpost.com",d:"科技财经"},
+  {n:"IT桔子",u:"https://www.itjuzi.com",d:"创投数据"},
+  {n:"鲸准",u:"https://www.jingdata.com",d:"创投平台"},
+  {n:"铅笔道",u:"https://www.pencilnews.cn",d:"创业报道"},
+  {n:"黑马",u:"https://www.iheima.com",d:"创业服务"},
+  {n:"联想之星",u:"https://www.legendstar.com.cn",d:"天使投资"}
+ ]}
+]},
+{id:"marketing",icon:"📣",name:"营销 / 运营",children:[
+ {id:"marketing-main",name:"增长运营",items:[
+  {n:"人人都是产品经理",u:"https://www.woshipm.com",d:"产品社区"},
+  {n:"运营研究社",u:"https://www.yunyingyanjiu.com",d:"运营社区"},
+  {n:"鸟哥笔记",u:"https://www.niaogebiji.com",d:"推广运营"},
+  {n:"广告门",u:"https://www.adquan.com",d:"广告门户"},
+  {n:"数英",u:"https://www.digitaling.com",d:"数字营销"},
+  {n:"SocialBeta",u:"https://www.socialbeta.com",d:"社会化营销"},
+  {n:"Morketing",u:"https://www.morketing.com",d:"营销媒体"},
+  {n:"增长黑盒",u:"https://www.growthbox.cn",d:"增长研究"}
+ ]}
+]},
+{id:"designsys",icon:"🧱",name:"设计系统 / UI",children:[
+ {id:"designsys-main",name:"UI框架",items:[
+  {n:"Ant Design",u:"https://ant.design",d:"蚂蚁组件"},
+  {n:"Element",u:"https://element.eleme.io",d:"饿了么组件"},
+  {n:"Vant",u:"https://vant-contrib.gitee.io",d:"移动组件"},
+  {n:"Material",u:"https://m3.material.io",d:"谷歌设计"},
+  {n:"Bootstrap",u:"https://getbootstrap.com",d:"前端框架"},
+  {n:"Tailwind",u:"https://tailwindcss.com",d:"原子CSS"},
+  {n:"Semantic UI",u:"https://semantic-ui.com",d:"语义UI"},
+  {n:"Bulma",u:"https://bulma.io",d:"CSS框架"},
+  {n:"Chakra",u:"https://chakra-ui.com",d:"React组件"},
+  {n:"Foundation",u:"https://get.foundation",d:"响应式框架"}
+ ]}
+]},
+{id:"devops",icon:"⚙️",name:"运维 / 部署",children:[
+ {id:"devops-main",name:"运维工具",items:[
+  {n:"Docker",u:"https://www.docker.com",d:"容器引擎"},
+  {n:"Kubernetes",u:"https://kubernetes.io",d:"容器编排"},
+  {n:"Jenkins",u:"https://www.jenkins.io",d:"持续集成"},
+  {n:"GitHub Actions",u:"https://github.com/features/actions",d:"CI/CD"},
+  {n:"Ansible",u:"https://www.ansible.com",d:"自动化"},
+  {n:"Terraform",u:"https://www.terraform.io",d:"基础设施"},
+  {n:"Prometheus",u:"https://prometheus.io",d:"监控"},
+  {n:"Grafana",u:"https://grafana.com",d:"可视化"},
+  {n:"Nginx",u:"https://www.nginx.com",d:"Web服务器"},
+  {n:"Apache",u:"https://httpd.apache.org",d:"Web服务器"}
+ ]}
+]},
+{id:"datasci",icon:"📊",name:"数据科学",children:[
+ {id:"datasci-main",name:"数据分析",items:[
+  {n:"Kaggle",u:"https://www.kaggle.com",d:"数据竞赛"},
+  {n:"Pandas",u:"https://pandas.pydata.org",d:"数据分析"},
+  {n:"NumPy",u:"https://numpy.org",d:"数值计算"},
+  {n:"Scikit-learn",u:"https://scikit-learn.org",d:"机器学习"},
+  {n:"Tableau",u:"https://www.tableau.com",d:"可视化"},
+  {n:"Power BI",u:"https://powerbi.microsoft.com",d:"商业智能"},
+  {n:"DataCamp",u:"https://www.datacamp.com",d:"数据课程"},
+  {n:"KNIME",u:"https://www.knime.com",d:"数据工作流"}
+ ]}
+]},
+{id:"seo",icon:"📈",name:"网站分析",children:[
+ {id:"seo-main",name:"流量分析",items:[
+  {n:"Google Analytics",u:"https://analytics.google.com",d:"流量分析"},
+  {n:"百度统计",u:"https://tongji.baidu.com",d:"百度分析"},
+  {n:"CNZZ",u:"https://www.umeng.com",d:"友盟统计"},
+  {n:"SimilarWeb",u:"https://www.similarweb.com",d:"竞品分析"},
+  {n:"Ahrefs",u:"https://ahrefs.com",d:"外链分析"},
+  {n:"SEMrush",u:"https://www.semrush.com",d:"SEO工具"},
+  {n:"Moz",u:"https://moz.com",d:"SEO平台"},
+  {n:"Search Console",u:"https://search.google.com",d:"搜索控制台"}
+ ]}
+]},
+{id:"cms",icon:"🖥️",name:"建站 / 博客",children:[
+ {id:"cms-main",name:"建站工具",items:[
+  {n:"WordPress",u:"https://wordpress.org",d:"博客系统"},
+  {n:"Wix",u:"https://www.wix.com",d:"建站平台"},
+  {n:"Squarespace",u:"https://www.squarespace.com",d:"建站服务"},
+  {n:"Shopify",u:"https://www.shopify.com",d:"电商建站"},
+  {n:"Hexo",u:"https://hexo.io",d:"静态博客"},
+  {n:"Hugo",u:"https://gohugo.io",d:"静态站点"},
+  {n:"Ghost",u:"https://ghost.org",d:"写作平台"},
+  {n:"Typecho",u:"https://typecho.org",d:"轻量博客"},
+  {n:"Discuz",u:"https://www.discuz.net",d:"论坛系统"},
+  {n:"帝国CMS",u:"https://www.phome.net",d:"内容系统"}
+ ]}
+]},
+{id:"browser",icon:"🧭",name:"浏览器",children:[
+ {id:"browser-main",name:"浏览器官网",items:[
+  {n:"Chrome",u:"https://www.google.com/chrome",d:"谷歌浏览器"},
+  {n:"Edge",u:"https://www.microsoft.com/edge",d:"微软浏览器"},
+  {n:"Firefox",u:"https://www.mozilla.org/firefox",d:"火狐浏览器"},
+  {n:"Safari",u:"https://www.apple.com/safari",d:"苹果浏览器"},
+  {n:"Opera",u:"https://www.opera.com",d:"欧朋浏览器"},
+  {n:"Brave",u:"https://brave.com",d:"隐私浏览器"},
+  {n:"Vivaldi",u:"https://vivaldi.com",d:"个性化浏览器"},
+  {n:"Arc",u:"https://arc.net",d:"新潮浏览器"},
+  {n:"QQ浏览器",u:"https://browser.qq.com",d:"腾讯浏览器"},
+  {n:"360浏览器",u:"https://browser.360.cn",d:"360浏览器"},
+  {n:"搜狗浏览器",u:"https://ie.sogou.com",d:"搜狗浏览器"},
+  {n:"UC浏览器",u:"https://www.uc.cn",d:"UC浏览器"},
+  {n:"夸克浏览器",u:"https://www.quark.cn",d:"夸克浏览器"}
+ ]}
+]},
+{id:"rent",icon:"🏠",name:"租房 / 居住",children:[
+ {id:"rent-main",name:"租房平台",items:[
+  {n:"自如",u:"https://www.ziroom.com",d:"品质租房"},
+  {n:"我爱我家",u:"https://www.5i5j.com",d:"房产中介"},
+  {n:"蘑菇租房",u:"https://www.mogoroom.com",d:"租房平台"},
+  {n:"泊寓",u:"https://www.boyu.com",d:"万科公寓"},
+  {n:"冠寓",u:"https://www.guanyu.com",d:"龙湖公寓"},
+  {n:"贝壳租房",u:"https://www.ke.com",d:"租房频道"}
+ ]}
+]},
+{id:"wedding",icon:"💍",name:"婚庆 / 婚礼",children:[
+ {id:"wedding-main",name:"婚礼服务",items:[
+  {n:"婚礼纪",u:"https://www.hunliji.com",d:"婚礼策划"},
+  {n:"到喜啦",u:"https://www.daoxila.com",d:"婚宴预订"},
+  {n:"喜歌",u:"https://www.xige.com",d:"婚庆平台"},
+  {n:"婚芭莎",u:"https://www.hunbasha.com",d:"婚博会"},
+  {n:"Only婚礼",u:"https://www.only.com",d:"婚礼策划"}
+ ]}
+]},
+{id:"kaoyan",icon:"📚",name:"考研 / 培训",children:[
+ {id:"kaoyan-main",name:"考研机构",items:[
+  {n:"新东方",u:"https://www.koolearn.com",d:"教育培训"},
+  {n:"文都",u:"https://www.wendu.com",d:"考研机构"},
+  {n:"海文",u:"https://www.haowen.com",d:"考研培训"},
+  {n:"启航",u:"https://www.qihang.com",d:"考研机构"},
+  {n:"跨考",u:"https://www.kuakao.com",d:"跨校考研"},
+  {n:"考研网",u:"https://www.kaoyan.net",d:"考研资讯"}
+ ]}
+]},
+{id:"parttime",icon:"💼",name:"兼职 / 零工",children:[
+ {id:"parttime-main",name:"兼职平台",items:[
+  {n:"兼职猫",u:"https://www.jianzhimao.com",d:"兼职招聘"},
+  {n:"斗米",u:"https://www.doumi.com",d:"兼职平台"},
+  {n:"青团社",u:"https://www.qingtuan.com",d:"大学生兼职"},
+  {n:"赏帮",u:"https://www.shangbang.com",d:"悬赏任务"},
+  {n:"众人帮",u:"https://www.zhongrenbang.com",d:"任务平台"}
+ ]}
+]},
+{id:"futures",icon:"📉",name:"期货 / 交易所",children:[
+ {id:"futures-main",name:"期货交易所",items:[
+  {n:"上期所",u:"https://www.shfe.com.cn",d:"上海期货"},
+  {n:"大商所",u:"https://www.dce.com.cn",d:"大连期货"},
+  {n:"郑商所",u:"https://www.czce.com.cn",d:"郑州期货"},
+  {n:"中金所",u:"https://www.cffex.com.cn",d:"金融期货"},
+  {n:"上海能源",u:"https://www.ine.com.cn",d:"原油期货"},
+  {n:"CME",u:"https://www.cmegroup.com",d:"芝加哥期货"}
+ ]}
+]},
+{id:"mining",icon:"⛏️",name:"矿池 / 算力",children:[
+ {id:"mining-main",name:"矿池平台",items:[
+  {n:"F2Pool",u:"https://www.f2pool.com",d:"鱼池"},
+  {n:"Antpool",u:"https://www.antpool.com",d:"蚂蚁矿池"},
+  {n:"Poolin",u:"https://www.poolin.com",d:"币印矿池"},
+  {n:"ViaBTC",u:"https://www.viabtc.com",d:"微比特矿池"}
+ ]}
+]},
+{id:"gamestore",icon:"🛒",name:"游戏商城",children:[
+ {id:"gamestore-main",name:"正版商店",items:[
+  {n:"IndieGala",u:"https://www.indiegala.com",d:"独立游戏"},
+  {n:"GreenManGaming",u:"https://www.greenmangaming.com",d:"游戏key"},
+  {n:"Fanatical",u:"https://www.fanatical.com",d:"游戏bundle"},
+  {n:"Voidu",u:"https://www.voidu.com",d:"游戏商店"},
+  {n:"Chrono.gg",u:"https://chrono.gg",d:"每日特惠"},
+  {n:"GOG",u:"https://www.gog.com",d:"无DRM"}
+ ]}
+]},
+{id:"takeout",icon:"🍔",name:"外卖 / 餐饮",children:[
+ {id:"takeout-main",name:"外卖点餐",items:[
+  {n:"美团外卖",u:"https://waimai.meituan.com",d:"美团外卖"},
+  {n:"饿了么",u:"https://www.ele.me",d:"饿了么"},
+  {n:"肯德基",u:"https://www.kfc.com.cn",d:"KFC官网"},
+  {n:"麦当劳",u:"https://www.mcdonalds.com.cn",d:"麦当劳"},
+  {n:"必胜客",u:"https://www.pizzahut.com.cn",d:"必胜客"},
+  {n:"汉堡王",u:"https://www.bkchina.cn",d:"汉堡王"}
+ ]}
+]},
+{id:"carforum",icon:"🚙",name:"车友社区",children:[
+ {id:"carforum-main",name:"汽车论坛",items:[
+  {n:"汽车之家论坛",u:"https://club.autohome.com.cn",d:"车友社区"},
+  {n:"爱卡论坛",u:"https://www.xcar.com.cn",d:"爱卡社区"},
+  {n:"易车论坛",u:"https://www.yiche.com",d:"易车社区"},
+  {n:"太平洋汽车",u:"https://www.pcauto.com.cn",d:"太平洋车友"},
+  {n:"越野e族",u:"https://www.yes4x4.com",d:"越野论坛"}
+ ]}
+]},
+{id:"localnews",icon:"🗞️",name:"地方新闻",children:[
+ {id:"localnews-main",name:"省级门户",items:[
+  {n:"浙江在线",u:"https://www.zjol.com.cn",d:"浙江新闻"},
+  {n:"东方网",u:"https://www.eastday.com",d:"上海新闻"},
+  {n:"南方网",u:"https://www.southcn.com",d:"广东新闻"},
+  {n:"北方网",u:"https://www.enorth.com.cn",d:"天津新闻"},
+  {n:"红网",u:"https://www.rednet.cn",d:"湖南新闻"},
+  {n:"大河网",u:"https://www.dahe.cn",d:"河南新闻"},
+  {n:"荆楚网",u:"https://www.cnhubei.com",d:"湖北新闻"},
+  {n:"四川在线",u:"https://www.scol.com.cn",d:"四川新闻"}
+ ]}
+]},
+{id:"collect",icon:"🏺",name:"收藏 / 文玩",children:[
+ {id:"collect-main",name:"收藏爱好",items:[
+  {n:"钱币收藏",u:"https://www.coin.com",d:"钱币交流"},
+  {n:"邮票网",u:"https://www.youpiao.com",d:"邮票收藏"},
+  {n:"文玩天下",u:"https://www.wenwan.com",d:"文玩社区"},
+  {n:"古董网",u:"https://www.gudong.com",d:"古董交易"},
+  {n:"收藏界",u:"https://www.scj.com",d:"收藏媒体"}
+ ]}
+]},
+{id:"sciencehall",icon:"🔭",name:"科普场馆",children:[
+ {id:"sciencehall-main",name:"科技馆",items:[
+  {n:"中国数字科技馆",u:"https://www.cdstm.cn",d:"数字科技"},
+  {n:"上海科技馆",u:"https://www.sstm.org.cn",d:"上海科技"},
+  {n:"广东科学中心",u:"https://www.gdsc.org.cn",d:"广东科学"},
+  {n:"中国科技馆",u:"https://www.cstm.org.cn",d:"国家科技馆"},
+  {n:"上海自然博物馆",u:"https://www.snhm.org.cn",d:"自然博物"}
+ ]}
+]},
+{id:"hospital",icon:"🏥",name:"医院 / 挂号",children:[
+ {id:"hospital-main",name:"挂号问诊",items:[
+  {n:"挂号网",u:"https://www.guahao.com",d:"预约挂号"},
+  {n:"健康160",u:"https://www.91160.com",d:"就医挂号"},
+  {n:"趣医院",u:"https://www.quyiyuan.com",d:"掌上医院"},
+  {n:"微医",u:"https://www.guahao.com",d:"互联网医院"},
+  {n:"好大夫",u:"https://www.haodf.com",d:"在线问诊"}
+ ]}
+]},
+{id:"telecom",icon:"📶",name:"运营商 / 通信",children:[
+ {id:"telecom-main",name:"通信运营商",items:[
+  {n:"中国移动",u:"https://www.10086.cn",d:"移动官网"},
+  {n:"中国联通",u:"https://www.10010.com",d:"联通官网"},
+  {n:"中国电信",u:"https://www.189.cn",d:"电信官网"},
+  {n:"中国广电",u:"https://www.10099.com.cn",d:"广电5G"},
+  {n:"T-Mobile",u:"https://www.t-mobile.com",d:"美运营商"},
+  {n:"Verizon",u:"https://www.verizon.com",d:"美运营商"},
+  {n:"AT&T",u:"https://www.att.com",d:"美运营商"},
+  {n:"Vodafone",u:"https://www.vodafone.com",d:"英运营商"}
+ ]}
+]},
+{id:"domain",icon:"🌐",name:"域名 / 注册",children:[
+ {id:"domain-main",name:"域名服务",items:[
+  {n:"GoDaddy",u:"https://www.godaddy.com",d:"域名注册"},
+  {n:"Namecheap",u:"https://www.namecheap.com",d:"域名注册"},
+  {n:"阿里云域名",u:"https://wanwang.aliyun.com",d:"阿里域名"},
+  {n:"腾讯云域名",u:"https://dnspod.cloud.tencent.com",d:"腾讯域名"},
+  {n:"西部数码",u:"https://www.west.cn",d:"域名注册"},
+  {n:"新网",u:"https://www.xinnet.com",d:"域名注册"},
+  {n:"NameSilo",u:"https://www.namesilo.com",d:"域名注册"},
+  {n:"Porkbun",u:"https://porkbun.com",d:"域名注册"},
+  {n:"Dynadot",u:"https://www.dynadot.com",d:"域名注册"},
+  {n:"Cloudflare",u:"https://www.cloudflare.com",d:"免费注册"}
+ ]}
+]},
+{id:"hosting",icon:"🖥️",name:"主机 / 服务器",children:[
+ {id:"hosting-main",name:"主机服务",items:[
+  {n:"Bluehost",u:"https://www.bluehost.com",d:"虚拟主机"},
+  {n:"HostGator",u:"https://www.hostgator.com",d:"虚拟主机"},
+  {n:"SiteGround",u:"https://www.siteground.com",d:"主机托管"},
+  {n:"Linode",u:"https://www.linode.com",d:"VPS"},
+  {n:"DigitalOcean",u:"https://www.digitalocean.com",d:"云主机"},
+  {n:"Vultr",u:"https://www.vultr.com",d:"VPS"},
+  {n:"Hetzner",u:"https://www.hetzner.com",d:"德国主机"},
+  {n:"OVH",u:"https://www.ovh.com",d:"法国主机"},
+  {n:"Contabo",u:"https://www.contabo.com",d:"德国主机"},
+  {n:"阿里云ECS",u:"https://www.aliyun.com",d:"阿里云服务器"},
+  {n:"腾讯云CVM",u:"https://cloud.tencent.com",d:"腾讯云服务器"}
+ ]}
+]},
+{id:"aiwrite",icon:"✍️",name:"AI 写作",children:[
+ {id:"aiwrite-main",name:"写作助手",items:[
+  {n:"Jasper",u:"https://www.jasper.ai",d:"营销写作"},
+  {n:"Copy.ai",u:"https://www.copy.ai",d:"文案生成"},
+  {n:"Writesonic",u:"https://writesonic.com",d:"AI写作"},
+  {n:"Rytr",u:"https://rytr.me",d:"廉价写作"},
+  {n:"文心一格",u:"https://yige.baidu.com",d:"百度写作"},
+  {n:"讯飞写作",u:"https://www.xfyun.cn",d:"讯飞写作"},
+  {n:"秘塔写作",u:"https://mistal.ai",d:"秘塔写作猫"},
+  {n:"火山写作",u:"https://www.volcengine.com",d:"字节写作"}
+ ]}
+]},
+{id:"aivideo",icon:"🎬",name:"AI 数字人视频",children:[
+ {id:"aivideo-main",name:"视频生成",items:[
+  {n:"Synthesia",u:"https://www.synthesia.io",d:"数字人视频"},
+  {n:"D-ID",u:"https://www.d-id.com",d:"会说话头像"},
+  {n:"Colossyan",u:"https://www.colossyan.com",d:"AI演员"},
+  {n:"Elai",u:"https://elai.io",d:"数字人视频"},
+  {n:"DeepBrain",u:"https://www.deepbrain.io",d:"AI视频"},
+  {n:"HeyGen",u:"https://www.heygen.com",d:"数字人"}
+ ]}
+]},
+{id:"aispeech",icon:"🔊",name:"AI 语音合成",children:[
+ {id:"aispeech-main",name:"语音生成",items:[
+  {n:"Murf",u:"https://murf.ai",d:"AI配音"},
+  {n:"PlayHT",u:"https://play.ht",d:"语音克隆"},
+  {n:"Resemble",u:"https://www.resemble.ai",d:"语音合成"},
+  {n:"Speechify",u:"https://speechify.com",d:"朗读助手"},
+  {n:"讯飞语音",u:"https://www.xfyun.cn",d:"讯飞TTS"},
+  {n:"微软语音",u:"https://azure.microsoft.com",d:"Azure TTS"}
+ ]}
+]},
+{id:"imagetool",icon:"🖌️",name:"在线图片设计",children:[
+ {id:"imagetool-main",name:"图片编辑",items:[
+  {n:"Fotor",u:"https://www.fotor.com",d:"在线修图"},
+  {n:"Pixlr",u:"https://pixlr.com",d:"在线PS"},
+  {n:"Photopea",u:"https://www.photopea.com",d:"在线PS"},
+  {n:"DesignCap",u:"https://www.designcap.com",d:"海报设计"},
+  {n:"VistaCreate",u:"https://create.vista.com",d:"平面设计"},
+  {n:"Desygner",u:"https://desygner.com",d:"设计工具"},
+  {n:"Canva",u:"https://www.canva.com",d:"在线设计"}
+ ]}
+]},
+{id:"translate",icon:"🌐",name:"翻译 / 词典",children:[
+ {id:"translate-main",name:"翻译工具",items:[
+  {n:"Google 翻译",u:"https://translate.google.com",d:"谷歌翻译"},
+  {n:"有道翻译",u:"https://fanyi.youdao.com",d:"网易翻译"},
+  {n:"百度翻译",u:"https://fanyi.baidu.com",d:"百度翻译"},
+  {n:"DeepL",u:"https://www.deepl.com",d:"深度翻译"},
+  {n:"腾讯翻译君",u:"https://fanyi.qq.com",d:"腾讯翻译"},
+  {n:"搜狗翻译",u:"https://fanyi.sogou.com",d:"搜狗翻译"},
+  {n:"Yandex 翻译",u:"https://translate.yandex.com",d:"俄翻译"},
+  {n:"Microsoft Translator",u:"https://www.bing.com/translator",d:"必应翻译"},
+  {n:"欧路词典",u:"https://www.eudic.net",d:"欧路词典"},
+  {n:"金山词霸",u:"https://www.iciba.com",d:"词霸"}
+ ]}
+]},
+{id:"coupon",icon:"🏷️",name:"优惠 / 返利",children:[
+ {id:"coupon-main",name:"省钱工具",items:[
+  {n:"返利网",u:"https://www.fanli.com",d:"返利平台"},
+  {n:"55返",u:"https://www.55fan.com",d:"返利网"},
+  {n:"淘粉吧",u:"https://www.taofen8.com",d:"淘宝返利"},
+  {n:"一淘",u:"https://www.etao.com",d:"淘宝比价"},
+  {n:"惠惠",u:"https://www.huihui.cn",d:"购物助手"},
+  {n:"慢慢买",u:"https://www.manmanbuy.com",d:"历史价格"},
+  {n:"什么值得买",u:"https://www.smzdm.com",d:"优惠导购"}
+ ]}
+]},
+{id:"gov2",icon:"🏛️",name:"地方政务",children:[
+ {id:"gov2-main",name:"省级政务",items:[
+  {n:"粤省事",u:"https://www.gd.gov.cn",d:"广东政务"},
+  {n:"浙里办",u:"https://www.zjzwfw.gov.cn",d:"浙江政务"},
+  {n:"随申办",u:"https://www.shanghai.gov.cn",d:"上海政务"},
+  {n:"闽政通",u:"https://www.fujian.gov.cn",d:"福建政务"},
+  {n:"皖事通",u:"https://www.ahzwfw.gov.cn",d:"安徽政务"},
+  {n:"渝快办",u:"https://www.cq.gov.cn",d:"重庆政务"},
+  {n:"国家政务",u:"https://gjzwfw.www.gov.cn",d:"全国政务"}
+ ]}
+]},
+{id:"creditcard",icon:"💳",name:"信用卡 / 支付",children:[
+ {id:"creditcard-main",name:"卡组织",items:[
+  {n:"卡牛信用",u:"https://www.kaniu.com",d:"信用卡管理"},
+  {n:"51信用卡",u:"https://www.51credit.com",d:"信用卡管家"},
+  {n:"银联",u:"https://www.unionpay.com",d:"中国银联"},
+  {n:"Visa",u:"https://www.visa.com.cn",d:"维萨"},
+  {n:"Mastercard",u:"https://www.mastercard.com.cn",d:"万事达"},
+  {n:"American Express",u:"https://www.americanexpress.com",d:"运通"}
+ ]}
+]},
+{id:"edu7",icon:"🔢",name:"少儿编程 / 思维",children:[
+ {id:"edu7-main",name:"素质教育",items:[
+  {n:"火花思维",u:"https://www.huohua.cn",d:"思维训练"},
+  {n:"豌豆思维",u:"https://www.wandoujiao.com",d:"数学思维"},
+  {n:"美术宝",u:"https://www.meishubao.com",d:"在线美术"},
+  {n:"核桃编程",u:"https://www.hetao101.com",d:"少儿编程"},
+  {n:"西瓜创客",u:"https://www.xiguacode.com",d:"编程教育"},
+  {n:"编程猫",u:"https://www.codemao.cn",d:"少儿编程"}
+ ]}
+]},
+{id:"travel7",icon:"🧳",name:"游记 / 攻略",children:[
+ {id:"travel7-main",name:"旅行记录",items:[
+  {n:"蝉游记",u:"https://www.chanlvyou.com",d:"游记平台"},
+  {n:"面包旅行",u:"https://www.breadtrip.com",d:"旅行记录"},
+  {n:"旅图",u:"https://www.mapout.com",d:"离线地图"},
+  {n:"穷游",u:"https://www.qyer.com",d:"穷游社区"},
+  {n:"马蜂窝",u:"https://www.mafengwo.cn",d:"旅游攻略"}
+ ]}
+]},
+{id:"hobby4",icon:"🌿",name:"园艺 / 养花",children:[
+ {id:"hobby4-main",name:"花草园艺",items:[
+  {n:"花百科",u:"https://www.huabaike.com",d:"养花知识"},
+  {n:"多肉",u:"https://www.duorou.com",d:"多肉社区"},
+  {n:"踏花行",u:"https://www.tahua.net",d:"花卉论坛"},
+  {n:"藏花阁",u:"https://www.zanghuage.com",d:"兰花论坛"},
+  {n:"园艺网",u:"https://www.yuanyi.com",d:"园艺门户"}
+ ]}
+]},
+{id:"pet4",icon:"🦴",name:"宠物食品 / 用品",children:[
+ {id:"pet4-main",name:"宠物用品",items:[
+  {n:"皇家",u:"https://www.royalcanin.com",d:"宠物粮"},
+  {n:"冠能",u:"https://www.proplan.com",d:"宠物粮"},
+  {n:"麦富迪",u:"https://www.mfd.com",d:"宠物食品"},
+  {n:"比瑞吉",u:"https://www.bridgepetcare.com",d:"宠物粮"},
+  {n:"卫仕",u:"https://www.wishpet.com",d:"宠物营养"}
+ ]}
+]},
+{id:"news8",icon:"💹",name:"国际财经",children:[
+ {id:"news8-main",name:"全球财经",items:[
+  {n:"WSJ",u:"https://www.wsj.com",d:"华尔街日报"},
+  {n:"Nikkei",u:"https://www.nikkei.com",d:"日本经济"},
+  {n:"Handelsblatt",u:"https://www.handelsblatt.com",d:"德国商报"},
+  {n:"Les Echos",u:"https://www.lesechos.fr",d:"法国回声"},
+  {n:"Financial Times",u:"https://www.ft.com",d:"金融时报"},
+  {n:"Bloomberg",u:"https://www.bloomberg.com",d:"彭博社"}
+ ]}
+]},
+{id:"science5",icon:"⚛️",name:"物理 / 科研机构",children:[
+ {id:"science5-main",name:"物理研究",items:[
+  {n:"Fermilab",u:"https://www.fnal.gov",d:"费米实验室"},
+  {n:"SLAC",u:"https://www.slac.stanford.edu",d:"斯坦福线性加速"},
+  {n:"Brookhaven",u:"https://www.bnl.gov",d:"布鲁克海文"},
+  {n:"中科院",u:"https://www.cas.cn",d:"中科院官网"},
+  {n:"物理所",u:"https://www.iop.cas.cn",d:"物理研究所"},
+  {n:"Physics.org",u:"https://phys.org",d:"物理新闻"},
+  {n:"CERN",u:"https://home.cern",d:"欧洲核子中心"}
+ ]}
+]},
+{id:"edu8",icon:"🏫",name:"中小学教育",children:[
+ {id:"edu8-main",name:"基础教育",items:[
+  {n:"国家中小学",u:"https://basic.smartedu.cn",d:"智慧教育"},
+  {n:"人教社",u:"https://www.pep.com.cn",d:"教材出版社"},
+  {n:"外研社",u:"https://www.fltrp.com",d:"外语教材"},
+  {n:"菁优网",u:"https://www.jyeoo.com",d:"题库组卷"},
+  {n:"学科网",u:"https://www.zxxk.com",d:"教学资源"},
+  {n:"21世纪",u:"https://www.21cnjy.com",d:"教育资源"},
+  {n:"高考网",u:"https://www.gaokao.com",d:"高考资讯"}
+ ]}
+]},
+{id:"car6",icon:"🔋",name:"新能源车企",children:[
+ {id:"car6-main",name:"造车新势力",items:[
+  {n:"极氪",u:"https://www.zeekrlife.com",d:"吉利高端"},
+  {n:"哪吒",u:"https://www.hozonauto.com",d:"合众汽车"},
+  {n:"零跑",u:"https://www.leapmotor.com",d:"零跑汽车"},
+  {n:"问界",u:"https://www.aitoauto.com",d:"华为赛力斯"},
+  {n:"阿维塔",u:"https://www.avatr.com",d:"长安华为"},
+  {n:"智己",u:"https://www.immotors.com",d:"上汽高端"},
+  {n:"岚图",u:"https://www-voyah.com",d:"东风高端"}
+ ]}
+]},
+{id:"coffee",icon:"☕",name:"精品咖啡",children:[
+ {id:"coffee-main",name:"咖啡品牌",items:[
+  {n:"连咖啡",u:"https://www.liancoffee.com",d:"连咖啡"},
+  {n:"鹰集",u:"https://www.eaglecoffee.com",d:"鹰集咖啡"},
+  {n:"Seesaw",u:"https://www.seesawcoffee.com",d:"精品咖啡"},
+  {n:"%Arabica",u:"https://www.arabica.com",d:"阿拉比卡"},
+  {n:"M Stand",u:"https://www.mstand.com",d:"M Stand"},
+  {n:"Tims",u:"https://www.timschina.com",d:"天好咖啡"},
+  {n:"皮爷",u:"https://www.peets.com",d:"Peets咖啡"}
+ ]}
+]},
+{id:"alcohol",icon:"🍷",name:"酒水 / 饮料",children:[
+ {id:"alcohol-main",name:"酒类品牌",items:[
+  {n:"茅台",u:"https://www.moutai.com.cn",d:"贵州茅台"},
+  {n:"五粮液",u:"https://www.wuliangye.com.cn",d:"五粮液"},
+  {n:"洋河",u:"https://www.chinayanghe.com",d:"洋河股份"},
+  {n:"泸州老窖",u:"https://www.lzlj.com",d:"泸州老窖"},
+  {n:"剑南春",u:"https://www.jnc.com",d:"剑南春"},
+  {n:"青岛啤酒",u:"https://www.tsingtao.com.cn",d:"青岛啤酒"},
+  {n:"雪花啤酒",u:"https://www.snowbeer.com.cn",d:"雪花啤酒"},
+  {n:"燕京啤酒",u:"https://www.yanjing.com.cn",d:"燕京啤酒"},
+  {n:"百威",u:"https://www.budweiser.com",d:"百威啤酒"},
+  {n:"喜力",u:"https://www.heineken.com",d:"喜力啤酒"}
+ ]}
+]},
+{id:"fashion",icon:"👕",name:"服饰 / 时尚",children:[
+ {id:"fashion-main",name:"服装品牌",items:[
+  {n:"优衣库",u:"https://www.uniqlo.com",d:"优衣库"},
+  {n:"ZARA",u:"https://www.zara.com",d:"ZARA"},
+  {n:"H&M",u:"https://www2.hm.com",d:"H&M"},
+  {n:"GAP",u:"https://www.gap.com",d:"GAP"},
+  {n:"海澜之家",u:"https://www.hla.com",d:"海澜之家"},
+  {n:"森马",u:"https://www.semir.com",d:"森马"},
+  {n:"太平鸟",u:"https://www.peacesbird.com",d:"太平鸟"},
+  {n:"李宁",u:"https://www.lining.com",d:"李宁"},
+  {n:"安踏",u:"https://www.anta.com",d:"安踏"}
+ ]}
+]},
+{id:"furniture",icon:"🛋️",name:"家具 / 家居",children:[
+ {id:"furniture-main",name:"家具品牌",items:[
+  {n:"宜家",u:"https://www.ikea.cn",d:"宜家家居"},
+  {n:"林氏木业",u:"https://www.linso.com",d:"林氏家居"},
+  {n:"全友",u:"https://www.quanyou.com",d:"全友家居"},
+  {n:"顾家家居",u:"https://www.kuka.com",d:"顾家家居"},
+  {n:"源氏木语",u:"https://www.yuanshi.com",d:"源氏木语"},
+  {n:"掌上明珠",u:"https://www.mzwz.com",d:"明珠家居"}
+ ]}
+]},
+{id:"sports3",icon:"🥾",name:"运动装备",children:[
+ {id:"sports3-main",name:"户外装备",items:[
+  {n:"迪卡侬",u:"https://www.decathlon.com.cn",d:"迪卡侬"},
+  {n:"始祖鸟",u:"https://www.arcteryx.com",d:"Arc'teryx"},
+  {n:"北面",u:"https://www.thenorthface.com",d:"The North Face"},
+  {n:"探路者",u:"https://www.toread.com",d:"探路者"},
+  {n:"骆驼",u:"https://www.camel.com",d:"骆驼户外"},
+  {n:"凯乐石",u:"https://www.kailas.com",d:"凯乐石"}
+ ]}
+]},
+{id:"pet5",icon:"🏥",name:"宠物医疗",children:[
+ {id:"pet5-main",name:"宠物医院",items:[
+  {n:"瑞鹏",u:"https://www.ruipeng.com",d:"瑞鹏宠物"},
+  {n:"芭比堂",u:"https://www.babytang.com",d:"芭比堂"},
+  {n:"安安",u:"https://www.ananpet.com",d:"安安宠医"},
+  {n:"美联众合",u:"https://www.mlzh.com",d:"美联宠医"}
+ ]}
+]},
+{id:"camping",icon:"⛺",name:"露营 / 装备",children:[
+ {id:"camping-main",name:"露营品牌",items:[
+  {n:"牧高笛",u:"https://www.mobigarden.com",d:"牧高笛"},
+  {n:"挪客",u:"https://www.naturehike.com",d:"Naturehike"},
+  {n:"黑鹿",u:"https://www.blackdeer.com",d:"黑鹿"},
+  {n:"自然之歌",u:"https://www.nature-song.com",d:"露营装备"},
+  {n:"探路者",u:"https://www.toread.com",d:"探路者"}
+ ]}
+]},
+{id:"aiagent",icon:"🤖",name:"AI 智能体平台",children:[
+ {id:"aiagent-main",name:"智能体",items:[
+  {n:"Coze",u:"https://www.coze.cn",d:"字节扣子"},
+  {n:"Dify",u:"https://dify.ai",d:"开源智能体"},
+  {n:"文心智能体",u:"https://agents.baidu.com",d:"百度智能体"},
+  {n:"元器",u:"https://yuanqi.tencent.com",d:"腾讯元器"},
+  {n:"智谱",u:"https://open.bigmodel.cn",d:"智谱开放"},
+  {n:"钉钉AI",u:"https://www.dingtalk.com",d:"钉钉AI"}
+ ]}
+]},
+{id:"game6",icon:"🕹️",name:"怀旧 / 模拟器",children:[
+ {id:"game6-main",name:"怀旧游戏",items:[
+  {n:"小霸王",u:"https://www.subor.com",d:"小霸王"},
+  {n:"怀旧游戏",u:"https://www.wan1234.com",d:"红白机"},
+  {n:"街机",u:"https://www.arcade.com",d:"街机游戏"},
+  {n:"MAME",u:"https://www.mamedev.org",d:"街机模拟"},
+  {n:"模拟器",u:"https://www.emulator.com",d:"游戏模拟"}
+ ]}
+]},
+{id:"music4",icon:"🎸",name:"乐器 / 品牌",children:[
+ {id:"music4-main",name:"乐器品牌",items:[
+  {n:"雅马哈",u:"https://www.yamaha.com",d:"雅马哈"},
+  {n:"卡西欧",u:"https://www.casio.com",d:"卡西欧"},
+  {n:"罗兰",u:"https://www.roland.com",d:"Roland"},
+  {n:"芬达",u:"https://www.fender.com",d:"Fender"},
+  {n:"吉普森",u:"https://www.gibson.com",d:"Gibson"},
+  {n:"敦煌",u:"https://www.dunhuang.com",d:"敦煌乐器"},
+  {n:"星海",u:"https://www.xinghai.com",d:"星海钢琴"}
+ ]}
+]},
+{id:"bookstore",icon:"📚",name:"书店 / 阅读空间",children:[
+ {id:"bookstore-main",name:"实体书店",items:[
+  {n:"中信书店",u:"https://www.citicpub.com",d:"中信出版"},
+  {n:"西西弗",u:"https://www.sisyphe.com",d:"西西弗书店"},
+  {n:"言几又",u:"https://www.yanjiyou.com",d:"言几又"},
+  {n:"方所",u:"https://www.fangsuo.com",d:"方所书店"},
+  {n:"单向空间",u:"https://www.onewayplace.com",d:"单向街"},
+  {n:"三联书店",u:"https://www.sanlian.com",d:"三联书店"}
+ ]}
+]},
+{id:"aisearch",icon:"🔎",name:"AI 搜索引擎",children:[
+ {id:"aisearch-main",name:"智能搜索",items:[
+  {n:"Phind",u:"https://www.phind.com",d:"开发者搜索"},
+  {n:"Andi",u:"https://andisearch.com",d:"对话搜索"},
+  {n:"You.com",u:"https://you.com",d:"AI搜索"},
+  {n:"Devv",u:"https://devv.ai",d:"程序员搜索"},
+  {n:"Metaso",u:"https://metaso.cn",d:"秘塔搜索"},
+  {n:"Perplexity",u:"https://www.perplexity.ai",d:"AI问答搜索"}
+ ]}
+]},
+{id:"screenshot",icon:"✂️",name:"截图 / 录屏",children:[
+ {id:"screenshot-main",name:"截图工具",items:[
+  {n:"Snipaste",u:"https://www.snipaste.com",d:"贴图截图"},
+  {n:"ShareX",u:"https://getsharex.com",d:"开源截图"},
+  {n:"Greenshot",u:"https://getgreenshot.org",d:"轻量截图"},
+  {n:"LightShot",u:"https://app.prnt.sc",d:"在线截图"},
+  {n:"腾讯截图",u:"https://pc.qq.com",d:"QQ截图"},
+  {n:"FastStone",u:"https://www.faststone.org",d:"截图录屏"}
+ ]}
+]},
+{id:"anime2",icon:"🌸",name:"动漫站点",children:[
+ {id:"anime2-main",name:"番剧资源",items:[
+  {n:"嘀哩嘀哩",u:"https://www.dilidili.com",d:"D站番剧"},
+  {n:"动漫岛",u:"https://www.dmdm.com",d:"动漫岛"},
+  {n:"樱花动漫",u:"https://www.yhmao.com",d:"樱花动漫"},
+  {n:"动漫花园",u:"https://www.dmhy.org",d:"动漫字幕"},
+  {n:"B站番剧",u:"https://www.bilibili.com",d:"正版番剧"}
+ ]}
+]},
+{id:"magazine",icon:"📰",name:"杂志 / 周刊",children:[
+ {id:"magazine-main",name:"杂志媒体",items:[
+  {n:"VISTA看天下",u:"https://www.vistastory.com",d:"新闻周刊"},
+  {n:"人物",u:"https://www.renwugc.com",d:"人物杂志"},
+  {n:"三联生活",u:"https://www.lifeweek.com",d:"三联周刊"},
+  {n:"南风窗",u:"https://www.nfcmag.com",d:"新闻杂志"},
+  {n:"中国新闻",u:"https://www.chinanews.com",d:"中新周刊"},
+  {n:"财经",u:"https://www.caijing.com",d:"财经杂志"}
+ ]}
+]},
+{id:"chess",icon:"♟️",name:"棋牌 / 休闲",children:[
+ {id:"chess-main",name:"棋牌游戏",items:[
+  {n:"腾讯棋牌",u:"https://board.qq.com",d:"qq游戏"},
+  {n:"JJ比赛",u:"https://www.jj.cn",d:"竞技棋牌"},
+  {n:"博雅",u:"https://www.boyaa.com",d:"扑克游戏"},
+  {n:"联众",u:"https://www.ourgame.com",d:"老牌棋牌"},
+  {n:"边锋",u:"https://www.bianfeng.com",d:"棋牌游戏"},
+  {n:"中国象棋",u:"https://www.xqbase.com",d:"象棋对弈"}
+ ]}
+]},
+{id:"ticket",icon:"🎫",name:"演出 / 票务",children:[
+ {id:"ticket-main",name:"票务平台",items:[
+  {n:"大麦",u:"https://www.damai.cn",d:"演出票务"},
+  {n:"秀动",u:"https://www.showstart.com",d:"live票务"},
+  {n:"摩天轮",u:"https://www.mty.cn",d:"票务交易"},
+  {n:"猫眼演出",u:"https://www.maoyan.com",d:"演出票"},
+  {n:"Ticketmaster",u:"https://www.ticketmaster.com",d:"国际票务"},
+  {n:"StubHub",u:"https://www.stubhub.com",d:"二手票务"}
+ ]}
+]},
+{id:"food9",icon:"🍽️",name:"海外美食",children:[
+ {id:"food9-main",name:"国际美食",items:[
+  {n:"Zomato",u:"https://www.zomato.com",d:"餐厅点评"},
+  {n:"OpenRice",u:"https://www.openrice.com",d:"亚洲美食"},
+  {n:"Yelp",u:"https://www.yelp.com",d:"商户点评"},
+  {n:"TripAdvisor",u:"https://www.tripadvisor.cn",d:"猫途鹰"},
+  {n:"大众点评",u:"https://www.dianping.com",d:"探店点评"}
+ ]}
+]},
+{id:"motor",icon:"🏍️",name:"摩托品牌",children:[
+ {id:"motor-main",name:"摩托车",items:[
+  {n:"哈雷",u:"https://www.harley-davidson.com",d:"哈雷摩托"},
+  {n:"宝马摩托",u:"https://www.bmw-motorrad.com",d:"宝马摩托"},
+  {n:"杜卡迪",u:"https://www.ducati.com",d:"杜卡迪"},
+  {n:"川崎",u:"https://www.kawasaki.com",d:"川崎摩托"},
+  {n:"雅马哈摩托",u:"https://www.yamaha-motor.com",d:"雅马哈"},
+  {n:"KTM",u:"https://www.ktm.com",d:"KTM摩托"}
+ ]}
+]},
+{id:"police",icon:"🚓",name:"公安 / 交管",children:[
+ {id:"police-main",name:"政务服务",items:[
+  {n:"交管12123",u:"https://www.122.gov.cn",d:"交通管理"},
+  {n:"出入境",u:"https://www.nia.gov.cn",d:"移民管理局"},
+  {n:"身份证查询",u:"https://www.nciic.com",d:"身份核验"},
+  {n:"公安局",u:"https://www.mps.gov.cn",d:"公安官网"},
+  {n:"反诈骗",u:"https://www.12321.cn",d:"反诈中心"}
+ ]}
+]},
+{id:"smarthome",icon:"🏡",name:"智能家居",children:[
+ {id:"smarthome-main",name:"智能设备",items:[
+  {n:"涂鸦智能",u:"https://www.tuya.com",d:"IoT平台"},
+  {n:"欧瑞博",u:"https://www.orvibo.com",d:"全宅智能"},
+  {n:"绿米",u:"https://www.aqara.com",d:"Aqara"},
+  {n:"博联",u:"https://www.broadlink.com",d:"智能遥控"},
+  {n:"小米智能",u:"https://www.mi.com",d:"米家"},
+  {n:"华为全屋",u:"https://www.harmonyos.com",d:"鸿蒙智联"}
+ ]}
+]},
+{id:"insurance3",icon:"📑",name:"保险代理",children:[
+ {id:"insurance3-main",name:"保险经纪",items:[
+  {n:"慧择",u:"https://www.huize.com",d:"保险经纪"},
+  {n:"梧桐树",u:"https://www.wutongshu.com",d:"保险代理"},
+  {n:"水滴保",u:"https://www.shuidi.cn",d:"保险商城"},
+  {n:"蚂蚁保",u:"https://www.antins.com",d:"蚂蚁保险"}
+ ]}
+]},
+{id:"dental",icon:"🦷",name:"口腔 / 牙科",children:[
+ {id:"dental-main",name:"牙科连锁",items:[
+  {n:"瑞尔齿科",u:"https://www.arrail.com",d:"瑞尔牙科"},
+  {n:"拜博口腔",u:"https://www.baibo.com",d:"拜博口腔"},
+  {n:"美维口腔",u:"https://www.mwyakq.com",d:"美维口腔"},
+  {n:"通策医疗",u:"https://www.tcmedical.com",d:"通策医疗"}
+ ]}
+]},
+{id:"sportsnews",icon:"🏟️",name:"国际体育",children:[
+ {id:"sportsnews-main",name:"体育媒体",items:[
+  {n:"Sky Sports",u:"https://www.skysports.com",d:"天空体育"},
+  {n:"BBC Sport",u:"https://www.bbc.com/sport",d:"BBC体育"},
+  {n:"Marca",u:"https://www.marca.com",d:"西班牙体育"},
+  {n:"AS",u:"https://www.as.com",d:"AS体育"},
+  {n:"Goal",u:"https://www.goal.com",d:"足球新闻"},
+  {n:"Le Figaro Sport",u:"https://www.lefigaro.fr/sport",d:"法国体育"}
+ ]}
+]},
+{id:"studyexam",icon:"📝",name:"留学考试",children:[
+ {id:"studyexam-main",name:"语言考试",items:[
+  {n:"PTE",u:"https://www.pearsonpte.com",d:"培生英语"},
+  {n:"多邻国英语",u:"https://englishtest.duolingo.com",d:"Duolingo测试"},
+  {n:"LanguageCert",u:"https://www.languagecert.org",d:"语言证书"},
+  {n:"朗思",u:"https://www.languagetest.com",d:"朗思考试"},
+  {n:"托福",u:"https://www.ets.org/toefl",d:"托福官网"},
+  {n:"雅思",u:"https://www.chinaielts.org",d:"雅思官网"}
+ ]}
+]},
+{id:"carrent",icon:"🚗",name:"租车 / 出行",children:[
+ {id:"carrent-main",name:"租车平台",items:[
+  {n:"神州租车",u:"https://www.zuche.com",d:"神州租车"},
+  {n:"一嗨租车",u:"https://www.1hai.cn",d:"一嗨租车"},
+  {n:"首汽租车",u:"https://www.shouqi.com",d:"首汽租车"},
+  {n:"凹凸租车",u:"https://www.atzuche.com",d:"P2P租车"},
+  {n:"Hertz",u:"https://www.hertz.com",d:"赫兹租车"},
+  {n:"Avis",u:"https://www.avis.com",d:"安飞士"},
+  {n:"Enterprise",u:"https://www.enterprise.com",d:"企业租车"}
+ ]}
+]},
+{id:"audiobook",icon:"🎧",name:"海外听书",children:[
+ {id:"audiobook-main",name:"有声书",items:[
+  {n:"Audible",u:"https://www.audible.com",d:"亚马逊听书"},
+  {n:"Google Play Books",u:"https://play.google.com",d:"谷歌图书"},
+  {n:"Kobo",u:"https://www.kobo.com",d:"电子书"},
+  {n:"Scribd",u:"https://www.scribd.com",d:"文档听书"},
+  {n:"LibriVox",u:"https://librivox.org",d:"公版有声"}
+ ]}
+]},
+{id:"musicstream",icon:"🎶",name:"音乐流媒体",children:[
+ {id:"musicstream-main",name:"听歌平台",items:[
+  {n:"YouTube Music",u:"https://music.youtube.com",d:"谷歌音乐"},
+  {n:"Amazon Music",u:"https://music.amazon.com",d:"亚马逊音乐"},
+  {n:"Qobuz",u:"https://www.qobuz.com",d:"无损音乐"},
+  {n:"Tidal",u:"https://tidal.com",d:"高保真"},
+  {n:"Deezer",u:"https://www.deezer.com",d:"流媒体"},
+  {n:"Spotify",u:"https://www.spotify.com",d:"流媒体"}
+ ]}
+]},
+{id:"social4",icon:"🙈",name:"匿名 / 兴趣社交",children:[
+ {id:"social4-main",name:"匿名社区",items:[
+  {n:"Soul",u:"https://www.soulapp.cn",d:"灵魂社交"},
+  {n:"一罐",u:"https://www.yiguan.com",d:"匿名树洞"},
+  {n:"最右",u:"https://www.zuiyou.com",d:"搞笑社区"},
+  {n:"不熟",u:"https://www.bushu.com",d:"附近社交"},
+  {n:"秘蜜",u:"https://www.mimi.com",d:"闺蜜社交"}
+ ]}
+]},
+{id:"gold",icon:"🥇",name:"黄金 / 贵金属",children:[
+ {id:"gold-main",name:"黄金交易",items:[
+  {n:"上海黄金交易所",u:"https://www.sge.com.cn",d:"黄金交易所"},
+  {n:"金荣中国",u:"https://www.jrjr.com",d:"贵金属"},
+  {n:"领峰",u:"https://www.ascetop.com",d:"贵金属"},
+  {n:"金投网",u:"https://www.cngold.org",d:"黄金投资"},
+  {n:"和讯黄金",u:"https://gold.hexun.com",d:"黄金资讯"}
+ ]}
+]},
+{id:"socialsec",icon:"🛡️",name:"社保 / 公积金",children:[
+ {id:"socialsec-main",name:"社会保障",items:[
+  {n:"国家社保",u:"https://www.mohrss.gov.cn",d:"人社官网"},
+  {n:"12333",u:"https://www.12333.gov.cn",d:"社保查询"},
+  {n:"公积金",u:"https://www.gjj12329.com",d:"公积金查询"},
+  {n:"电子社保卡",u:"https://www.12333.gov.cn",d:"电子社保"}
+ ]}
+]},
+{id:"teadrink",icon:"🧋",name:"新茶饮",children:[
+ {id:"teadrink-main",name:"茶饮品牌",items:[
+  {n:"茶百道",u:"https://www.chabaidao.com",d:"茶百道"},
+  {n:"古茗",u:"https://www.guming.com",d:"古茗茶饮"},
+  {n:"沪上阿姨",u:"https://www.hushang.com",d:"沪上阿姨"},
+  {n:"书亦烧仙草",u:"https://www.shuyi.com",d:"书亦"},
+  {n:"益禾堂",u:"https://www.yihetang.com",d:"益禾堂"},
+  {n:"CoCo",u:"https://www.coco.com",d:"都可茶饮"},
+  {n:"喜茶",u:"https://www.heytea.com",d:"喜茶"},
+  {n:"奈雪",u:"https://www.naixue.com",d:"奈雪"}
+ ]}
+]},
+{id:"psych2",icon:"💭",name:"心理 / 倾诉",children:[
+ {id:"psych2-main",name:"心理服务",items:[
+  {n:"壹点灵",u:"https://www.yidianling.com",d:"心理咨询"},
+  {n:"糖心理",u:"https://www.tangxinli.com",d:"心理学"},
+  {n:"壹心理",u:"https://www.xinli001.com",d:"心理服务"},
+  {n:"简单心理",u:"https://www.jiandanxinli.com",d:"专业咨询"}
+ ]}
+]},
+{id:"game9",icon:"🎮",name:"小游戏 / 网游",children:[
+ {id:"game9-main",name:"游戏门户",items:[
+  {n:"3366",u:"https://www.3366.com",d:"小游戏"},
+  {n:"17173",u:"https://www.17173.com",d:"游戏门户"},
+  {n:"游久",u:"https://www.uuu9.com",d:"游戏资讯"},
+  {n:"太平洋游戏",u:"https://www.pcgames.com.cn",d:"游戏频道"},
+  {n:"叶子猪",u:"https://www.yzz.cn",d:"网游门户"},
+  {n:"52pk",u:"https://www.52pk.com",d:"游戏资讯"}
+ ]}
+]},
+{id:"carmedia2",icon:"🚘",name:"汽车新媒体",children:[
+ {id:"carmedia2-main",name:"车评媒体",items:[
+  {n:"新车评",u:"https://www.xincheping.com",d:"新车评测"},
+  {n:"萝卜报告",u:"https://www.luobu.com",d:"车评视频"},
+  {n:"陈震",u:"https://www.chenzhen.com",d:"车评人"},
+  {n:"38号车评",u:"https://www.38hao.com",d:"车评"},
+  {n:"韩路",u:"https://www.hanlu.com",d:"自驾游"},
+  {n:"逗斗车",u:"https://www.doudouche.com",d:"汽车吐槽"}
+ ]}
+]},
+{id:"techmedia2",icon:"📱",name:"数码博主 / 媒体",children:[
+ {id:"techmedia2-main",name:"数码评测",items:[
+  {n:"李大锤",u:"https://www.lidachui.com",d:"手机评测"},
+  {n:"钟文泽",u:"https://www.zhongwenze.com",d:"数码评测"},
+  {n:"林亦",u:"https://www.linyi.com",d:"数码科普"},
+  {n:"影视飓风",u:"https://www.yingshijufeng.com",d:"影视设备"},
+  {n:"小白测评",u:"https://www.xiaobaiceping.com",d:"手机测评"},
+  {n:"Zealer",u:"https://www.zealer.com",d:"科技评测"}
+ ]}
+]},
+{id:"techintl",icon:"🌐",name:"国际科技媒体",children:[
+ {id:"techintl-main",name:"海外科技",items:[
+  {n:"The Information",u:"https://www.theinformation.com",d:"科技商业"},
+  {n:"Protocol",u:"https://www.protocol.com",d:"科技媒体"},
+  {n:"Rest of World",u:"https://restofworld.org",d:"科技文化"},
+  {n:"Semafor",u:"https://www.semafor.com",d:"新闻门户"},
+  {n:"The Verge",u:"https://www.theverge.com",d:"科技文化"},
+  {n:"Wired",u:"https://www.wired.com",d:"连线"}
+ ]}
+]},
+{id:"social5",icon:"🌟",name:"兴趣社交补充",children:[
+ {id:"social5-main",name:"兴趣社区",items:[
+  {n:"绿洲",u:"https://www.oasis.com",d:"微博绿洲"},
+  {n:"飞书",u:"https://www.feishu.cn",d:"办公社区"},
+  {n:"小米社区",u:"https://www.xiaomi.cn",d:"米粉社区"},
+  {n:"华为社区",u:"https://www.vmall.com",d:"花粉社区"},
+  {n:"魅族社区",u:"https://www.meizu.com",d:"魅友社区"}
+ ]}
+]},
+{id:"food11",icon:"🍲",name:"菜谱补充",children:[
+ {id:"food11-main",name:"美食平台",items:[
+  {n:"烘焙帮",u:"https://www.hongbei.com",d:"烘焙社区"},
+  {n:"美食杰",u:"https://www.meishij.net",d:"菜谱大全"},
+  {n:"香哈菜谱",u:"https://m.xiangha.com",d:"菜谱大全"},
+  {n:"下厨房",u:"https://www.xiachufang.com",d:"菜谱社区"},
+  {n:"豆果美食",u:"https://www.douguo.com",d:"美食分享"}
+ ]}
+]},
+{id:"study2",icon:"🎓",name:"远程教育",children:[
+ {id:"study2-main",name:"继续教育",items:[
+  {n:"国家开放大学",u:"https://www.ouchn.edu.cn",d:"开放教育"},
+  {n:"奥鹏教育",u:"https://www.open.com.cn",d:"远程学历"},
+  {n:"弘成教育",u:"https://www.chinaedu.net",d:"继续教育"},
+  {n:"知金教育",u:"https://www.zhijin.net",d:"远程教育"}
+ ]}
+]},
+{id:"stocknews",icon:"📜",name:"证券 / 财经报",children:[
+ {id:"stocknews-main",name:"证券媒体",items:[
+  {n:"证券时报",u:"https://www.stcn.com",d:"证券时报"},
+  {n:"中国证券报",u:"https://www.cs.com.cn",d:"中证报"},
+  {n:"上海证券报",u:"https://www.cnstock.com",d:"上证报"},
+  {n:"经济日报",u:"https://www.ce.cn",d:"经济日报"},
+  {n:"证券日报",u:"https://www.zqrb.cn",d:"证券日报"}
+ ]}
+]},
+{id:"oss",icon:"🌍",name:"开源基金会",children:[
+ {id:"oss-main",name:"开源组织",items:[
+  {n:"Apache",u:"https://www.apache.org",d:"阿帕奇"},
+  {n:"CNCF",u:"https://www.cncf.io",d:"云原生"},
+  {n:"Eclipse",u:"https://www.eclipse.org",d:"Eclipse"},
+  {n:"Linux Foundation",u:"https://www.linuxfoundation.org",d:"Linux基金会"},
+  {n:"OpenJS",u:"https://openjsf.org",d:"JS基金会"}
+ ]}
+]}
+];
